@@ -3,6 +3,7 @@ import json
 
 def get_schema_details(connection):
     cursor = connection.cursor()
+
     # Fetch table details
     cursor.execute("""
         SELECT c.table_name, c.column_name, c.data_type, c.character_maximum_length,
@@ -19,19 +20,23 @@ def get_schema_details(connection):
         WHERE c.table_schema = 'public'
         ORDER BY c.table_name, c.ordinal_position;
     """)
+
     schema_details = {}
     for row in cursor.fetchall():
         table_name, column_name, data_type, character_maximum_length, constraint_type = row
         if table_name not in schema_details:
             schema_details[table_name] = []
+
         column_details = {
             'column_name': column_name,
             'data_type': data_type
         }
+
         if data_type == 'character varying':
             column_details['max_length'] = character_maximum_length
-        if constraint_type:
+            
             column_details['constraint_type'] = constraint_type
+            
         schema_details[table_name].append(column_details)
 
      # Fetch foreign key constraints
@@ -59,13 +64,24 @@ def get_schema_details(connection):
 
     for row in cursor.fetchall():
         table_name, column_name, foreign_table_name, foreign_column_name, foreign_column_data_type = row
-        schema_details[table_name].append({
-            'column_name': column_name,
-            'data_type': foreign_column_data_type,
-            'constraint_type': 'FOREIGN KEY',
-            'foreign_table': foreign_table_name,
-            'foreign_column': foreign_column_name
-    })
+        
+        for column in schema_details[table_name]:  # If column found, update not to duplicate
+            if column['column_name'] == column_name:
+                column.update({
+                    'constraint_type': 'FOREIGN KEY',
+                    'foreign_table': foreign_table_name,
+                    'foreign_column': foreign_column_name
+                })
+                break
+        else:  # If column not found, add new
+            schema_details[table_name].append({
+                'column_name': column_name,
+                'data_type': foreign_column_data_type,
+                'constraint_type': 'FOREIGN KEY',
+                'foreign_table': foreign_table_name,
+                'foreign_column': foreign_column_name
+            })
+
     return schema_details
 
 def save_to_json(data, filename):
