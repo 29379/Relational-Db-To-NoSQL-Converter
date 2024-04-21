@@ -90,7 +90,7 @@ def save_to_json(data, filename):
 
 def main():
     conn = psycopg2.connect(
-        dbname='czy_dojade',
+        dbname='zbd_czy_dojade',
         user='postgres',
         password='asdlkj000',
         host='localhost',
