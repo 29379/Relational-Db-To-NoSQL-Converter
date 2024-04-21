@@ -5,7 +5,7 @@ import datetime
 # one-to-one
 def create_db():
     client = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = client["czy_dojade"]
+    db = client["zbd_czy_dojade"]
 
     with open("schema_details.json", "r") as file:
         schema = json.load(file)
