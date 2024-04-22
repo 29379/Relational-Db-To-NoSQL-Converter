@@ -2,23 +2,33 @@
     "accident": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "time_of_accident",
-            "data_type": "date"
+            "data_type": "date",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "acc_latitude",
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "acc_longitude",
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "is_verified",
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "trip_id",
@@ -32,7 +42,9 @@
     "app_user": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "first_name",
@@ -60,7 +72,9 @@
         },
         {
             "column_name": "subscriber",
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "role",
@@ -72,19 +86,26 @@
     "live_stop_time": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "arrival_delay",
-            "data_type": "time without time zone"
+            "data_type": "time without time zone",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "departure_delay",
-            "data_type": "time without time zone"
+            "data_type": "time without time zone",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "schedule_stop_timeid",
             "data_type": "integer",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "schedule_stop_time",
             "foreign_column": "id"
@@ -101,7 +122,9 @@
     "report": [
         {
             "column_name": "id",
-            "data_type": "integer"
+            "data_type": "integer",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "description",
@@ -111,11 +134,14 @@
         },
         {
             "column_name": "time_of_report",
-            "data_type": "time without time zone"
+            "data_type": "time without time zone",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "accident_id",
             "data_type": "bigint",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "accident",
             "foreign_column": "id"
@@ -123,6 +149,7 @@
         {
             "column_name": "user_id",
             "data_type": "bigint",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "app_user",
             "foreign_column": "id"
@@ -138,6 +165,7 @@
         {
             "column_name": "route_type_id",
             "data_type": "bigint",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "route_type",
             "foreign_column": "id"
@@ -146,7 +174,9 @@
     "route_stop": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "routeid",
@@ -159,19 +189,24 @@
         {
             "column_name": "stopid",
             "data_type": "integer",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "stop",
             "foreign_column": "id"
         },
         {
             "column_name": "currentstopinroute",
-            "data_type": "integer"
+            "data_type": "integer",
+            "max_length": null,
+            "constraint_type": null
         }
     ],
     "route_type": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "type",
@@ -183,7 +218,9 @@
     "route_user": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "route_id",
@@ -196,6 +233,7 @@
         {
             "column_name": "user_id",
             "data_type": "bigint",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "app_user",
             "foreign_column": "id"
@@ -204,19 +242,26 @@
     "schedule_stop_time": [
         {
             "column_name": "id",
-            "data_type": "integer"
+            "data_type": "integer",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "scheduled_arrival_time",
-            "data_type": "time without time zone"
+            "data_type": "time without time zone",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "scheduled_departure_time",
-            "data_type": "time without time zone"
+            "data_type": "time without time zone",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "stop_id",
             "data_type": "integer",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "stop",
             "foreign_column": "id"
@@ -225,11 +270,15 @@
     "stop": [
         {
             "column_name": "id",
-            "data_type": "integer"
+            "data_type": "integer",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "code",
-            "data_type": "integer"
+            "data_type": "integer",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "name",
@@ -239,11 +288,15 @@
         },
         {
             "column_name": "latitude",
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "longitude",
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "max_length": null,
+            "constraint_type": null
         }
     ],
     "trip": [
@@ -264,6 +317,7 @@
         {
             "column_name": "vehicle_id",
             "data_type": "bigint",
+            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "vehicle",
             "foreign_column": "id"
@@ -272,7 +326,9 @@
     "trip_destination": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "trip_headsign",
@@ -282,7 +338,9 @@
         },
         {
             "column_name": "direction_id",
-            "data_type": "boolean"
+            "data_type": "boolean",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "tripid",
@@ -296,15 +354,93 @@
     "vehicle": [
         {
             "column_name": "id",
-            "data_type": "bigint"
+            "data_type": "bigint",
+            "max_length": null,
+            "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "curr_latitude",
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "max_length": null,
+            "constraint_type": null
         },
         {
             "column_name": "curr_longitude",
-            "data_type": "numeric"
+            "data_type": "numeric",
+            "max_length": null,
+            "constraint_type": null
+        }
+    ],
+    "relationships": [
+        {
+            "from": "report",
+            "to": "app_user",
+            "type": "many-to-one"
+        },
+        {
+            "from": "report",
+            "to": "accident",
+            "type": "many-to-one"
+        },
+        {
+            "from": "trip",
+            "to": "route",
+            "type": "many-to-one"
+        },
+        {
+            "from": "trip",
+            "to": "vehicle",
+            "type": "many-to-one"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "stop",
+            "type": "many-to-one"
+        },
+        {
+            "from": "route",
+            "to": "route_type",
+            "type": "many-to-one"
+        },
+        {
+            "from": "route_user",
+            "to": "route",
+            "type": "many-to-many"
+        },
+        {
+            "from": "route_user",
+            "to": "app_user",
+            "type": "many-to-many"
+        },
+        {
+            "from": "accident",
+            "to": "trip",
+            "type": "one-to-one"
+        },
+        {
+            "from": "route_stop",
+            "to": "route",
+            "type": "many-to-many"
+        },
+        {
+            "from": "route_stop",
+            "to": "stop",
+            "type": "many-to-many"
+        },
+        {
+            "from": "live_stop_time",
+            "to": "schedule_stop_time",
+            "type": "many-to-one"
+        },
+        {
+            "from": "live_stop_time",
+            "to": "trip",
+            "type": "many-to-one"
+        },
+        {
+            "from": "trip_destination",
+            "to": "trip",
+            "type": "many-to-one"
         }
     ]
 }
