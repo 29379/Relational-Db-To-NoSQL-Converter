@@ -58,7 +58,7 @@ CREATE TABLE Accident (
   acc_latitude     numeric(19, 0) NOT NULL, 
   acc_longitude    numeric(19, 0) NOT NULL, 
   is_verified      bool NOT NULL, 
-  trip_id          varchar(50) NOT NULL, 
+  trip_id          varchar(50) NOT NULL UNIQUE, 
   PRIMARY KEY (id));
 CREATE TABLE Route_Stop (
   id                 int8 NOT NULL, 
@@ -90,7 +90,6 @@ ALTER TABLE Route_User ADD CONSTRAINT FKRoute_User99971 FOREIGN KEY (route_id) R
 ALTER TABLE Route_User ADD CONSTRAINT FKRoute_User284284 FOREIGN KEY (user_id) REFERENCES App_user (id);
 ALTER TABLE Report ADD CONSTRAINT FKReport31188 FOREIGN KEY (accident_id) REFERENCES Accident (id);
 ALTER TABLE Accident ADD CONSTRAINT FKAccident397259 FOREIGN KEY (trip_id) REFERENCES Trip (id);
-ALTER TABLE Accident ADD CONSTRAINT unique_trip_id UNIQUE (trip_id);
 ALTER TABLE Route_Stop ADD CONSTRAINT FKRoute_Stop727755 FOREIGN KEY (Routeid) REFERENCES Route (id);
 ALTER TABLE Route_Stop ADD CONSTRAINT FKRoute_Stop627197 FOREIGN KEY (Stopid) REFERENCES Stop (id);
 ALTER TABLE Live_stop_time ADD CONSTRAINT FKLive_stop_851340 FOREIGN KEY (Schedule_stop_timeid) REFERENCES Schedule_stop_time (id);
