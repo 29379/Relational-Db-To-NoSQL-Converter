@@ -11,7 +11,7 @@ def create_db():
         schema = json.load(file)
 
     for collection_name, columns in schema.items():
-        if collection_name not in ["databasechangelog", "databasechangeloglock"]:
+        if collection_name != "relationships":
             collection = db[collection_name]
             indexes = []
 
