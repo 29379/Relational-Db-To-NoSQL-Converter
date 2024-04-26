@@ -3,32 +3,23 @@
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "time_of_accident",
-            "data_type": "date",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "date"
         },
         {
             "column_name": "acc_latitude",
-            "data_type": "numeric",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "numeric"
         },
         {
             "column_name": "acc_longitude",
-            "data_type": "numeric",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "numeric"
         },
         {
             "column_name": "is_verified",
-            "data_type": "boolean",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "boolean"
         },
         {
             "column_name": "trip_id",
@@ -43,116 +34,96 @@
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "first_name",
             "data_type": "character varying",
-            "max_length": 50,
-            "constraint_type": null
+            "max_length": 50
         },
         {
             "column_name": "last_name",
             "data_type": "character varying",
-            "max_length": 50,
-            "constraint_type": null
+            "max_length": 50
         },
         {
             "column_name": "email",
             "data_type": "character varying",
-            "max_length": 320,
-            "constraint_type": null
+            "max_length": 320
         },
         {
             "column_name": "hash_password",
             "data_type": "character varying",
-            "max_length": 50,
-            "constraint_type": null
+            "max_length": 50
         },
         {
             "column_name": "subscriber",
-            "data_type": "boolean",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "boolean"
         },
         {
             "column_name": "role",
             "data_type": "character varying",
-            "max_length": 10,
-            "constraint_type": null
+            "max_length": 10
         }
     ],
     "live_stop_time": [
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "arrival_delay",
-            "data_type": "time without time zone",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "time without time zone"
         },
         {
             "column_name": "departure_delay",
-            "data_type": "time without time zone",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "time without time zone"
         },
         {
             "column_name": "schedule_stop_timeid",
             "data_type": "integer",
-            "max_length": null,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "schedule_stop_time",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         },
         {
             "column_name": "tripid",
             "data_type": "character varying",
             "max_length": 50,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "trip",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         }
     ],
     "report": [
         {
             "column_name": "id",
             "data_type": "integer",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "description",
             "data_type": "character varying",
-            "max_length": 500,
-            "constraint_type": null
+            "max_length": 500
         },
         {
             "column_name": "time_of_report",
-            "data_type": "time without time zone",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "time without time zone"
         },
         {
             "column_name": "accident_id",
             "data_type": "bigint",
-            "max_length": null,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "accident",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         },
         {
             "column_name": "user_id",
             "data_type": "bigint",
-            "max_length": null,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "app_user",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         }
     ],
     "route": [
@@ -165,17 +136,15 @@
         {
             "column_name": "route_type_id",
             "data_type": "bigint",
-            "max_length": null,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "route_type",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         }
     ],
     "route_stop": [
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
@@ -189,37 +158,31 @@
         {
             "column_name": "stopid",
             "data_type": "integer",
-            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "stop",
             "foreign_column": "id"
         },
         {
             "column_name": "currentstopinroute",
-            "data_type": "integer",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "integer"
         }
     ],
     "route_type": [
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "type",
             "data_type": "character varying",
-            "max_length": 50,
-            "constraint_type": null
+            "max_length": 50
         }
     ],
     "route_user": [
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
@@ -233,7 +196,6 @@
         {
             "column_name": "user_id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "FOREIGN KEY",
             "foreign_table": "app_user",
             "foreign_column": "id"
@@ -243,60 +205,46 @@
         {
             "column_name": "id",
             "data_type": "integer",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "scheduled_arrival_time",
-            "data_type": "time without time zone",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "time without time zone"
         },
         {
             "column_name": "scheduled_departure_time",
-            "data_type": "time without time zone",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "time without time zone"
         },
         {
             "column_name": "stop_id",
             "data_type": "integer",
-            "max_length": null,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "stop",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         }
     ],
     "stop": [
         {
             "column_name": "id",
             "data_type": "integer",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "code",
-            "data_type": "integer",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "integer"
         },
         {
             "column_name": "name",
             "data_type": "character varying",
-            "max_length": 255,
-            "constraint_type": null
+            "max_length": 255
         },
         {
             "column_name": "latitude",
-            "data_type": "numeric",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "numeric"
         },
         {
             "column_name": "longitude",
-            "data_type": "numeric",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "numeric"
         }
     ],
     "trip": [
@@ -310,65 +258,55 @@
             "column_name": "route_id",
             "data_type": "character varying",
             "max_length": 50,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "route",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         },
         {
             "column_name": "vehicle_id",
             "data_type": "bigint",
-            "max_length": null,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "vehicle",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         }
     ],
     "trip_destination": [
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "trip_headsign",
             "data_type": "character varying",
-            "max_length": 100,
-            "constraint_type": null
+            "max_length": 100
         },
         {
             "column_name": "direction_id",
-            "data_type": "boolean",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "boolean"
         },
         {
             "column_name": "tripid",
             "data_type": "character varying",
             "max_length": 50,
-            "constraint_type": "FOREIGN KEY",
             "foreign_table": "trip",
-            "foreign_column": "id"
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
         }
     ],
     "vehicle": [
         {
             "column_name": "id",
             "data_type": "bigint",
-            "max_length": null,
             "constraint_type": "PRIMARY KEY"
         },
         {
             "column_name": "curr_latitude",
-            "data_type": "numeric",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "numeric"
         },
         {
             "column_name": "curr_longitude",
-            "data_type": "numeric",
-            "max_length": null,
-            "constraint_type": null
+            "data_type": "numeric"
         }
     ],
     "relationships": [

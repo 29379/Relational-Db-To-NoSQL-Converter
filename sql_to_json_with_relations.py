@@ -174,12 +174,16 @@ def get_schema_details(connection):
 
         column_details = {
             'column_name': column_name,
-            'data_type': data_type,
-            'max_length': character_maximum_length if data_type == 'character varying' else None,
-            'constraint_type': ('PRIMARY KEY' if 'PRIMARY KEY' in constraint_types
-                                else 'UNIQUE' if 'UNIQUE' in constraint_types
-                                else None)
+            'data_type': data_type
         }
+
+        if data_type == 'character varying' and character_maximum_length is not None:
+            column_details['max_length'] = character_maximum_length
+
+        if 'PRIMARY KEY' in constraint_types:
+            column_details['constraint_type'] = 'PRIMARY KEY'
+        elif 'UNIQUE' in constraint_types:
+            column_details['constraint_type'] = 'UNIQUE'
 
         schema_details[table_name].append(column_details)
     
