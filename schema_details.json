@@ -22,7 +22,7 @@
             "data_type": "boolean"
         },
         {
-            "column_name": "trip_id",
+            "column_name": "tripid",
             "data_type": "character varying",
             "max_length": 50,
             "constraint_type": "FOREIGN KEY",
@@ -81,17 +81,17 @@
             "data_type": "time without time zone"
         },
         {
-            "column_name": "schedule_stop_timeid",
-            "data_type": "integer",
-            "foreign_table": "schedule_stop_time",
-            "foreign_column": "id",
-            "constraint_type": "FOREIGN KEY"
-        },
-        {
             "column_name": "tripid",
             "data_type": "character varying",
             "max_length": 50,
             "foreign_table": "trip",
+            "foreign_column": "id",
+            "constraint_type": "FOREIGN KEY"
+        },
+        {
+            "column_name": "schedule_stop_timeid",
+            "data_type": "integer",
+            "foreign_table": "schedule_stop_time",
             "foreign_column": "id",
             "constraint_type": "FOREIGN KEY"
         }
@@ -112,14 +112,14 @@
             "data_type": "time without time zone"
         },
         {
-            "column_name": "accident_id",
+            "column_name": "accidentid",
             "data_type": "bigint",
             "foreign_table": "accident",
             "foreign_column": "id",
             "constraint_type": "FOREIGN KEY"
         },
         {
-            "column_name": "user_id",
+            "column_name": "app_userid",
             "data_type": "bigint",
             "foreign_table": "app_user",
             "foreign_column": "id",
@@ -134,11 +134,33 @@
             "constraint_type": "PRIMARY KEY"
         },
         {
-            "column_name": "route_type_id",
+            "column_name": "route_typeid",
             "data_type": "bigint",
             "foreign_table": "route_type",
             "foreign_column": "id",
             "constraint_type": "FOREIGN KEY"
+        }
+    ],
+    "route_app_user": [
+        {
+            "column_name": "id",
+            "data_type": "bigint",
+            "constraint_type": "PRIMARY KEY"
+        },
+        {
+            "column_name": "routeid",
+            "data_type": "character varying",
+            "max_length": 50,
+            "constraint_type": "FOREIGN KEY",
+            "foreign_table": "route",
+            "foreign_column": "id"
+        },
+        {
+            "column_name": "app_userid",
+            "data_type": "bigint",
+            "constraint_type": "FOREIGN KEY",
+            "foreign_table": "app_user",
+            "foreign_column": "id"
         }
     ],
     "route_stop": [
@@ -179,28 +201,6 @@
             "max_length": 50
         }
     ],
-    "route_user": [
-        {
-            "column_name": "id",
-            "data_type": "bigint",
-            "constraint_type": "PRIMARY KEY"
-        },
-        {
-            "column_name": "route_id",
-            "data_type": "character varying",
-            "max_length": 50,
-            "constraint_type": "FOREIGN KEY",
-            "foreign_table": "route",
-            "foreign_column": "id"
-        },
-        {
-            "column_name": "user_id",
-            "data_type": "bigint",
-            "constraint_type": "FOREIGN KEY",
-            "foreign_table": "app_user",
-            "foreign_column": "id"
-        }
-    ],
     "schedule_stop_time": [
         {
             "column_name": "id",
@@ -216,7 +216,7 @@
             "data_type": "time without time zone"
         },
         {
-            "column_name": "stop_id",
+            "column_name": "stopid",
             "data_type": "integer",
             "foreign_table": "stop",
             "foreign_column": "id",
@@ -255,7 +255,7 @@
             "constraint_type": "PRIMARY KEY"
         },
         {
-            "column_name": "route_id",
+            "column_name": "routeid",
             "data_type": "character varying",
             "max_length": 50,
             "foreign_table": "route",
@@ -263,7 +263,7 @@
             "constraint_type": "FOREIGN KEY"
         },
         {
-            "column_name": "vehicle_id",
+            "column_name": "vehicleid",
             "data_type": "bigint",
             "foreign_table": "vehicle",
             "foreign_column": "id",
@@ -311,14 +311,29 @@
     ],
     "relationships": [
         {
-            "from": "report",
-            "to": "app_user",
+            "from": "route",
+            "to": "route_type",
             "type": "many-to-one"
         },
         {
-            "from": "report",
-            "to": "accident",
-            "type": "many-to-one"
+            "from": "route_app_user",
+            "to": "route",
+            "type": "many-to-many"
+        },
+        {
+            "from": "route_app_user",
+            "to": "app_user",
+            "type": "many-to-many"
+        },
+        {
+            "from": "route_stop",
+            "to": "route",
+            "type": "many-to-many"
+        },
+        {
+            "from": "route_stop",
+            "to": "stop",
+            "type": "many-to-many"
         },
         {
             "from": "trip",
@@ -331,24 +346,9 @@
             "type": "many-to-one"
         },
         {
-            "from": "schedule_stop_time",
-            "to": "stop",
+            "from": "trip_destination",
+            "to": "trip",
             "type": "many-to-one"
-        },
-        {
-            "from": "route",
-            "to": "route_type",
-            "type": "many-to-one"
-        },
-        {
-            "from": "route_user",
-            "to": "route",
-            "type": "many-to-many"
-        },
-        {
-            "from": "route_user",
-            "to": "app_user",
-            "type": "many-to-many"
         },
         {
             "from": "accident",
@@ -356,14 +356,9 @@
             "type": "one-to-one"
         },
         {
-            "from": "route_stop",
-            "to": "route",
-            "type": "many-to-many"
-        },
-        {
-            "from": "route_stop",
-            "to": "stop",
-            "type": "many-to-many"
+            "from": "live_stop_time",
+            "to": "trip",
+            "type": "many-to-one"
         },
         {
             "from": "live_stop_time",
@@ -371,13 +366,18 @@
             "type": "many-to-one"
         },
         {
-            "from": "live_stop_time",
-            "to": "trip",
+            "from": "schedule_stop_time",
+            "to": "stop",
             "type": "many-to-one"
         },
         {
-            "from": "trip_destination",
-            "to": "trip",
+            "from": "report",
+            "to": "accident",
+            "type": "many-to-one"
+        },
+        {
+            "from": "report",
+            "to": "app_user",
             "type": "many-to-one"
         }
     ]
