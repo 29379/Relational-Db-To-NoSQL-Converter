@@ -1,28 +1,17 @@
-use std::collections::HashMap;
+use std::path::Path;
+
 
 fn main() {
-    let trips = include_str!("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
+    let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
+    let path_test = Path::new("../../source_data");
+
+    println!("{}",path_test.exists());
+ //let trips = include_bytes!("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
+    let mut reader = csv::Reader::from_path(path).unwrap();
+
+    reader.records().for_each(|record| {
+        println!("{:?}",record);
+    })
+
     
-    let mut headsigns: HashMap<&str,usize> = HashMap::new();
-    let mut latest_key = 0;
-    let mut trips_iter = trips.split("\n");
-
-    trips_iter.next();
-    trips_iter
-        .for_each(|line| {
-            let headsign = line
-            .split(",")
-            .nth(3)
-            .unwrap();
-
-            println!("{}",headsign);
-            headsigns
-                .entry(headsign)
-                .or_insert_with(|| {
-                    latest_key = latest_key + 1;
-                    latest_key
-                });
-
-            });
-    print!("{:?}",headsigns)
 }
