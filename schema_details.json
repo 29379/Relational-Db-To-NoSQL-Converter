@@ -255,6 +255,10 @@
             "constraint_type": "PRIMARY KEY"
         },
         {
+            "column_name": "direction_id",
+            "data_type": "boolean"
+        },
+        {
             "column_name": "routeid",
             "data_type": "character varying",
             "max_length": 50,
@@ -280,10 +284,6 @@
             "column_name": "trip_headsign",
             "data_type": "character varying",
             "max_length": 100
-        },
-        {
-            "column_name": "direction_id",
-            "data_type": "boolean"
         },
         {
             "column_name": "tripid",
