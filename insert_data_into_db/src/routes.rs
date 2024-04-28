@@ -1,13 +1,14 @@
-pub struct Test{}
+pub struct Test {}
 
-pub fn print_collection(){
+pub fn print_collection() {
+    use crate::HashMap;
+    use std::path::Path;
 
-use crate::HashMap;
-use std::path::Path;
-
-let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
+    let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
     let mut reader = csv::Reader::from_path(path).unwrap();
-    let mut trip_heads: HashMap<String, usize> = HashMap::new();
+    let mut trip_heads: HashMap<String, (usize, usize)> = HashMap::new();
+    // HashMap< Trip_heasign, (id, direction_id)>
+
     let mut trip_heads_count = 0;
 
     reader
@@ -21,10 +22,10 @@ let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.
                             trip_heads_count = trip_heads_count + 1;
                             trip_heads_count
                         };
-                        count
+                        (count, record.get(4).unwrap().parse::<usize>().unwrap())
                     });
             }
             Err(e) => println!("{}", e),
         });
-    print!("Collection : {:?}",trip_heads);
+    print!("Collection : {:?}", trip_heads);
 }
