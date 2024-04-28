@@ -31,9 +31,10 @@ CREATE TABLE Report (
   App_userid     int8 NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE Trip (
-  id        varchar(50) NOT NULL, 
-  Routeid   varchar(50) NOT NULL, 
-  Vehicleid int8 NOT NULL, 
+  id           varchar(50) NOT NULL, 
+  direction_id bool NOT NULL, 
+  Routeid      varchar(50) NOT NULL, 
+  Vehicleid    int8 NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE Schedule_stop_time (
   id                       SERIAL NOT NULL, 
@@ -63,7 +64,6 @@ CREATE TABLE Live_stop_time (
 CREATE TABLE Trip_destination (
   id            BIGSERIAL NOT NULL, 
   trip_headsign varchar(100) NOT NULL, 
-  direction_id  bool NOT NULL, 
   Tripid        varchar(50) NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE Route_App_user (

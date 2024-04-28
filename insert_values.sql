@@ -32,10 +32,10 @@ INSERT INTO App_user (first_name, last_name, email, hash_password, subscriber, r
 ('Jerry', 'Smith', 'jerry.smith@example.com', 'hash9', TRUE, 'user'), 
 ('Janet', 'Snakehole', 'janet.snakehole@example.com', 'hash10', FALSE, 'admin');
 
-INSERT INTO Trip (id, Routeid, Vehicleid) VALUES
-('T001', 'R001', 1), ('T002', 'R002', 2), ('T003', 'R003', 3), ('T004', 'R004', 4), 
-('T005', 'R005', 5), ('T006', 'R006', 6), ('T007', 'R007', 7), ('T008', 'R008', 8),
-('T009', 'R009', 9), ('T010', 'R010', 10);
+INSERT INTO Trip (id, direction_id, Routeid, Vehicleid) VALUES
+('T001', FALSE, 'R001', 1), ('T002', FALSE, 'R002', 2), ('T003', TRUE, 'R003', 3), ('T004', TRUE, 'R004', 4), 
+('T005', TRUE, 'R005', 5), ('T006', FALSE, 'R006', 6), ('T007', TRUE, 'R007', 7), ('T008', FALSE, 'R008', 8),
+('T009', TRUE, 'R009', 9), ('T010', FALSE, 'R010', 10);
 
 INSERT INTO Accident (time_of_accident, acc_latitude, acc_longitude, is_verified, Tripid) VALUES
 ('2023-01-01', 34.052235, -118.243683, TRUE, 'T001'), ('2023-01-02', 34.052236, -118.243684, FALSE, 'T002'),
@@ -75,9 +75,9 @@ INSERT INTO Route_Stop (id, Routeid, Stopid, currentStopInRoute) VALUES
 (5, 'R005', 5, 1), (6, 'R006', 6, 2), (7, 'R007', 7, 3), (8, 'R008', 8, 4),
 (9, 'R009', 9, 1), (10, 'R010', 10, 2);
 
-INSERT INTO Trip_destination (trip_headsign, direction_id, Tripid) VALUES
-('Downtown', TRUE, 'T001'), ('Uptown', FALSE, 'T002'),
-('Eastside', TRUE, 'T003'), ('Westside', FALSE, 'T004'),
-('North End', TRUE, 'T005'), ('South Corner', FALSE, 'T006'),
-('Central Station', TRUE, 'T007'), ('City Limits', FALSE, 'T008'),
-('Suburb', TRUE, 'T009'), ('Outer Zone', FALSE, 'T010');
+INSERT INTO Trip_destination (trip_headsign, Tripid) VALUES
+('Downtown', 'T001'), ('Uptown', 'T002'),
+('Eastside', 'T003'), ('Westside', 'T004'),
+('North End', 'T005'), ('South Corner', 'T006'),
+('Central Station', 'T007'), ('City Limits', 'T008'),
+('Suburb', 'T009'), ('Outer Zone', 'T010');
