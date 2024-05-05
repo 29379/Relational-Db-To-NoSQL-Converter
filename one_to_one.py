@@ -68,11 +68,11 @@ def main():
     client = pymongo.MongoClient("mongodb://localhost:27017/")
     db = client["zbd_czy_dojade"]
     conn = psycopg2.connect(
-        dbname="zbd_czy_dojade",
-        user="postgres",
-        password="123456",
-        host="localhost",
-        port="5432",
+        dbname='zbd_czy_dojade',
+        user='postgres',
+        password='asdlkj000',
+        host='localhost',
+        port='5432'
     )
     cursor = conn.cursor()
 

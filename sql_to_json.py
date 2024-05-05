@@ -253,11 +253,11 @@ def save_to_json(data, filename):
 
 def main():
     conn = psycopg2.connect(
-        dbname="zbd_czy_dojade",
-        user="postgres",
-        password="123456",
-        host="localhost",
-        port="5432",
+        dbname='zbd_czy_dojade',
+        user='postgres',
+        password='asdlkj000',
+        host='localhost',
+        port='5432'
     )
 
     schema_details = get_schema_details(conn)
