@@ -71,6 +71,7 @@ def main():
         dbname='zbd_czy_dojade',
         user='postgres',
         password='asdlkj000',
+        password='asdlkj000',
         host='localhost',
         port='5432'
     )
