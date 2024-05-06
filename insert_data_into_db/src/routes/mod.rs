@@ -22,7 +22,11 @@ pub struct Record {
     valid_until: String,
 }
 //                              route, route_Stop, stop
-pub fn get_collections() -> (Vec<(String, usize)>,Vec<(usize, String, usize, usize)>,Vec<(usize, usize, String, f64, f64)>){
+pub fn get_collections() -> (
+    Vec<(String, usize)>,
+    Vec<(usize, String, usize, usize)>,
+    HashMap<String, (usize, usize, f64, f64)>,
+) {
     let mut stops_id = stop::get_stop_id();
     let mut last_stop_id = get_last_id(&stops_id);
     let mut route_stop: Vec<(usize, String, usize, usize)> = Vec::new();
@@ -48,22 +52,27 @@ pub fn get_collections() -> (Vec<(String, usize)>,Vec<(usize, String, usize, usi
                         route_stop.push((
                             current_id,
                             record.route_id.clone(),
-                            stops_id
-                                .entry((*stop_name).to_string())
-                                .or_insert_with(|| {
-                                    last_stop_id = last_stop_id + 1;
-                                    last_stop_id
-                                })
-                                .clone(),
+                            {
+                                let stop =
+                                    stops_id.entry((*stop_name).to_string()).or_insert_with(|| {
+                                        last_stop_id = last_stop_id + 1;
+                                        (last_stop_id, 0usize, 0f64, 0f64)
+                                    });
+                                stop.1.clone()
+                            },
                             i,
                         ))
                     })
             }
             Err(e) => println!("{}", e),
         });
-    (route,route_stop,stop::create_stop(stops_id))
+    (route, route_stop, stops_id)
 }
 
-fn get_last_id(hash_map: &HashMap<String, usize>) -> usize {
-    hash_map.values().max().unwrap().clone()
+fn get_last_id(hash_map: &HashMap<String, (usize, usize, f64, f64)>) -> usize {
+    let (stop_id, _stop_code, _lat, _lon) = hash_map
+        .values()
+        .max_by_key(|stop_touple| stop_touple.1)
+        .unwrap();
+    *stop_id
 }
