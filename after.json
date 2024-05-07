@@ -29,14 +29,14 @@
                 "constraints": []
             },
             {
-                "column_name": "tripid",
+                "column_name": "trip_destination__tripid",
                 "data_type": "character varying",
                 "constraints": [
                     "UNIQUE",
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "trip",
+                "foreign_table": "trip_destination__trip",
                 "foreign_column": "id"
             }
         ],
@@ -103,13 +103,13 @@
                 "constraints": []
             },
             {
-                "column_name": "tripid",
+                "column_name": "trip_destination__tripid",
                 "data_type": "character varying",
                 "constraints": [
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "trip",
+                "foreign_table": "trip_destination__trip",
                 "foreign_column": "id"
             },
             {
@@ -160,22 +160,6 @@
                 "foreign_column": "id"
             }
         ],
-        "route": [
-            {
-                "column_name": "id",
-                "data_type": "character varying",
-                "constraints": [
-                    "PRIMARY KEY"
-                ],
-                "max_length": 50
-            },
-            {
-                "column_name": "type",
-                "data_type": "character varying",
-                "constraints": [],
-                "max_length": 50
-            }
-        ],
         "route_app_user": [
             {
                 "column_name": "id",
@@ -185,14 +169,14 @@
                 ]
             },
             {
-                "column_name": "routeid",
+                "column_name": "route__route_typeid",
                 "data_type": "character varying",
                 "constraints": [
                     "PRIMARY KEY",
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "route",
+                "foreign_table": "route__route_type",
                 "foreign_column": "id"
             },
             {
@@ -215,14 +199,14 @@
                 ]
             },
             {
-                "column_name": "routeid",
+                "column_name": "route__route_typeid",
                 "data_type": "character varying",
                 "constraints": [
                     "PRIMARY KEY",
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "route",
+                "foreign_table": "route__route_type",
                 "foreign_column": "id"
             },
             {
@@ -299,7 +283,42 @@
                 "constraints": []
             }
         ],
-        "trip_destination": [
+        "vehicle": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "curr_latitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "curr_longitude",
+                "data_type": "numeric",
+                "constraints": []
+            }
+        ],
+        "route__route_type": [
+            {
+                "column_name": "id",
+                "data_type": "character varying",
+                "constraints": [
+                    "PRIMARY KEY"
+                ],
+                "max_length": 50
+            },
+            {
+                "column_name": "type",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 50
+            }
+        ],
+        "trip_destination__trip": [
             {
                 "column_name": "id",
                 "data_type": "bigint",
@@ -319,13 +338,13 @@
                 "constraints": []
             },
             {
-                "column_name": "routeid",
+                "column_name": "route__route_typeid",
                 "data_type": "character varying",
                 "constraints": [
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "route",
+                "foreign_table": "route__route_type",
                 "foreign_column": "id"
             },
             {
@@ -337,37 +356,9 @@
                 "foreign_table": "vehicle",
                 "foreign_column": "id"
             }
-        ],
-        "vehicle": [
-            {
-                "column_name": "id",
-                "data_type": "bigint",
-                "constraints": [
-                    "PRIMARY KEY"
-                ]
-            },
-            {
-                "column_name": "curr_latitude",
-                "data_type": "numeric",
-                "constraints": []
-            },
-            {
-                "column_name": "curr_longitude",
-                "data_type": "numeric",
-                "constraints": []
-            }
         ]
     },
     "relationships": [
-        {
-            "from": "route",
-            "to": "route",
-            "type": "many-to-one",
-            "column": "route_typeid",
-            "foreign_table": "route_type",
-            "foreign_column": "id",
-            "foreign_key": "route_typeid"
-        },
         {
             "junction_table": "route_app_user",
             "from": "route_app_user",
@@ -379,9 +370,9 @@
         {
             "junction_table": "route_app_user",
             "from": "route_app_user",
-            "to": "route",
+            "to": "route__route_type",
             "type": "many-to-many",
-            "column": "routeid",
+            "column": "route__route_typeid",
             "foreign_key_to": "id"
         },
         {
@@ -395,22 +386,22 @@
         {
             "junction_table": "route_stop",
             "from": "route_stop",
-            "to": "route",
+            "to": "route__route_type",
             "type": "many-to-many",
-            "column": "routeid",
+            "column": "route__route_typeid",
             "foreign_key_to": "id"
         },
         {
-            "from": "trip_destination",
-            "to": "route",
+            "from": "trip_destination__trip",
+            "to": "route__route_type",
             "type": "many-to-one",
-            "column": "routeid",
-            "foreign_table": "route",
+            "column": "route__route_typeid",
+            "foreign_table": "route__route_type",
             "foreign_column": "id",
-            "foreign_key": "routeid"
+            "foreign_key": "route__route_typeid"
         },
         {
-            "from": "trip_destination",
+            "from": "trip_destination__trip",
             "to": "vehicle",
             "type": "many-to-one",
             "column": "vehicleid",
@@ -419,31 +410,22 @@
             "foreign_key": "vehicleid"
         },
         {
-            "from": "trip_destination",
-            "to": "trip_destination",
-            "type": "many-to-one",
-            "column": "tripid",
-            "foreign_table": "trip",
-            "foreign_column": "id",
-            "foreign_key": "tripid"
-        },
-        {
             "from": "accident",
-            "to": "trip_destination",
+            "to": "trip_destination__trip",
             "type": "one-to-one",
-            "column": "tripid",
-            "foreign_table": "trip",
+            "column": "trip_destination__tripid",
+            "foreign_table": "trip_destination__trip",
             "foreign_column": "id",
-            "foreign_key": "tripid"
+            "foreign_key": "trip_destination__tripid"
         },
         {
             "from": "live_stop_time",
-            "to": "trip_destination",
+            "to": "trip_destination__trip",
             "type": "many-to-one",
-            "column": "tripid",
-            "foreign_table": "trip",
+            "column": "trip_destination__tripid",
+            "foreign_table": "trip_destination__trip",
             "foreign_column": "id",
-            "foreign_key": "tripid"
+            "foreign_key": "trip_destination__tripid"
         },
         {
             "from": "live_stop_time",

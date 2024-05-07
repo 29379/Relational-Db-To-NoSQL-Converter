@@ -6,11 +6,22 @@ from bson import ObjectId
 from bson.decimal128 import Decimal128
 from decimal import Decimal
 
-# TODO: delete relation from route_type to route_type /
-#   trip_destination to trip_destination in relationships in after.json
 # TODO: merging 1:1 relationships
-# TODO: merging the names of the tables
 # TODO: merging the postgresql data
+
+
+def is_id_column(column_name, pattern):
+    column_name = column_name.lower()
+    patterns = [
+        pattern + "id",
+        pattern + "_id",
+    ]
+    return column_name in patterns
+
+
+def create_meged_table_name(from_table, to_table):
+    return from_table + "__" + to_table
+
 
 def create_db(cursor, db, schema, relationships):
     handle_merging_tables_relationships(schema, relationships)
@@ -37,7 +48,6 @@ def handle_merging_tables_relationships(schema, relationships, merged_tables=set
         for label, value in relation.items():
             if label == "type" and value == "many-to-one":
                 is_a_dictionary_table = check_if_is_a_dictionary_table(schema[relation["to"]])
-                # print("From: " + relation["from"] + " To: " + relation["to"] + " Num: " + str(num))
                 if is_a_dictionary_table:
                     fix_schema_details(
                         schema,
@@ -47,11 +57,15 @@ def handle_merging_tables_relationships(schema, relationships, merged_tables=set
                     )
                     merged_tables.add(relation["to"])
                     merged_tables.add(relation["from"])
+                    merged_tables.add(create_meged_table_name(relation["from"], relation["to"]))
                     #   recursive call - if a table 'relation["to"]' was merged into table 'relation["from"]',
                     #   then 'relation["to"]' table ceases to exist, so we can skip it, and the table
                     #   'relation["from"]' does not meet the criteria for further evaluation anymore,
                     #   so we can skip it as well
                     handle_merging_tables_relationships(schema, relationships, merged_tables)
+            elif label == "type" and value == "one-to-one":
+                # TODO: here
+                pass
 
 
 def check_if_is_a_dictionary_table(columns_info):
@@ -69,11 +83,23 @@ def check_if_is_a_dictionary_table(columns_info):
 
 
 def fix_schema_details(schema, relationships, from_t, to_t):
+    relations_tmp = []
+    merged_table_name = create_meged_table_name(from_t, to_t)
     for relation in relationships:
         if relation["from"] == to_t:
-            relation["from"] = from_t
+            relation["from"] = merged_table_name
+            relations_tmp.append(relation)
         elif relation["to"] == to_t:
-            relation["to"] = from_t
+            if relation["from"] == from_t:
+                pass
+            else:
+                relation["to"] = merged_table_name
+                relations_tmp.append(relation)
+        else:
+            relations_tmp.append(relation)
+    
+    relationships[:] = relations_tmp
+
     if to_t in schema and from_t in schema:
         to_t_accumulator = schema.pop(to_t)
         primary_key_column = None
@@ -91,11 +117,15 @@ def fix_schema_details(schema, relationships, from_t, to_t):
                     and to_t == column.get("foreign_table")):
                 filtered_columns.append(column)
 
-        print(filtered_columns)
         schema[from_t] = filtered_columns
         for column in to_t_accumulator:
             if column != primary_key_column:
                 schema[from_t].append(column)
+        schema[merged_table_name] = schema.pop(from_t)
+        # print("renaming: " + from_t + " to " + merged_table_name)
+    print("\nfrom: " + from_t + " to: " + to_t + " into new name: " + merged_table_name + "\n")
+    rename_merged_table(schema, from_t, to_t, merged_table_name)
+    rename_merged_table(relationships, from_t, to_t, merged_table_name)
 
     with open('after.json', 'w') as after_file:
         json.dump(
@@ -106,8 +136,27 @@ def fix_schema_details(schema, relationships, from_t, to_t):
         )
 
 
-def check_if_is_a_deprecated_foreign_key(columns_info):
-    pass
+def rename_merged_table(obj, old_name_f, old_name_t, new_name):
+    if isinstance(obj, dict):
+        for key, value in obj.items():
+            if isinstance(value, str) and (value == old_name_f or value == old_name_t):
+                obj[key] = new_name
+            elif isinstance(value, str) and is_id_column(value, old_name_f):
+                obj[key] = value.replace(old_name_f, new_name)
+            elif isinstance(value, str) and is_id_column(value, old_name_t):
+                obj[key] = value.replace(old_name_t, new_name)
+            else:
+                rename_merged_table(value, old_name_f, old_name_t, new_name)
+    elif isinstance(obj, list):
+        for i, item in enumerate(obj):
+            if isinstance(item, str) and (item == old_name_f or item == old_name_t):
+                obj[i] = new_name
+            elif isinstance(item, str) and is_id_column(item, old_name_f):
+                obj[i] = item.replace(old_name_f, new_name)
+            elif isinstance(item, str) and is_id_column(item, old_name_t):
+                obj[i] = item.replace(old_name_t, new_name)
+            else:
+                rename_merged_table(item, old_name_f, old_name_t, new_name)
 
 
 def fetch_data_from_postgres(cursor, table_name, columns):
