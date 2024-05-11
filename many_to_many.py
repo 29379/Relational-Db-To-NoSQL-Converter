@@ -5,6 +5,7 @@ import json
 from bson import ObjectId
 from bson.decimal128 import Decimal128
 from decimal import Decimal
+import sys
 
 
 def fetch_data_from_postgres(cursor, table_name, columns):
@@ -65,43 +66,59 @@ def handle_relationships(db, relationships):
 
 
 def handle_many_to_many_relations(db, relationships):
+    # group relationships by junction table
+    relation_groups = {}
     for relation in relationships:
         if relation["type"] == "many-to-many":
-            junction_collection = db[relation["junction_table"]]
-            from_collection = db[relation["from"]]
-            to_collection = db[relation["to"]]
+            key = relation["junction_table"]
+            if key not in relation_groups:
+                relation_groups[key] = []
+            relation_groups[key].append(relation)
 
-            junction_records = junction_collection.find()
+    for junction, rels in relation_groups.items():
+        if len(rels) == 2:
+            from_collection = db[junction]
+            to_collections = [rels[0]["to"], rels[1]["to"]]
+
+            # user decides embedding direction
+            choice = prompt_user_for_embedding_direction(junction, to_collections)
+
+            junction_records = from_collection.find()
 
             for record in junction_records:
-                from_id = record[relation["column"]]
-                to_id = record[relation["foreign_key_to"]]
+                embed_in = to_collections[choice - 1]
+                other_index = 1 if choice - 1 == 0 else 0
+                embed_id = record[rels[choice - 1]["column"]]
+                other_id = record[rels[other_index]["column"]]
 
-                to_document = to_collection.find_one({"id": from_id})
+                embed_collection = db[embed_in]
+                other_collection = db[to_collections[other_index]]
 
-                if to_document:
-                    embedded_to_document = {
-                        k: v for k, v in to_document.items() if k != "_id"
-                    }
-
-                    from_collection.update_one(
-                        {"id": to_id},
-                        {"$addToSet": {relation["to"]: embedded_to_document}},
+                other_document = other_collection.find_one({"id": other_id})
+                if other_document:
+                    embed_collection.update_one(
+                        {"id": embed_id},
+                        {"$addToSet": {junction: other_document}},
                         upsert=True,
                     )
 
-                    from_document = from_collection.find_one({"id": to_id})
 
-                    if from_document:
-                        embedded_from_document = {
-                            k: v for k, v in from_document.items() if k != "_id"
-                        }
-
-                        to_collection.update_one(
-                            {"id": from_id},
-                            {"$addToSet": {relation["from"]: embedded_from_document}},
-                            upsert=True,
-                        )
+def prompt_user_for_embedding_direction(from_collection_name, to_collection_names):
+    # get user to decide
+    print(
+        f"For the many-to-many relationship between {from_collection_name} and {to_collection_names[0]} / {to_collection_names[1]}:"
+    )
+    print(
+        f"1. Embed {from_collection_name} details in {to_collection_names[0]} documents."
+    )
+    print(
+        f"2. Embed {from_collection_name} details in {to_collection_names[1]} documents."
+    )
+    choice = input("Enter your choice (1 or 2): ")
+    while choice not in ["1", "2"]:
+        print("Invalid choice. Please enter 1 or 2.")
+        choice = input("Enter your choice (1 or 2): ")
+    return int(choice)
 
 
 def drop_junction_tables(db, relationships):
