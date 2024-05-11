@@ -14,8 +14,8 @@ def main():
     sql_to_json(conn)
 
     # ask user if they want to view the ERD diagram
-    view_erd = input("Do you want to view the JSON file? (y/n): ").lower()
-    if view_erd == "y":
+    view_json = input("Do you want to view the JSON file? (y/n): ").lower()
+    if view_json == "y":
         os.startfile("schema_details.json")
 
     # ask user if they want to view the ERD diagram
@@ -29,6 +29,12 @@ def main():
     # mongo database
     db = mongo_database()
 
+    # ask user if they want objectId or reference
+    print("Choose reference method:")
+    print("1: Id")
+    print("2: Object")
+    rel_choice = input("Enter your choice (1 or 2): ")
+
     print("Choose the relationship handling method:")
     print("1: One-to-One")
     print("2: Delete junction tables")
@@ -36,10 +42,10 @@ def main():
 
     if choice == "1":
         # one to one
-        one_to_one(conn, db)
+        one_to_one(conn, db, rel_choice)
     elif choice == "2":
         # delete junction tables
-        many_to_many(conn, db)
+        many_to_many(conn, db, rel_choice)
     else:
         print("Invalid choice. Exiting...")
 
