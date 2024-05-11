@@ -41,7 +41,7 @@ def create_db(cursor, db, schema):
             collection.insert_one(document)
 
 
-def handle_relationships(db, relationships):
+def handle_relationships(db, relationships, rel_choice):
     # relationships between collections
     for relation in relationships:
         from_collection = db[relation["from"]]
@@ -58,6 +58,8 @@ def handle_relationships(db, relationships):
             if related_document_id:
                 related_document = to_collection.find_one({"id": related_document_id})
                 if related_document:
+                    if rel_choice == "1":
+                        related_document = ObjectId(related_document["_id"])
                     from_collection.update_one(
                         {"_id": document["_id"]},
                         {"$set": {column_key: related_document}},
@@ -91,7 +93,7 @@ def handle_relationships(db, relationships):
 #     main()
 
 
-def one_to_one(conn, db):
+def one_to_one(conn, db, rel_choice):
     cursor = conn.cursor()
 
     with open("schema_details.json", "r") as file:
@@ -99,6 +101,6 @@ def one_to_one(conn, db):
         relationships = schema.pop("relationships", [])
 
     create_db(cursor, db, schema)
-    handle_relationships(db, relationships)
+    handle_relationships(db, relationships, rel_choice)
 
     cursor.close()

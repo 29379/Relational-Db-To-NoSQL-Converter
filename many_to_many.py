@@ -42,7 +42,7 @@ def create_db(cursor, db, schema):
             collection.insert_one(document)
 
 
-def handle_relationships(db, relationships):
+def handle_relationships(db, relationships, rel_choice):
     # relationships between collections
     for relation in relationships:
         from_collection = db[relation["from"]]
@@ -59,6 +59,8 @@ def handle_relationships(db, relationships):
             if related_document_id:
                 related_document = to_collection.find_one({"id": related_document_id})
                 if related_document:
+                    if rel_choice == "1":
+                        related_document = ObjectId(related_document["_id"])
                     from_collection.update_one(
                         {"_id": document["_id"]},
                         {"$set": {column_key: related_document}},
@@ -156,7 +158,7 @@ def drop_junction_tables(db, relationships):
 #     main()
 
 
-def many_to_many(conn, db):
+def many_to_many(conn, db, rel_choice):
     cursor = conn.cursor()
 
     with open("schema_details.json", "r") as file:
@@ -164,7 +166,9 @@ def many_to_many(conn, db):
         relationships = schema.pop("relationships", [])
 
     create_db(cursor, db, schema)
-    handle_relationships(db, [r for r in relationships if r["type"] != "many-to-many"])
+    handle_relationships(
+        db, [r for r in relationships if r["type"] != "many-to-many"], rel_choice
+    )
     handle_many_to_many_relations(db, relationships)
     drop_junction_tables(db, relationships)
 
