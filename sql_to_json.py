@@ -246,11 +246,6 @@ def save_to_json(data, filename):
         json.dump(data, json_file, indent=4)
 
 
-def save_to_json(data, filename):
-    with open(filename, "w") as json_file:
-        json.dump(data, json_file, indent=4)
-
-
 def main():
     conn = psycopg2.connect(
         dbname="zbd_czy_dojade",
