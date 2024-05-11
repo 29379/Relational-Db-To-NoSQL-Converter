@@ -64,16 +64,34 @@ def handle_relationships(db, relationships):
                     )
 
 
-def main():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = client["zbd_czy_dojade"]
-    conn = psycopg2.connect(
-        dbname="zbd_czy_dojade",
-        user="postgres",
-        password="123456",
-        host="localhost",
-        port="5432",
-    )
+# def main():
+#     client = pymongo.MongoClient("mongodb://localhost:27017/")
+#     db = client["zbd_czy_dojade"]
+#     conn = psycopg2.connect(
+#         dbname="zbd_czy_dojade",
+#         user="postgres",
+#         password="123456",
+#         host="localhost",
+#         port="5432",
+#     )
+#     cursor = conn.cursor()
+
+#     with open("schema_details.json", "r") as file:
+#         schema = json.load(file)
+#         relationships = schema.pop("relationships", [])
+
+#     create_db(cursor, db, schema)
+#     handle_relationships(db, relationships)
+
+#     cursor.close()
+#     conn.close()
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+def one_to_one(conn, db):
     cursor = conn.cursor()
 
     with open("schema_details.json", "r") as file:
@@ -84,8 +102,3 @@ def main():
     handle_relationships(db, relationships)
 
     cursor.close()
-    conn.close()
-
-
-if __name__ == "__main__":
-    main()

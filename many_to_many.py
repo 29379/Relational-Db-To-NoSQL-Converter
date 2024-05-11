@@ -127,16 +127,36 @@ def drop_junction_tables(db, relationships):
             db[relation["junction_table"]].drop()
 
 
-def main():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = client["zbd_czy_dojade"]
-    conn = psycopg2.connect(
-        dbname="zbd_czy_dojade",
-        user="postgres",
-        password="123456",
-        host="localhost",
-        port="5432",
-    )
+# def main():
+#     client = pymongo.MongoClient("mongodb://localhost:27017/")
+#     db = client["zbd_czy_dojade"]
+#     conn = psycopg2.connect(
+#         dbname="zbd_czy_dojade",
+#         user="postgres",
+#         password="123456",
+#         host="localhost",
+#         port="5432",
+#     )
+#     cursor = conn.cursor()
+
+#     with open("schema_details.json", "r") as file:
+#         schema = json.load(file)
+#         relationships = schema.pop("relationships", [])
+
+#     create_db(cursor, db, schema)
+#     handle_relationships(db, [r for r in relationships if r["type"] != "many-to-many"])
+#     handle_many_to_many_relations(db, relationships)
+#     drop_junction_tables(db, relationships)
+
+#     cursor.close()
+#     conn.close()
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+def many_to_many(conn, db):
     cursor = conn.cursor()
 
     with open("schema_details.json", "r") as file:
@@ -149,8 +169,3 @@ def main():
     drop_junction_tables(db, relationships)
 
     cursor.close()
-    conn.close()
-
-
-if __name__ == "__main__":
-    main()
