@@ -120,71 +120,6 @@
                 "foreign_column": "id"
             }
         ],
-        "route_app_user": [
-            {
-                "column_name": "id",
-                "data_type": "bigint",
-                "constraints": [
-                    "PRIMARY KEY"
-                ]
-            },
-            {
-                "column_name": "accident__trip__route__route_type__trip_destinationid",
-                "data_type": "character varying",
-                "constraints": [
-                    "PRIMARY KEY",
-                    "FOREIGN KEY"
-                ],
-                "max_length": 50,
-                "foreign_table": "accident__trip__route__route_type__trip_destination",
-                "foreign_column": "id"
-            },
-            {
-                "column_name": "app_userid",
-                "data_type": "bigint",
-                "constraints": [
-                    "PRIMARY KEY",
-                    "FOREIGN KEY"
-                ],
-                "foreign_table": "app_user",
-                "foreign_column": "id"
-            }
-        ],
-        "route_stop": [
-            {
-                "column_name": "id",
-                "data_type": "bigint",
-                "constraints": [
-                    "PRIMARY KEY"
-                ]
-            },
-            {
-                "column_name": "accident__trip__route__route_type__trip_destinationid",
-                "data_type": "character varying",
-                "constraints": [
-                    "PRIMARY KEY",
-                    "FOREIGN KEY"
-                ],
-                "max_length": 50,
-                "foreign_table": "accident__trip__route__route_type__trip_destination",
-                "foreign_column": "id"
-            },
-            {
-                "column_name": "stopid",
-                "data_type": "integer",
-                "constraints": [
-                    "PRIMARY KEY",
-                    "FOREIGN KEY"
-                ],
-                "foreign_table": "stop",
-                "foreign_column": "id"
-            },
-            {
-                "column_name": "currentstopinroute",
-                "data_type": "integer",
-                "constraints": []
-            }
-        ],
         "schedule_stop_time": [
             {
                 "column_name": "id",
@@ -315,47 +250,102 @@
                 "data_type": "character varying",
                 "constraints": [],
                 "max_length": 100
+            }
+        ],
+        "accident__trip__route__route_type__trip_destination_app_user": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
             },
             {
                 "column_name": "accident__trip__route__route_type__trip_destinationid",
                 "data_type": "character varying",
                 "constraints": [
+                    "PRIMARY KEY",
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
                 "foreign_table": "accident__trip__route__route_type__trip_destination",
                 "foreign_column": "id"
+            },
+            {
+                "column_name": "app_userid",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "app_user",
+                "foreign_column": "id"
+            }
+        ],
+        "accident__trip__route__route_type__trip_destination_stop": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
+                "data_type": "character varying",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "max_length": 50,
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "stopid",
+                "data_type": "integer",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "stop",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "currentstopinroute",
+                "data_type": "integer",
+                "constraints": []
             }
         ]
     },
     "relationships": [
         {
-            "junction_table": "route_app_user",
-            "from": "route_app_user",
+            "junction_table": "accident__trip__route__route_type__trip_destination_app_user",
+            "from": "accident__trip__route__route_type__trip_destination_app_user",
             "to": "app_user",
             "type": "many-to-many",
             "column": "app_userid",
             "foreign_key_to": "id"
         },
         {
-            "junction_table": "route_app_user",
-            "from": "route_app_user",
+            "junction_table": "accident__trip__route__route_type__trip_destination_app_user",
+            "from": "accident__trip__route__route_type__trip_destination_app_user",
             "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-many",
             "column": "accident__trip__route__route_type__trip_destinationid",
             "foreign_key_to": "id"
         },
         {
-            "junction_table": "route_stop",
-            "from": "route_stop",
+            "junction_table": "accident__trip__route__route_type__trip_destination_stop",
+            "from": "accident__trip__route__route_type__trip_destination_stop",
             "to": "stop",
             "type": "many-to-many",
             "column": "stopid",
             "foreign_key_to": "id"
         },
         {
-            "junction_table": "route_stop",
-            "from": "route_stop",
+            "junction_table": "accident__trip__route__route_type__trip_destination_stop",
+            "from": "accident__trip__route__route_type__trip_destination_stop",
             "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-many",
             "column": "accident__trip__route__route_type__trip_destinationid",

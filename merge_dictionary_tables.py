@@ -6,8 +6,6 @@ from bson import ObjectId
 from bson.decimal128 import Decimal128
 from decimal import Decimal
 
-# TODO: merging 1:1 relationships
-# TODO: naming in the junction tables and schema
 # TODO: merging the postgresql data
 # TODO: handling self referencing tables - big trouble
 
@@ -33,7 +31,6 @@ def check_if_is_a_dictionary_table(columns_info):
                 num_of_regular_columns += 1
         else:
             num_of_regular_columns += 1
-    print("num_of_regular_columns: " + str(num_of_regular_columns))
     return num_of_regular_columns == 1
 
 
@@ -67,27 +64,16 @@ def handle_merging_tables_relationships(schema, relationships, merged_tables=set
     for relation in relationships:
         if relation["from"] in merged_tables or relation["to"] in merged_tables:
             continue
-        if relation.get("type") == "many-to-one":
+        if relation.get("type") == "many-to-one" and \
+              (relation.get("from") != relation.get("to")): # self referencing tables do not count here
             merge_many_to_one(schema, relationships, relation, merged_tables)
-    # for relation in relationships:
-    #     if relation["from"] in merged_tables or relation["to"] in merged_tables:
-    #         # print(merged_tables)
-    #         continue
-    #     for label, value in relation.items():
-    #         if label == "type" and value == "many-to-one":
-    #             merge_many_to_one(schema, relationships, relation, merged_tables)
-    #         elif label == "type" and value == "one-to-one":
-    #             merge_one_to_one(schema, relationships, relation, merged_tables)
 
 
 def merge_many_to_one(schema, relationships, relation, merged_tables):
-    print("checking if is a dictionary table: " + relation["to"])
-    if relation["to"] == "trip_destination":
-        print("-----------------------------------------------")
     is_a_dictionary_table = check_if_is_a_dictionary_table(schema[relation["to"]])
 
     if is_a_dictionary_table:
-        print("\nmany-to-one merging (IF): - from: " + relation["from"] + " to: " + relation["to"] + "\n")
+        print("\nmany-to-one merging (dictionary table - " + relation["from"] +"): - contents from: " + relation["to"] + " go inside: " + relation["from"] + "\n")
         fix_schema_details(
             schema,
             relationships,
@@ -106,7 +92,7 @@ def merge_many_to_one(schema, relationships, relation, merged_tables):
     else:
         is_a_dictionary_table = check_if_is_a_dictionary_table(schema[relation["from"]])
         if is_a_dictionary_table:
-            print("\nmany-to-one merging (ELSE): - from: " + relation["from"] + " to: " + relation["to"] + "\n")
+            print("\nE: many-to-one merging (dictionary table - " + relation["from"] +"): - contents from: " + relation["from"] + " go inside: " + relation["to"] + "\n")
             fix_schema_details(
                 schema,
                 relationships,
@@ -119,10 +105,8 @@ def merge_many_to_one(schema, relationships, relation, merged_tables):
             handle_merging_tables_relationships(schema, relationships, merged_tables)
 
 
-
-
 def merge_one_to_one(schema, relationships, relation, merged_tables):
-    print("\none-to-one merging: - from: " + relation["from"] + " to: " + relation["to"] + "\n")
+    print("\none-to-one merging: - contents from: " + relation["to"] + " go inside: " + relation["from"] + "\n")
     fix_schema_details(
         schema,
         relationships,
@@ -136,8 +120,13 @@ def merge_one_to_one(schema, relationships, relation, merged_tables):
 
 
 def fix_schema_details(schema, relationships, cardinality_one, cardinality_many):
+    #   cardinality_one    -    route      |  trip_destination
+    #   cardinality_many   -    route_type |  trip
     relations_tmp = []
     merged_table_name = create_meged_table_name(cardinality_one, cardinality_many)
+    junction_tables = {}
+
+    #   modifying relationships
     for relation in relationships:
         if relation["from"] == cardinality_many:
             if relation["to"] != cardinality_one:   # self referencing tables left the chat but noone has to know
@@ -148,39 +137,64 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many)
                 pass
             else:
                 relation["to"] = merged_table_name
-                relations_tmp.append(relation)
+                relations_tmp.append(relation)    
         else:
             relations_tmp.append(relation)
-    
     relationships[:] = relations_tmp
 
-    #   cardinality_one    -    route      |  trip_destination
-    #   cardinality_many   -    route_type |  trip
-
+    #   modifying schema
     if cardinality_many in schema and cardinality_one in schema:
-        to_t_accumulator = schema.pop(cardinality_many)
+        cardinality_many_schema_accumulator = schema.pop(cardinality_many)
         primary_key_column = None
+        fk_many_to_one_merging_column = None
         filtered_columns = []
 
-        for column in to_t_accumulator:
+        # finding primary key and foreign key to 'cardinality_one' table
+        # (used when the dictionary table is on the 'many' side of the relationship)
+        for column in cardinality_many_schema_accumulator:
             if "constraints" in column \
                     and column["constraints"] != []:
                 if "PRIMARY KEY" in column["constraints"]:
                     primary_key_column = column
-                    break
-  
+                    if fk_many_to_one_merging_column is not None:
+                        break
+                else:
+                    if "FOREIGN KEY" in column["constraints"] \
+                            and cardinality_one == column["foreign_table"]:
+                        fk_many_to_one_merging_column = column
+                        if primary_key_column is not None:
+                            break
+                
+        # keeping all the columns from 'cardinality_one' table that are not a foreign key to 'cardinality_many' table
         for column in schema[cardinality_one]:
             if not ("FOREIGN KEY" in column.get("constraints") \
                     and cardinality_many == column.get("foreign_table")):
                 filtered_columns.append(column)
-
         schema[cardinality_one] = filtered_columns
-        for column in to_t_accumulator:
-            if column != primary_key_column:
+
+        # merging the tables
+        for column in cardinality_many_schema_accumulator:
+            if column != primary_key_column and column != fk_many_to_one_merging_column:
                 schema[cardinality_one].append(column)
         schema[merged_table_name] = schema.pop(cardinality_one)
-        # print("renaming: " + from_t + " to " + merged_table_name)
-    print("\nfrom: " + cardinality_one + " to: " + cardinality_many + " into new name: " + merged_table_name + "\n")
+
+    # renaming junction tables in relationships
+    for relation in relationships:
+        if "junction_table" in relation:
+            old_name = relation["junction_table"]
+            if cardinality_many in relation["junction_table"]:
+                relation["junction_table"] = relation["junction_table"].replace(cardinality_many, merged_table_name)
+                relation["from"] = relation["from"].replace(cardinality_many, merged_table_name)
+            elif cardinality_one in relation["junction_table"]:
+                relation["junction_table"] = relation["junction_table"].replace(cardinality_one, merged_table_name)
+                relation["from"] = relation["from"].replace(cardinality_one, merged_table_name)
+            junction_tables[old_name] = relation["junction_table"]
+
+    # renaming junction tables in schema
+    for old_name, new_name in junction_tables.items():
+        schema[new_name] = schema.pop(old_name)
+
+    # renaming everything
     rename_merged_table(schema, cardinality_one, cardinality_many, merged_table_name)
     rename_merged_table(relationships, cardinality_one, cardinality_many, merged_table_name)
 
