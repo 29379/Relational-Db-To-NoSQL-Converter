@@ -1,45 +1,5 @@
 {
     "schema": {
-        "accident": [
-            {
-                "column_name": "id",
-                "data_type": "bigint",
-                "constraints": [
-                    "PRIMARY KEY"
-                ]
-            },
-            {
-                "column_name": "time_of_accident",
-                "data_type": "date",
-                "constraints": []
-            },
-            {
-                "column_name": "acc_latitude",
-                "data_type": "numeric",
-                "constraints": []
-            },
-            {
-                "column_name": "acc_longitude",
-                "data_type": "numeric",
-                "constraints": []
-            },
-            {
-                "column_name": "is_verified",
-                "data_type": "boolean",
-                "constraints": []
-            },
-            {
-                "column_name": "trip_destination__tripid",
-                "data_type": "character varying",
-                "constraints": [
-                    "UNIQUE",
-                    "FOREIGN KEY"
-                ],
-                "max_length": 50,
-                "foreign_table": "trip_destination__trip",
-                "foreign_column": "id"
-            }
-        ],
         "app_user": [
             {
                 "column_name": "id",
@@ -103,13 +63,13 @@
                 "constraints": []
             },
             {
-                "column_name": "trip_destination__tripid",
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
                 "data_type": "character varying",
                 "constraints": [
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "trip_destination__trip",
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
                 "foreign_column": "id"
             },
             {
@@ -142,12 +102,12 @@
                 "constraints": []
             },
             {
-                "column_name": "accidentid",
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
                 "data_type": "bigint",
                 "constraints": [
                     "FOREIGN KEY"
                 ],
-                "foreign_table": "accident",
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
                 "foreign_column": "id"
             },
             {
@@ -169,14 +129,14 @@
                 ]
             },
             {
-                "column_name": "route__route_typeid",
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
                 "data_type": "character varying",
                 "constraints": [
                     "PRIMARY KEY",
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "route__route_type",
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
                 "foreign_column": "id"
             },
             {
@@ -199,14 +159,14 @@
                 ]
             },
             {
-                "column_name": "route__route_typeid",
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
                 "data_type": "character varying",
                 "constraints": [
                     "PRIMARY KEY",
                     "FOREIGN KEY"
                 ],
                 "max_length": 50,
-                "foreign_table": "route__route_type",
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
                 "foreign_column": "id"
             },
             {
@@ -302,23 +262,7 @@
                 "constraints": []
             }
         ],
-        "route__route_type": [
-            {
-                "column_name": "id",
-                "data_type": "character varying",
-                "constraints": [
-                    "PRIMARY KEY"
-                ],
-                "max_length": 50
-            },
-            {
-                "column_name": "type",
-                "data_type": "character varying",
-                "constraints": [],
-                "max_length": 50
-            }
-        ],
-        "trip_destination__trip": [
+        "accident__trip__route__route_type__trip_destination": [
             {
                 "column_name": "id",
                 "data_type": "bigint",
@@ -327,25 +271,29 @@
                 ]
             },
             {
-                "column_name": "trip_headsign",
-                "data_type": "character varying",
-                "constraints": [],
-                "max_length": 100
+                "column_name": "time_of_accident",
+                "data_type": "date",
+                "constraints": []
+            },
+            {
+                "column_name": "acc_latitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "acc_longitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "is_verified",
+                "data_type": "boolean",
+                "constraints": []
             },
             {
                 "column_name": "direction_id",
                 "data_type": "boolean",
                 "constraints": []
-            },
-            {
-                "column_name": "route__route_typeid",
-                "data_type": "character varying",
-                "constraints": [
-                    "FOREIGN KEY"
-                ],
-                "max_length": 50,
-                "foreign_table": "route__route_type",
-                "foreign_column": "id"
             },
             {
                 "column_name": "vehicleid",
@@ -354,6 +302,28 @@
                     "FOREIGN KEY"
                 ],
                 "foreign_table": "vehicle",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "type",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 50
+            },
+            {
+                "column_name": "trip_headsign",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 100
+            },
+            {
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
+                "data_type": "character varying",
+                "constraints": [
+                    "FOREIGN KEY"
+                ],
+                "max_length": 50,
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
                 "foreign_column": "id"
             }
         ]
@@ -370,9 +340,9 @@
         {
             "junction_table": "route_app_user",
             "from": "route_app_user",
-            "to": "route__route_type",
+            "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-many",
-            "column": "route__route_typeid",
+            "column": "accident__trip__route__route_type__trip_destinationid",
             "foreign_key_to": "id"
         },
         {
@@ -386,22 +356,13 @@
         {
             "junction_table": "route_stop",
             "from": "route_stop",
-            "to": "route__route_type",
+            "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-many",
-            "column": "route__route_typeid",
+            "column": "accident__trip__route__route_type__trip_destinationid",
             "foreign_key_to": "id"
         },
         {
-            "from": "trip_destination__trip",
-            "to": "route__route_type",
-            "type": "many-to-one",
-            "column": "route__route_typeid",
-            "foreign_table": "route__route_type",
-            "foreign_column": "id",
-            "foreign_key": "route__route_typeid"
-        },
-        {
-            "from": "trip_destination__trip",
+            "from": "accident__trip__route__route_type__trip_destination",
             "to": "vehicle",
             "type": "many-to-one",
             "column": "vehicleid",
@@ -410,22 +371,13 @@
             "foreign_key": "vehicleid"
         },
         {
-            "from": "accident",
-            "to": "trip_destination__trip",
-            "type": "one-to-one",
-            "column": "trip_destination__tripid",
-            "foreign_table": "trip_destination__trip",
-            "foreign_column": "id",
-            "foreign_key": "trip_destination__tripid"
-        },
-        {
             "from": "live_stop_time",
-            "to": "trip_destination__trip",
+            "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-one",
-            "column": "trip_destination__tripid",
-            "foreign_table": "trip_destination__trip",
+            "column": "accident__trip__route__route_type__trip_destinationid",
+            "foreign_table": "accident__trip__route__route_type__trip_destination",
             "foreign_column": "id",
-            "foreign_key": "trip_destination__tripid"
+            "foreign_key": "accident__trip__route__route_type__trip_destinationid"
         },
         {
             "from": "live_stop_time",
@@ -447,12 +399,12 @@
         },
         {
             "from": "report",
-            "to": "accident",
+            "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-one",
-            "column": "accidentid",
-            "foreign_table": "accident",
+            "column": "accident__trip__route__route_type__trip_destinationid",
+            "foreign_table": "accident__trip__route__route_type__trip_destination",
             "foreign_column": "id",
-            "foreign_key": "accidentid"
+            "foreign_key": "accident__trip__route__route_type__trip_destinationid"
         },
         {
             "from": "report",
