@@ -58,7 +58,7 @@ def handle_relationships(db, relationships, rel_choice):
             if related_document_id:
                 related_document = to_collection.find_one({"id": related_document_id})
                 if related_document:
-                    if rel_choice == "1":
+                    if rel_choice == "ReferencingType.id":
                         related_document = ObjectId(related_document["_id"])
                     from_collection.update_one(
                         {"_id": document["_id"]},
