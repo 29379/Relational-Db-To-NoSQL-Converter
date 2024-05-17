@@ -184,7 +184,8 @@ def many_to_many(conn, db, rel_choice, user_choices):
     verify_and_clean_foreign_keys(db, schema)
     handle_relationships(db, relationships, rel_choice)
     handle_many_to_many_relations(db, relationships, user_choices, rel_choice)
-    # drop_junction_tables(db, relationships)
+    # FIXME: we are dropping here junction tables. comment if needed
+    drop_junction_tables(db, relationships)
 
     cursor.close()
 
