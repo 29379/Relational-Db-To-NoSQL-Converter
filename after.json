@@ -325,7 +325,8 @@
             "to": "app_user",
             "type": "many-to-many",
             "column": "app_userid",
-            "foreign_key_to": "id"
+            "foreign_key_to": "id",
+            "old_name": "accident__trip__route__route_type_app_user"
         },
         {
             "junction_table": "accident__trip__route__route_type__trip_destination_app_user",
@@ -333,7 +334,8 @@
             "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-many",
             "column": "accident__trip__route__route_type__trip_destinationid",
-            "foreign_key_to": "id"
+            "foreign_key_to": "id",
+            "old_name": "accident__trip__route__route_type_app_user"
         },
         {
             "junction_table": "accident__trip__route__route_type__trip_destination_stop",
@@ -341,7 +343,8 @@
             "to": "stop",
             "type": "many-to-many",
             "column": "stopid",
-            "foreign_key_to": "id"
+            "foreign_key_to": "id",
+            "old_name": "accident__trip__route__route_type_stop"
         },
         {
             "junction_table": "accident__trip__route__route_type__trip_destination_stop",
@@ -349,7 +352,8 @@
             "to": "accident__trip__route__route_type__trip_destination",
             "type": "many-to-many",
             "column": "accident__trip__route__route_type__trip_destinationid",
-            "foreign_key_to": "id"
+            "foreign_key_to": "id",
+            "old_name": "accident__trip__route__route_type_stop"
         },
         {
             "from": "accident__trip__route__route_type__trip_destination",
