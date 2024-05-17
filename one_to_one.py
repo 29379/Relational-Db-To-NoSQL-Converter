@@ -135,3 +135,12 @@ def one_to_one(conn, db, rel_choice):
     handle_relationships(db, relationships, rel_choice)
 
     cursor.close()
+
+
+def apply_changes_to_database(db, changes):
+    for collection_name, changes_list in changes.items():
+        collection = db[collection_name]
+        for change in changes_list:
+            old_field_name = change["old"]
+            new_field_name = change["new"]
+            collection.update_many({}, {"$rename": {old_field_name: new_field_name}})
