@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os
+import json
 from database import create_connection, get_sqlalchemy_uri, OUTPUT_PATH, mongo_database
 from create_erd import create_erd
 from sql_to_json import sql_to_json
@@ -25,7 +26,31 @@ def convert_sql_to_json():
 def view_json():
     directory_path = os.getcwd()
     filename = "schema_details.json"
-    return send_from_directory(directory_path, filename, as_attachment=True)
+    file_path = os.path.join(directory_path, filename)
+    with open(file_path, "r") as json_file:
+        data = json.load(json_file)
+    return jsonify(data)
+
+
+# @app.route("/update-json", methods=["POST"])
+# def update_json():
+#     data = request.json
+#     old_name = data["old_name"]
+#     new_name = data["new_name"]
+
+#     directory_path = os.getcwd()
+#     filename = "schema_details.json"
+#     file_path = os.path.join(directory_path, filename)
+#     with open(file_path, "r+") as file:
+#         json_data = json.load(file)
+#         if old_name in json_data:
+#             json_data[new_name] = json_data.pop(old_name)
+
+#         file.seek(0)
+#         json.dump(json_data, file, indent=4)
+#         file.truncate()
+
+#     return jsonify({"message": "Data updated successfully"})
 
 
 @app.route("/generate-erd", methods=["GET"])
