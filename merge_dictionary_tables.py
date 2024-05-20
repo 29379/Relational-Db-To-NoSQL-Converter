@@ -8,11 +8,9 @@ from bson.decimal128 import Decimal128
 from decimal import Decimal
 from collections import defaultdict
 
-# TODO: merging the postgresql data - correctly assign the foreign keys
-# TODO: else condition after checking if junction table
-    #   if the last part does not match any table name - how to handle it?
-# TODO: handling self referencing tables - big trouble
-# TODO: sprawdzanie czy użytkownik nie łamie konwencji nazw na początku przed wykonaniem transformacji
+
+# TODO: handling self referencing tables - ????
+# TODO: mapping the foreign keys to the merged table
 
 
 def is_id_column(column_name, pattern, patterns=None):
@@ -44,11 +42,6 @@ def find_max_row_number(postgres_data):
     for _, rows in postgres_data.items():
         length += len(rows)
     return length
-    # max_length = 0
-    # for table_name, rows in postgres_data.items():
-    #     if len(rows) > max_length:
-    #         max_length = len(rows)
-    # return max_length 
     
 
 def clip_row_list_size(list_to_clip):
@@ -69,9 +62,7 @@ def is_a_junction_table(split_name, relationships_after):
 def rename_merged_table(obj, old_name_f, old_name_t, new_name):
     if isinstance(obj, dict):
         for key, value in obj.items():
-            if isinstance(value, str) and (key == "old_name"):
-                pass
-            elif isinstance(value, str) and (value == old_name_f or value == old_name_t):
+            if isinstance(value, str) and (value == old_name_f or value == old_name_t):
                 obj[key] = new_name
             elif isinstance(value, str) and is_id_column(value, old_name_f):
                 obj[key] = value.replace(old_name_f, new_name)
@@ -91,13 +82,43 @@ def rename_merged_table(obj, old_name_f, old_name_t, new_name):
                 rename_merged_table(item, old_name_f, old_name_t, new_name)
 
 
-def handle_merging_tables_relationships(schema, relationships, merged_tables=set()):
+def keep_track_of_junction_table_names(junction_table, next_old_name, next_new_name):
+    changed = False
+    for old_name, new_name in junction_table.items():
+        if new_name == next_old_name or new_name == next_new_name:
+            junction_table[old_name] = next_new_name
+            changed = True
+    if not changed:
+        junction_table[next_old_name] = next_new_name
+
+
+def split_junction_table(last_part_of_table_name, schema_before):
+    parts = last_part_of_table_name.split('_')
+    n = len(parts)
+
+    for i in range(n):
+        first_part = '_'.join(parts[:n - i])
+        second_part = '_'.join(parts[n - i:])
+        if second_part in schema_before and first_part in schema_before:
+            return (first_part, second_part)
+    return (None, None)
+    
+
+def add_data_from_unchanged_junction_table(old_name, postgres_data):
+    table_data = postgres_data[old_name]
+    rows_to_save = []
+    for row in table_data:
+        rows_to_save.append(row)
+    return rows_to_save
+
+
+def handle_merging_tables_relationships(schema, relationships, merged_tables=set(), junction_tables={}):
     # Process one-to-one relationships first
     for relation in relationships:
         if relation["from"] in merged_tables or relation["to"] in merged_tables:
             continue
         if relation.get("type") == "one-to-one":
-            merge_one_to_one(schema, relationships, relation, merged_tables)
+            merge_one_to_one(schema, relationships, relation, merged_tables, junction_tables)
             
     # Process many-to-one relationships afterwards
     for relation in relationships:
@@ -105,10 +126,10 @@ def handle_merging_tables_relationships(schema, relationships, merged_tables=set
             continue
         if relation.get("type") == "many-to-one" and \
               (relation.get("from") != relation.get("to")): # self referencing tables do not count here
-            merge_many_to_one(schema, relationships, relation, merged_tables)
+            merge_many_to_one(schema, relationships, relation, merged_tables, junction_tables)
 
 
-def merge_many_to_one(schema, relationships, relation, merged_tables):
+def merge_many_to_one(schema, relationships, relation, merged_tables, junction_tables):
     is_a_dictionary_table = check_if_is_a_dictionary_table(schema[relation["to"]])
 
     if is_a_dictionary_table:
@@ -117,7 +138,8 @@ def merge_many_to_one(schema, relationships, relation, merged_tables):
             schema,
             relationships,
             relation["from"],
-            relation["to"]
+            relation["to"],
+            junction_tables
         )
         merged_tables.add(relation["to"])
         merged_tables.add(relation["from"])
@@ -136,7 +158,8 @@ def merge_many_to_one(schema, relationships, relation, merged_tables):
                 schema,
                 relationships,
                 relation["to"],
-                relation["from"]
+                relation["from"],
+                junction_tables
             )
             merged_tables.add(relation["to"])
             merged_tables.add(relation["from"])
@@ -144,13 +167,14 @@ def merge_many_to_one(schema, relationships, relation, merged_tables):
             handle_merging_tables_relationships(schema, relationships, merged_tables)
 
 
-def merge_one_to_one(schema, relationships, relation, merged_tables):
+def merge_one_to_one(schema, relationships, relation, merged_tables, junction_tables):
     print("\none-to-one merging: - contents from: " + relation["to"] + " go inside: " + relation["from"] + "\n")
     fix_schema_details(
         schema,
         relationships,
         relation["from"],
-        relation["to"]
+        relation["to"],
+        junction_tables
     )
     merged_tables.add(relation["to"])
     merged_tables.add(relation["from"])
@@ -158,12 +182,12 @@ def merge_one_to_one(schema, relationships, relation, merged_tables):
     handle_merging_tables_relationships(schema, relationships, merged_tables)
 
 
-def fix_schema_details(schema, relationships, cardinality_one, cardinality_many):
+def fix_schema_details(schema, relationships, cardinality_one, cardinality_many, old_to_new_junction_tables):
     #   cardinality_one    -    route      |  trip_destination
     #   cardinality_many   -    route_type |  trip
     relations_tmp = []
     merged_table_name = create_meged_table_name(cardinality_one, cardinality_many)
-    junction_tables = {}
+    junction_tables = {}    # key - old name, value - new name
 
     #   modifying relationships
     for relation in relationships:
@@ -180,6 +204,10 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many)
         else:
             relations_tmp.append(relation)
     relationships[:] = relations_tmp
+
+    # for junction_table in junction_tables:
+    #     if junction_table in schema and "old_name" not in schema[junction_table]:
+    #         schema[junction_table].append({"old_name": junction_table})
 
     #   modifying schema
     if cardinality_many in schema and cardinality_one in schema:
@@ -221,7 +249,8 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many)
     for relation in relationships:
         if "junction_table" in relation:
             old_name = relation["junction_table"]
-            relation["old_name"] = old_name
+            # if "old_name" not in relation:
+            #     relation["old_name"] = old_name
             if cardinality_many in relation["junction_table"]:
                 relation["junction_table"] = relation["junction_table"].replace(cardinality_many, merged_table_name)
                 relation["from"] = relation["from"].replace(cardinality_many, merged_table_name)
@@ -229,9 +258,8 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many)
                 relation["junction_table"] = relation["junction_table"].replace(cardinality_one, merged_table_name)
                 relation["from"] = relation["from"].replace(cardinality_one, merged_table_name)
             junction_tables[old_name] = relation["junction_table"]
+            keep_track_of_junction_table_names(old_to_new_junction_tables, old_name, relation["junction_table"])
 
-
-    # renaming junction tables in schema
     for old_name, new_name in junction_tables.items():
         schema[new_name] = schema.pop(old_name)
 
@@ -242,7 +270,9 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many)
     with open('after.json', 'w') as after_file:
         json.dump(
             {"schema": schema, 
-             "relationships": relationships},
+             "relationships": relationships,
+             "junction_tables": old_to_new_junction_tables
+             },
              after_file, 
              indent=4
         )
@@ -256,6 +286,7 @@ def create_db(cursor, db, schema_before, relationships_before):
         data = json.load(file)
     schema_after = data.get('schema', {})
     relationships_after = data.get('relationships', {})
+    junction_tables = data.get('junction_tables', {})
 
     postgres_data = {}
     merged_data = {}
@@ -270,25 +301,20 @@ def create_db(cursor, db, schema_before, relationships_before):
     # handle the tables
     for collection_name, columns_info in schema_after.items():
         split_table_name = collection_name.split("__")
-        # print(str(split_name) + " - " + collection_name + " - " + str(len(split_name)))
         if len(split_table_name) == 1 and split_table_name[0] in schema_after:
-            print("\nFirst if: split_table_name length:" + str(len(split_table_name)) + " - " + str(split_table_name) + "\n")
             merged_data[collection_name] = postgres_data[split_table_name[0]]
         elif split_table_name[-1] not in cloned_schema_before:
-            print("Split table name [-1] not in schema before: " + str(split_table_name) + "\n")
-            pass    # keep everything as it is
+            for old_name, new_name in junction_tables.items():
+                if new_name == collection_name:
+                    merged_data[collection_name] = add_data_from_unchanged_junction_table(old_name, postgres_data)
+            pass    # keep everything as it is somehow
         else:
-            print("\nJunction table: " + str(split_table_name) + "\n")
             # key - table name, value: list of indicies that should be added to row
             indicies_to_add = defaultdict(list)    
             # list of rows to save - list of lists, which will then be converted to list of tuples as in postgres_data
             rows_to_save = [[] for _ in range(find_max_row_number(postgres_data))]
-            # indicies_of_foreign_keys = defaultdict(lambda: defaultdict(list))
-            indicies_of_foreign_keys = defaultdict(list)
 
             for table_part_index, table_name_part_in_order in enumerate(split_table_name):
-                # indicies_to_add[table_name_part_in_order] = []
-                print("\n" + table_name_part_in_order + "\n")
                 
                 if table_name_part_in_order in cloned_schema_before and \
                         table_name_part_in_order in postgres_data: 
@@ -297,35 +323,18 @@ def create_db(cursor, db, schema_before, relationships_before):
                         if table_part_index == 0 and column["column_name"] == "id":
                             indicies_to_add[table_name_part_in_order].append(column_index)  # primary key of merged table
                         elif "FOREIGN KEY" in column["constraints"] and column["foreign_table"] in split_table_name:
-                            fk_index = cloned_schema_before[table_name_part_in_order].index(column)
-                            fk_table_name = cloned_schema_before[table_name_part_in_order][fk_index]["foreign_table"]
-                            indicies_of_foreign_keys[fk_table_name].append(fk_index)
-                            # i'll have to loop through the dict and append the values to rows_to_save
-                            # first key - base table
-                            # second key - foreign table from which i'll have to take the values
-                            # value - list of indicies of columns from foreign table that should be added to the base table
+                            pass    # foreign key to a table that was merged into the current one - i handle it in the next iteration of the outer loop through split_table_name
                         elif table_part_index != 0 and column["column_name"] == "id":
                             pass    # literally pass, that is a primary key of a table, that was merged into the current one
                         else:   # base case - regular column or foreign key to some other table
                             indicies_to_add[table_name_part_in_order].append(column_index)
 
-                    print(indicies_to_add[table_name_part_in_order])
                     for row_index, row in enumerate(postgres_data[table_name_part_in_order]):
                         tmp_base_table_values = []
-                        tmp_foreign_table_values = defaultdict(list)    # key - source table, value - list of rows
                         for i in indicies_to_add[table_name_part_in_order]:
                             tmp_base_table_values.append(row[i])
 
-                        # for loop/method that uses indicies_in_foreign_keys to append the values from foreign tables
-                        # for foreign_table_name, foreign_table_keys in indicies_of_foreign_keys.items():
-                        #     for foreign_table_key in foreign_table_keys:
-                        #         foreign_table_id = row[foreign_table_key]
-                        #         foreign_table_relevant_row_values = return_foreign_table_row_values(postgres_data, cloned_schema_before, foreign_table_name, split_table_name, foreign_table_id)
-                        #         tmp_foreign_table_values[table_name_part_in_order] += foreign_table_relevant_row_values
-                            
-                        # add_foreign_table_values(tmp_foreign_table_values, row, indicies_of_foreign_keys, postgres_data, cloned_schema_before, split_table_name)
                         rows_to_save[row_index] += tmp_base_table_values
-                        # rows_to_save[row_index] += tmp_foreign_table_values[table_name_part_in_order]
                     
             rows_to_save = clip_row_list_size(rows_to_save)
             for i in range(len(rows_to_save)):
@@ -338,69 +347,22 @@ def create_db(cursor, db, schema_before, relationships_before):
         print(x + " - " + str(len(y)))
         for i in y:
             print(i)
-        print("\n\n\n\n")
+        print("\n\n\n")
 
+    for collection_name, columns_info in schema_after.items():
+        collection = db[collection_name]
+        column_names = [col["column_name"] for col in columns_info]
+        data = merged_data[collection_name]
 
-def return_foreign_table_row_values(postgres_data, cloned_schema_before, foreign_table_name, split_table_name, id_value):
-    for row in postgres_data[foreign_table_name]:
-        if row[0] == id_value:
-            return return_specific_parts_of_foreign_row_as_list(postgres_data, cloned_schema_before, foreign_table_name, split_table_name, row)
-    return None
+        for row in data:
+            document = {
+                col["column_name"]: convert_to_compatible_types(row[idx])
+                for idx, col in enumerate(columns_info)
+            }
+            document["_id"] = ObjectId()
+            collection.insert_one(document)
 
-
-def return_specific_parts_of_foreign_row_as_list(postgres_data, cloned_schema_before, foreign_table_name, split_table_name, row):
-    output = []
-    for column_id, column in enumerate(cloned_schema_before[foreign_table_name]):
-        if column["column_name"] == "id" or \
-              ("FOREIGN KEY" in column["constraints"] and column["foreign_table"] in split_table_name):
-            pass
-        else:
-            output.append(row[column_id])
-    return output
-
-
-# def add_foreign_table_values(tmp_foreign_table_values, row, indicies_of_foreign_keys, postgres_data, schema, split_table_name):
-#     print(f'\nADD FOREIGN TABLE VALUES: \n')
-#     for base_table, foreign_tables in indicies_of_foreign_keys.items():
-#         print(f'BASE TABLE - {base_table}')
-#         for foreign_table, indicies in foreign_tables.items():
-#             print(f'FOREIGN TABLE - {foreign_table}')
-#             print(str(indicies))
-#             ids = find_relevant_indexes_for_table_merge(schema, split_table_name, foreign_table)
-#             for index in indicies:
-#                 print("\n" + str(ids))
-#                 print(str(row))
-#                 print(index)
-#                 fk_value = row[index]
-#                 for data_row in postgres_data[foreign_table]:
-#                     if data_row[0] == fk_value:
-#                         for i in ids:
-#                             tmp_foreign_table_values[foreign_table].append(data_row[i])
-#                         # add only the fields from 'ids' list
-                        
-#                         # tmp_foreign_table_values[base_table].append(data_row)
-#                         # break
-#                     # if data_row[0] == fk_value:
-#                     #     tmp_foreign_table_values[base_table].append(data_row)
-#                     #     break
-#                 # tmp_foreign_table_values[base_table].append(postgres_data[foreign_table][row[index]])
-
-
-# def find_relevant_indexes_for_table_merge(schema, split_table_name, foreign_table):
-#     indexes = []
-#     for id, column in enumerate(schema[foreign_table]):
-#         if column.get("constraints") is not None and "FOREIGN KEY" in column.get("constraints"):
-#             if not column["foreign_table"] in split_table_name:
-#                 indexes.append(id)
-#             else:
-#                 # TODO: recurrent call
-#                 pass
-#         elif column.get("constraints") is not None and "PRIMARY KEY" in column.get("constraints"):
-#             pass
-#         else:
-#             indexes.append(id)
-#     return indexes
-
+    return relationships_after
 
 
 def fetch_data_from_postgres(cursor, table_name, columns):
@@ -423,10 +385,13 @@ def convert_to_compatible_types(value):
 
 def handle_relationships(db, relationships):
     # relationships between collections
+    print("HANDLE RELATIONSHIPS")
     for relation in relationships:
         from_collection = db[relation["from"]]
         to_collection = db[relation["to"]]
         column_key = relation.get("column", relation.get("foreign_key"))
+
+        print("\nRELATION: from " + str(relation["from"]) + " to " + str(relation["to"]) + " column_key: " + str(column_key))
 
         for document in from_collection.find():
             related_document_id = None
@@ -441,7 +406,9 @@ def handle_relationships(db, relationships):
                 relation["to"].capitalize() + "_ID",
                 relation["to"].capitalize() + "_ID",
                 ]:
+                print("KEY: " + key)
                 if key in document:
+                    print("KEY FOUND")
                     related_document_id = document[key]
                     break
             
@@ -485,12 +452,12 @@ def main():
         schema_before = json.load(file)
         relationships_before = schema_before.pop("relationships", [])
 
-    create_db(
+    relationships_after = create_db(
         cursor, db,
         schema_before,
         relationships_before
     )
-    handle_relationships(db, relationships_before)
+    handle_relationships(db, relationships_after)
 
     cursor.close()
     conn.close()
@@ -498,19 +465,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-"""
-
-
-    trip
-    trip_destination
-
-    trip__trip_destination
-    accident__trip__route__route_type__trip_destination
-    accident__trip__route__route_type__trip_destination_app_user
-    
-
-
-"""
-
