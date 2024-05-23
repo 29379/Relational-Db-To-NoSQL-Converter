@@ -64,12 +64,12 @@ INSERT INTO Report (id, description, time_of_report, Accidentid, App_userid) VAL
 (7, 'Headlight broken', '18:00:00', 7, 7), (8, 'Rear end collision', '19:00:00', 8, 8),
 (9, 'Stolen vehicle report', '20:00:00', 9, 9), (10, 'Vandalism', '21:00:00', 10, 10);
 
-INSERT INTO Schedule_stop_time (id, scheduled_arrival_time, scheduled_departure_time, Stopid, Route_Stopid, Route_StopRouteid, Route_StopStopid) VALUES
-(1, '08:00:00', '08:05:00', 1, 1, 'R001', 1), (2, '08:10:00', '08:15:00', 2, 2, 'R002', 2),
-(3, '08:20:00', '08:25:00', 3, 3, 'R003', 3), (4, '08:30:00', '08:35:00', 4, 4, 'R004', 4),
-(5, '08:40:00', '08:45:00', 5, 5, 'R005', 5), (6, '08:50:00', '08:55:00', 6, 6, 'R006', 6),
-(7, '09:00:00', '09:05:00', 7, 7, 'R007', 7), (8, '09:10:00', '09:15:00', 8, 8, 'R008', 8),
-(9, '09:20:00', '09:25:00', 9, 9, 'R009', 9), (10, '09:30:00', '09:35:00', 10, 10, 'R010', 10);
+INSERT INTO Schedule_stop_time (id, scheduled_arrival_time, scheduled_departure_time, Route_Stopid, Route_StopRouteid, Route_StopStopid) VALUES
+(1, '08:00:00', '08:05:00', 1, 'R001', 1), (2, '08:10:00', '08:15:00', 2, 'R002', 2),
+(3, '08:20:00', '08:25:00', 3, 'R003', 3), (4, '08:30:00', '08:35:00', 4, 'R004', 4),
+(5, '08:40:00', '08:45:00', 5, 'R005', 5), (6, '08:50:00', '08:55:00', 6, 'R006', 6),
+(7, '09:00:00', '09:05:00', 7, 'R007', 7), (8, '09:10:00', '09:15:00', 8, 'R008', 8),
+(9, '09:20:00', '09:25:00', 9, 'R009', 9), (10, '09:30:00', '09:35:00', 10, 'R010', 10);
 
 INSERT INTO Live_stop_time (id, arrival_delay, departure_delay, Schedule_stop_timeid) VALUES
 (1, '00:05:00', '00:10:00', 1), (2, '00:03:00', '00:07:00', 2),

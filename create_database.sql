@@ -68,7 +68,6 @@ CREATE TABLE Schedule_stop_time (
   id                       BIGSERIAL NOT NULL, 
   scheduled_arrival_time   time(7) NOT NULL, 
   scheduled_departure_time time(7) NOT NULL, 
-  Stopid                   int8 NOT NULL, 
   Route_Stopid             int8 NOT NULL, 
   Route_StopRouteid        varchar(50) NOT NULL, 
   Route_StopStopid         int8 NOT NULL, 
@@ -118,7 +117,6 @@ ALTER TABLE Route_Stop ADD CONSTRAINT FKRoute_Stop627197 FOREIGN KEY (Stopid) RE
 ALTER TABLE Trip ADD CONSTRAINT FKTrip896381 FOREIGN KEY (Routeid) REFERENCES Route (id);
 ALTER TABLE Trip ADD CONSTRAINT FKTrip176192 FOREIGN KEY (Vehicleid) REFERENCES Vehicle (id);
 ALTER TABLE Accident ADD CONSTRAINT FKAccident429604 FOREIGN KEY (Tripid) REFERENCES Trip (id);
-ALTER TABLE Schedule_stop_time ADD CONSTRAINT FKSchedule_s521500 FOREIGN KEY (Stopid) REFERENCES Stop (id);
 ALTER TABLE Report ADD CONSTRAINT FKReport668870 FOREIGN KEY (Accidentid) REFERENCES Accident (id);
 ALTER TABLE Report ADD CONSTRAINT FKReport344463 FOREIGN KEY (App_userid) REFERENCES App_user (id);
 ALTER TABLE Trip ADD CONSTRAINT FKTrip238194 FOREIGN KEY (Trip_destinationid) REFERENCES Trip_destination (id);

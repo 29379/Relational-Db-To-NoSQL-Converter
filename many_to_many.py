@@ -5,7 +5,6 @@ import json
 from bson import ObjectId
 from bson.decimal128 import Decimal128
 from decimal import Decimal
-import sys
 
 
 def fetch_data_from_postgres(cursor, table_name, columns):

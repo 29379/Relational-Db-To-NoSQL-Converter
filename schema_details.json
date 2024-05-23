@@ -268,15 +268,6 @@
             "constraints": []
         },
         {
-            "column_name": "stopid",
-            "data_type": "bigint",
-            "constraints": [
-                "FOREIGN KEY"
-            ],
-            "foreign_table": "stop",
-            "foreign_column": "id"
-        },
-        {
             "column_name": "route_stopid",
             "data_type": "bigint",
             "constraints": [
@@ -491,96 +482,6 @@
             "foreign_key": "tripid"
         },
         {
-            "from": "schedule_stop_time",
-            "to": "stop",
-            "type": "many-to-one",
-            "column": "stopid",
-            "foreign_table": "stop",
-            "foreign_column": "id",
-            "foreign_key": "stopid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stopid",
-            "foreign_table": "route_stop",
-            "foreign_column": "id",
-            "foreign_key": "route_stopid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stopid",
-            "foreign_table": "route_stop",
-            "foreign_column": "routeid",
-            "foreign_key": "route_stopid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stopid",
-            "foreign_table": "route_stop",
-            "foreign_column": "stopid",
-            "foreign_key": "route_stopid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stoprouteid",
-            "foreign_table": "route_stop",
-            "foreign_column": "id",
-            "foreign_key": "route_stoprouteid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stoprouteid",
-            "foreign_table": "route_stop",
-            "foreign_column": "routeid",
-            "foreign_key": "route_stoprouteid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stoprouteid",
-            "foreign_table": "route_stop",
-            "foreign_column": "stopid",
-            "foreign_key": "route_stoprouteid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stopstopid",
-            "foreign_table": "route_stop",
-            "foreign_column": "id",
-            "foreign_key": "route_stopstopid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stopstopid",
-            "foreign_table": "route_stop",
-            "foreign_column": "routeid",
-            "foreign_key": "route_stopstopid"
-        },
-        {
-            "from": "schedule_stop_time",
-            "to": "route_stop",
-            "type": "many-to-one",
-            "column": "route_stopstopid",
-            "foreign_table": "route_stop",
-            "foreign_column": "stopid",
-            "foreign_key": "route_stopstopid"
-        },
-        {
             "from": "report",
             "to": "accident",
             "type": "many-to-one",
@@ -606,6 +507,87 @@
             "foreign_table": "schedule_stop_time",
             "foreign_column": "id",
             "foreign_key": "schedule_stop_timeid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stopid",
+            "foreign_table": "route_stop",
+            "foreign_column": "id",
+            "foreign_key": "route_stopid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stopid",
+            "foreign_table": "route_stop",
+            "foreign_column": "routeid",
+            "foreign_key": "route_stopid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stopid",
+            "foreign_table": "route_stop",
+            "foreign_column": "stopid",
+            "foreign_key": "route_stopid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stoprouteid",
+            "foreign_table": "route_stop",
+            "foreign_column": "id",
+            "foreign_key": "route_stoprouteid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stoprouteid",
+            "foreign_table": "route_stop",
+            "foreign_column": "routeid",
+            "foreign_key": "route_stoprouteid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stoprouteid",
+            "foreign_table": "route_stop",
+            "foreign_column": "stopid",
+            "foreign_key": "route_stoprouteid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stopstopid",
+            "foreign_table": "route_stop",
+            "foreign_column": "id",
+            "foreign_key": "route_stopstopid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stopstopid",
+            "foreign_table": "route_stop",
+            "foreign_column": "routeid",
+            "foreign_key": "route_stopstopid"
+        },
+        {
+            "from": "schedule_stop_time",
+            "to": "route_stop",
+            "type": "many-to-one",
+            "column": "route_stopstopid",
+            "foreign_table": "route_stop",
+            "foreign_column": "stopid",
+            "foreign_key": "route_stopstopid"
         }
     ]
 }
