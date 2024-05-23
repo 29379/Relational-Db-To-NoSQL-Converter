@@ -5,22 +5,23 @@ import json
 from database import create_connection, get_sqlalchemy_uri, OUTPUT_PATH, mongo_database
 from create_erd import create_erd
 from sql_to_json import sql_to_json
-from one_to_one import one_to_one, apply_changes_to_database
+from one_to_one import one_to_one
 from many_to_many import many_to_many, findUserPromptChoices
+from rename_by_json import apply_changes_to_database
 
 app = Flask(__name__)
 CORS(app)
 
 
-changes = {}
+jsonChanges = {}
 
 
 @app.route("/sql-to-json", methods=["GET"])
 def convert_sql_to_json():
     conn = create_connection()
     try:
-        global changes
-        changes = {}
+        global jsonChanges
+        jsonChanges = {}
         return jsonify(sql_to_json(conn))
     finally:
         if conn:
@@ -40,10 +41,9 @@ def view_json():
 @app.route("/update-json", methods=["POST"])
 def update_json():
     data = request.get_json()
-    print(data)
     if data != {}:
-        global changes
-        changes = data
+        global jsonChanges
+        jsonChanges = data
     return jsonify({"message": "Changes applied successfully"}), 200
 
 
@@ -76,8 +76,8 @@ def handle_relationship():
     try:
         if conversionType == "ConversionType.ttb":
             one_to_one(conn, db, referencingType)
-            if changes != {}:
-                apply_changes_to_database(db, changes)
+            if jsonChanges != {}:
+                apply_changes_to_database(db, jsonChanges)
 
             return (
                 jsonify(
@@ -91,8 +91,10 @@ def handle_relationship():
         elif conversionType == "ConversionType.smart":
             if "RelationshipType.mtm" in relationType:
                 many_to_many(conn, db, referencingType, userChoices)
-                # TODO: apply jsonChanges
+                if jsonChanges != {}:
+                    apply_changes_to_database(db, jsonChanges)
 
+            # TODO: apply jsonChanges to one - to - one and many - to - many
             # if "RelationshipType.oto" in relationType:
             # TODO" one - to - one
             # if "RelationshipType.otm" in relationType:
