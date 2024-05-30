@@ -1,5 +1,6 @@
-use serde::Deserialize;
+use std::collections::HashMap;
 
+use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct Record {
@@ -15,12 +16,10 @@ pub struct Record {
     brigade_id: u8,
     vehicle_id: u8,
     #[allow(dead_code)]
-    variant_id: usize
+    variant_id: usize,
 }
 
-
-pub fn print_collection() {
-    use crate::HashMap;
+pub fn get_collections() -> (Vec<(String, u8, String, u8, usize)>, HashMap<String, usize>) {
     use std::path::Path;
 
     let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
@@ -51,10 +50,24 @@ pub fn print_collection() {
                     record.direction_id,
                     record.route_id,
                     record.vehicle_id,
-                    trip_destiantion_id.clone()
+                    trip_destiantion_id.clone(),
                 ))
             }
             Err(e) => println!("{}", e),
         });
-    println!("Created table trip and trip_headsign");
+    (trip,trip_destination)
+}
+
+pub fn trip_vec_to_hash_map(
+    trip: Vec<(String, u8, String, u8, usize)>,
+) -> HashMap<String, (u8, String, u8, usize)> {
+    let map: HashMap<String, (u8, String, u8, usize)> = HashMap::from_iter(trip
+        .into_iter()
+        .map(|trip_entry| {
+        (
+            trip_entry.0,
+            (trip_entry.1, trip_entry.2, trip_entry.3, trip_entry.4),
+        )
+    }));
+    map
 }

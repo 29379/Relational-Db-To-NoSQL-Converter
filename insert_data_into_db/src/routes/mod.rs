@@ -23,9 +23,9 @@ pub struct Record {
 }
 //                              route, route_Stop, stop
 pub fn get_collections() -> (
-    Vec<(String, usize)>,
-    Vec<(usize, String, usize, usize)>,
-    HashMap<String, (usize, usize, f64, f64)>,
+    Vec<(String, usize)>,                      //route
+    Vec<(usize, String, usize, usize)>,        //route_stop
+    HashMap<String, (usize, usize, f64, f64)>, //stop
 ) {
     let mut stops_id = stop::get_stop_id();
     let mut last_stop_id = get_last_id(&stops_id);
@@ -33,6 +33,7 @@ pub fn get_collections() -> (
     //(id, route_id, stop_id, current_stop_in_route)
     let mut id_route_stop = 0usize;
 
+                    // id, route_type
     let mut route: Vec<(String, usize)> = Vec::new();
 
     let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/routes.txt");
@@ -55,6 +56,7 @@ pub fn get_collections() -> (
                             {
                                 let stop =
                                     stops_id.entry((*stop_name).to_string()).or_insert_with(|| {
+                                        println!("Brak entry dla przystanku: {}", stop_name);
                                         last_stop_id = last_stop_id + 1;
                                         (last_stop_id, 0usize, 0f64, 0f64)
                                     });
