@@ -9,7 +9,7 @@ pub struct Record {
     service_id: u8,
     trip_id: String,
     trip_headsign: String,
-    direction_id: u8,
+    direction_id: u32,
     #[allow(dead_code)]
     shape_id: usize,
     #[allow(dead_code)]
@@ -19,7 +19,7 @@ pub struct Record {
     variant_id: usize,
 }
 
-pub fn get_collections() -> (Vec<(String, u8, String, u8, usize)>, HashMap<String, usize>) {
+pub fn get_collections() -> (Vec<(String, u32, String, u32, u32)>, HashMap<String, usize>) {
     use std::path::Path;
 
     let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/trips.txt");
@@ -27,7 +27,7 @@ pub fn get_collections() -> (Vec<(String, u8, String, u8, usize)>, HashMap<Strin
     let mut trip_destination: HashMap<String, usize> = HashMap::new();
     // trip_destination HashMap< Trip_heasign, id>
     //
-    let mut trip: Vec<(String, u8, String, u8, usize)> = Vec::new();
+    let mut trip: Vec<(String, u32, String, u32, u32)> = Vec::new();
     //trip Vec<(id,direction_id,Route_Id,vechicle_id,trip_destination_id)
 
     let mut trip_heads_count = 0;
@@ -49,8 +49,8 @@ pub fn get_collections() -> (Vec<(String, u8, String, u8, usize)>, HashMap<Strin
                     record.trip_id,
                     record.direction_id,
                     record.route_id,
-                    record.vehicle_id,
-                    trip_destiantion_id.clone(),
+                    record.vehicle_id.into(),
+                    trip_destiantion_id.clone().try_into().unwrap(),
                 ))
             }
             Err(e) => println!("{}", e),
@@ -59,9 +59,9 @@ pub fn get_collections() -> (Vec<(String, u8, String, u8, usize)>, HashMap<Strin
 }
 
 pub fn trip_vec_to_hash_map(
-    trip: Vec<(String, u8, String, u8, usize)>,
-) -> HashMap<String, (u8, String, u8, usize)> {
-    let map: HashMap<String, (u8, String, u8, usize)> = HashMap::from_iter(trip
+    trip: Vec<(String, u32, String, u32, u32)>,
+) -> HashMap<String, (u32, String, u32, u32)> {
+    let map: HashMap<String, (u32, String, u32, u32)> = HashMap::from_iter(trip
         .into_iter()
         .map(|trip_entry| {
         (

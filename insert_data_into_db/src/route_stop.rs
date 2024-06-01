@@ -15,7 +15,7 @@ pub struct Record {
     drop_off_type: usize,
 }
 
-pub fn get_route_stop(trip: HashMap<String, (u8, String, u8, usize)>) -> (HashMap<(String, usize), (usize, u8)>, Vec<(usize, String, String, usize, usize, String)>){
+pub fn get_route_stop(trip: HashMap<String, (u32, String, u32, u32)>) -> (HashMap<(String, usize), (usize, u8)>, Vec<(usize, String, String, usize, usize, String)>){
     let mut route_stop: HashMap<(String, usize), (usize, u8)> = HashMap::new();
     // (route_id, stop_id), (id, current_stop_in_route)
     let mut schedule_stop_time: Vec<(usize, String, String, usize, usize, String)> = Vec::new();
@@ -25,7 +25,7 @@ pub fn get_route_stop(trip: HashMap<String, (u8, String, u8, usize)>) -> (HashMa
     let mut schedule_stop_time_id = 0usize;
     let path = Path::new("../../source_data/OtwartyWroclaw_rozklad_jazdy_GTFS/stop_times.txt");
     let mut reader = csv::Reader::from_path(path).unwrap();
-    let default_var = (0u8, "0".to_string(), 0u8, 0usize);
+    let default_var = (0u32, "0".to_string(), 0u32, 032);
     reader
         .deserialize::<Record>()
         .for_each(|record_result| match record_result {

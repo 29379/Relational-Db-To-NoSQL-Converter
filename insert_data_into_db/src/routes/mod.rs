@@ -24,8 +24,8 @@ pub struct Record {
 //                              route, route_Stop, stop
 pub fn get_collections() -> (
     Vec<(String, usize)>,                      //route
-    Vec<(usize, String, usize, usize)>,        //route_stop
-    HashMap<String, (usize, usize, f64, f64)>, //stop
+    Vec<(usize, String, usize, usize)>,        //route_stop - obsolet - do not use
+    HashMap<String, (usize, usize, f64, f64)>, //stop - obsolet - do not use
 ) {
     let mut stops_id = stop::get_stop_id();
     let mut last_stop_id = get_last_id(&stops_id);
