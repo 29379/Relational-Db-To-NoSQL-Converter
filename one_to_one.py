@@ -41,7 +41,37 @@ def create_db(cursor, db, schema):
             collection.insert_one(document)
 
 
-def handle_relationships(db, relationships):
+def verify_and_clean_foreign_keys(db, schema):
+    suffixes = ["id", "_id"]
+
+    for collection_name, fields in schema.items():
+        collection = db[collection_name]
+        foreign_keys = [
+            field["column_name"]
+            for field in fields
+            if "FOREIGN KEY" in field["constraints"]
+        ]
+
+        for document in collection.find():
+            updates = {}
+            for key in foreign_keys:
+                if key in document:
+
+                    ref_collection_names = [
+                        key.rstrip(suffix).lower() for suffix in suffixes
+                    ]
+
+                    if not any(
+                        ref_collection_name in schema
+                        for ref_collection_name in ref_collection_names
+                    ):
+                        updates[key] = ""
+
+            if updates:
+                collection.update_one({"_id": document["_id"]}, {"$unset": updates})
+
+
+def handle_relationships(db, relationships, rel_choice):
     # relationships between collections
     for relation in relationships:
         from_collection = db[relation["from"]]
@@ -69,6 +99,8 @@ def handle_relationships(db, relationships):
                 # using the object itself
                 related_document = to_collection.find_one({"id": related_document_id})
                 if related_document:
+                    if rel_choice == "ReferencingType.id":
+                        related_document = ObjectId(related_document["_id"])
                     from_collection.update_one(
                         {"_id": document["_id"]},
                         {"$set": {column_key: related_document}},
@@ -106,11 +138,7 @@ def main():
         relationships = schema.pop("relationships", [])
 
     create_db(cursor, db, schema)
-    handle_relationships(db, relationships)
+    verify_and_clean_foreign_keys(db, schema)
+    handle_relationships(db, relationships, rel_choice)
 
     cursor.close()
-    conn.close()
-
-
-if __name__ == "__main__":
-    main()

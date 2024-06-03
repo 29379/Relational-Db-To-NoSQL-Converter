@@ -1,0 +1,5891 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linie>
+ <linia nazwa="938" typ="Strefowa autobusowa" wazny_od="06.04.2024" wazny_do="">
+  <wariant id="1" nazwa="LEŚNICA - Lutynia Centrum">
+   <przystanek id="18388" nazwa="LEŚNICA" ulica="Płońskiego" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18388" nazwa="LEŚNICA" czas="0"/>
+     <przystanek numer="1" id="18389" nazwa="RUBCZAKA (Stacja kolejowa)" czas="2"/>
+     <przystanek numer="2" id="18391" nazwa="Rubczaka" czas="3"/>
+     <przystanek numer="3" id="18312" nazwa="Średzka" czas="4"/>
+     <przystanek numer="4" id="18341" nazwa="Leśnica - Hermes" czas="5"/>
+     <przystanek numer="5" id="18343" nazwa="Mokrzańska" czas="6"/>
+     <przystanek numer="6" id="18347" nazwa="ŻAR" czas="9"/>
+     <przystanek numer="7" id="91048981" nazwa="Wróblowice Innowacyjna" czas="12"/>
+     <przystanek numer="8" id="91048985" nazwa="Lutynia Rondo" czas="13"/>
+     <przystanek numer="9" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="16"/>
+     <przystanek numer="10" id="90000014" nazwa="Lutynia Centrum" czas="20"/>
+    </czasy>
+    <tabliczka id="1" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="05">
+       </min>
+       <min m="20" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="00">
+       </min>
+       <min m="20" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="10" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="05">
+       </min>
+       <min m="40" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="20">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="45" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="40" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="50">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="45">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="45">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18389" nazwa="RUBCZAKA (Stacja kolejowa)" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18389" nazwa="RUBCZAKA (Stacja kolejowa)" czas="0"/>
+     <przystanek numer="1" id="18391" nazwa="Rubczaka" czas="1"/>
+     <przystanek numer="2" id="18312" nazwa="Średzka" czas="2"/>
+     <przystanek numer="3" id="18341" nazwa="Leśnica - Hermes" czas="3"/>
+     <przystanek numer="4" id="18343" nazwa="Mokrzańska" czas="4"/>
+     <przystanek numer="5" id="18347" nazwa="ŻAR" czas="7"/>
+     <przystanek numer="6" id="91048981" nazwa="Wróblowice Innowacyjna" czas="10"/>
+     <przystanek numer="7" id="91048985" nazwa="Lutynia Rondo" czas="11"/>
+     <przystanek numer="8" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="14"/>
+     <przystanek numer="9" id="90000014" nazwa="Lutynia Centrum" czas="18"/>
+    </czasy>
+    <tabliczka id="2" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="07">
+       </min>
+       <min m="22" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="02">
+       </min>
+       <min m="22" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="12" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="07">
+       </min>
+       <min m="42" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="22">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="47" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="42" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="52">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="47">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="47">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18391" nazwa="Rubczaka" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18391" nazwa="Rubczaka" czas="0"/>
+     <przystanek numer="1" id="18312" nazwa="Średzka" czas="1"/>
+     <przystanek numer="2" id="18341" nazwa="Leśnica - Hermes" czas="2"/>
+     <przystanek numer="3" id="18343" nazwa="Mokrzańska" czas="3"/>
+     <przystanek numer="4" id="18347" nazwa="ŻAR" czas="6"/>
+     <przystanek numer="5" id="91048981" nazwa="Wróblowice Innowacyjna" czas="9"/>
+     <przystanek numer="6" id="91048985" nazwa="Lutynia Rondo" czas="10"/>
+     <przystanek numer="7" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="13"/>
+     <przystanek numer="8" id="90000014" nazwa="Lutynia Centrum" czas="17"/>
+    </czasy>
+    <tabliczka id="3" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="08">
+       </min>
+       <min m="23" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="03">
+       </min>
+       <min m="23" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="13" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="13">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="08">
+       </min>
+       <min m="43" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="23">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="48" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="43" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="53">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="48">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="48">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18312" nazwa="Średzka" ulica="Trzmielowicka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18312" nazwa="Średzka" czas="0"/>
+     <przystanek numer="1" id="18341" nazwa="Leśnica - Hermes" czas="1"/>
+     <przystanek numer="2" id="18343" nazwa="Mokrzańska" czas="2"/>
+     <przystanek numer="3" id="18347" nazwa="ŻAR" czas="5"/>
+     <przystanek numer="4" id="91048981" nazwa="Wróblowice Innowacyjna" czas="8"/>
+     <przystanek numer="5" id="91048985" nazwa="Lutynia Rondo" czas="9"/>
+     <przystanek numer="6" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="12"/>
+     <przystanek numer="7" id="90000014" nazwa="Lutynia Centrum" czas="16"/>
+    </czasy>
+    <tabliczka id="4" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="09">
+       </min>
+       <min m="24" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="04">
+       </min>
+       <min m="24" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="14" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="09">
+       </min>
+       <min m="44" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="24">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="49" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="44" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="54">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="49">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="49">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18341" nazwa="Leśnica - Hermes" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18341" nazwa="Leśnica - Hermes" czas="0"/>
+     <przystanek numer="1" id="18343" nazwa="Mokrzańska" czas="1"/>
+     <przystanek numer="2" id="18347" nazwa="ŻAR" czas="4"/>
+     <przystanek numer="3" id="91048981" nazwa="Wróblowice Innowacyjna" czas="7"/>
+     <przystanek numer="4" id="91048985" nazwa="Lutynia Rondo" czas="8"/>
+     <przystanek numer="5" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="11"/>
+     <przystanek numer="6" id="90000014" nazwa="Lutynia Centrum" czas="15"/>
+    </czasy>
+    <tabliczka id="5" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="10">
+       </min>
+       <min m="25" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="00">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="05">
+       </min>
+       <min m="25" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="15" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="15">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="10">
+       </min>
+       <min m="45" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="00">
+       </min>
+       <min m="50" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="45" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="55">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="50">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="50">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18343" nazwa="Mokrzańska" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18343" nazwa="Mokrzańska" czas="0"/>
+     <przystanek numer="1" id="18347" nazwa="ŻAR" czas="3"/>
+     <przystanek numer="2" id="91048981" nazwa="Wróblowice Innowacyjna" czas="6"/>
+     <przystanek numer="3" id="91048985" nazwa="Lutynia Rondo" czas="7"/>
+     <przystanek numer="4" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="10"/>
+     <przystanek numer="5" id="90000014" nazwa="Lutynia Centrum" czas="14"/>
+    </czasy>
+    <tabliczka id="6" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="11">
+       </min>
+       <min m="26" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="01">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="06">
+       </min>
+       <min m="26" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="16" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="16">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="11">
+       </min>
+       <min m="46" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="01">
+       </min>
+       <min m="51" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="46" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="56">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="31">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="51">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="31">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="51">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18347" nazwa="ŻAR" ulica="Średzka" cechy="1">
+    <czasy>
+     <przystanek numer="0" id="18347" nazwa="ŻAR" czas="0"/>
+     <przystanek numer="1" id="91048981" nazwa="Wróblowice Innowacyjna" czas="3"/>
+     <przystanek numer="2" id="91048985" nazwa="Lutynia Rondo" czas="4"/>
+     <przystanek numer="3" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="7"/>
+     <przystanek numer="4" id="90000014" nazwa="Lutynia Centrum" czas="11"/>
+    </czasy>
+    <tabliczka id="7" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="14">
+       </min>
+       <min m="29" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="04">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="09">
+       </min>
+       <min m="29" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="19" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="14">
+       </min>
+       <min m="49" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="04">
+       </min>
+       <min m="54" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="49" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="59">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="54">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="54">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048981" nazwa="Wróblowice Innowacyjna" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048981" nazwa="Wróblowice Innowacyjna" czas="0"/>
+     <przystanek numer="1" id="91048985" nazwa="Lutynia Rondo" czas="1"/>
+     <przystanek numer="2" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="4"/>
+     <przystanek numer="3" id="90000014" nazwa="Lutynia Centrum" czas="8"/>
+    </czasy>
+    <tabliczka id="8" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="17">
+       </min>
+       <min m="32" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="07">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="12">
+       </min>
+       <min m="32" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="02">
+       </min>
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="22" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="17">
+       </min>
+       <min m="52" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="07">
+       </min>
+       <min m="57" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="02">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="52" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="02">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="57">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="57">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048985" nazwa="Lutynia Rondo" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048985" nazwa="Lutynia Rondo" czas="0"/>
+     <przystanek numer="1" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="3"/>
+     <przystanek numer="2" id="90000014" nazwa="Lutynia Centrum" czas="7"/>
+    </czasy>
+    <tabliczka id="9" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="18">
+       </min>
+       <min m="33" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="08">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="13">
+       </min>
+       <min m="33" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="03">
+       </min>
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="23" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="18">
+       </min>
+       <min m="53" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="08">
+       </min>
+       <min m="58" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="03">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="53" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="03">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="58">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="58">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="0"/>
+     <przystanek numer="1" id="90000014" nazwa="Lutynia Centrum" czas="4"/>
+    </czasy>
+    <tabliczka id="10" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="21">
+       </min>
+       <min m="36" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="11">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="16">
+       </min>
+       <min m="36" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="06">
+       </min>
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="26" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="21">
+       </min>
+       <min m="56" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="11">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="01" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="06">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="56" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="06">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="01">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="01">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="90000014" nazwa="Lutynia Centrum" ulica="Kościelna" cechy="">
+    <czasy>
+    </czasy>
+   </przystanek>
+  </wariant>
+  <wariant id="2" nazwa="Lutynia Centrum - LEŚNICA" obj="na138">
+   <przystanek id="90000014" nazwa="Lutynia Centrum" ulica="Kościelna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="90000014" nazwa="Lutynia Centrum" czas="0"/>
+     <przystanek numer="1" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="4"/>
+     <przystanek numer="2" id="91048984" nazwa="Lutynia Rondo" czas="7"/>
+     <przystanek numer="3" id="90094001" nazwa="Krępice" czas="9"/>
+     <przystanek numer="4" id="18346" nazwa="ŻAR" czas="12"/>
+     <przystanek numer="5" id="18344" nazwa="Mokrzańska" czas="15"/>
+     <przystanek numer="6" id="18342" nazwa="Leśnica - Hermes" czas="17"/>
+     <przystanek numer="7" id="18311" nazwa="Średzka" czas="17"/>
+     <przystanek numer="8" id="18392" nazwa="Rubczaka" czas="18"/>
+     <przystanek numer="9" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="19"/>
+     <przystanek numer="10" id="18388" nazwa="LEŚNICA" czas="20"/>
+    </czasy>
+    <tabliczka id="11" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="08" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="33">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="23">
+       </min>
+       <min m="53" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="18">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="18">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="18" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="08">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="10">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="10">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="0"/>
+     <przystanek numer="1" id="91048984" nazwa="Lutynia Rondo" czas="3"/>
+     <przystanek numer="2" id="90094001" nazwa="Krępice" czas="5"/>
+     <przystanek numer="3" id="18346" nazwa="ŻAR" czas="8"/>
+     <przystanek numer="4" id="18344" nazwa="Mokrzańska" czas="11"/>
+     <przystanek numer="5" id="18342" nazwa="Leśnica - Hermes" czas="13"/>
+     <przystanek numer="6" id="18311" nazwa="Średzka" czas="13"/>
+     <przystanek numer="7" id="18392" nazwa="Rubczaka" czas="14"/>
+     <przystanek numer="8" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="15"/>
+     <przystanek numer="9" id="18388" nazwa="LEŚNICA" czas="16"/>
+    </czasy>
+    <tabliczka id="12" mc="4">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="07">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="12" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="02">
+       </min>
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="27">
+       </min>
+       <min m="57" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="22">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="32">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="22" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="52" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="12">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="14">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="14">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048984" nazwa="Lutynia Rondo" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048984" nazwa="Lutynia Rondo" czas="0"/>
+     <przystanek numer="1" id="90094001" nazwa="Krępice" czas="2"/>
+     <przystanek numer="2" id="18346" nazwa="ŻAR" czas="5"/>
+     <przystanek numer="3" id="18344" nazwa="Mokrzańska" czas="8"/>
+     <przystanek numer="4" id="18342" nazwa="Leśnica - Hermes" czas="10"/>
+     <przystanek numer="5" id="18311" nazwa="Średzka" czas="10"/>
+     <przystanek numer="6" id="18392" nazwa="Rubczaka" czas="11"/>
+     <przystanek numer="7" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="12"/>
+     <przystanek numer="8" id="18388" nazwa="LEŚNICA" czas="13"/>
+    </czasy>
+    <tabliczka id="13" mc="3" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="10">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="15" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="05">
+       </min>
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="00" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="00">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="00">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="25">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="35">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="25" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="55" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="15">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="17">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="17">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="90094001" nazwa="Krępice" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="90094001" nazwa="Krępice" czas="0"/>
+     <przystanek numer="1" id="18346" nazwa="ŻAR" czas="3"/>
+     <przystanek numer="2" id="18344" nazwa="Mokrzańska" czas="6"/>
+     <przystanek numer="3" id="18342" nazwa="Leśnica - Hermes" czas="8"/>
+     <przystanek numer="4" id="18311" nazwa="Średzka" czas="8"/>
+     <przystanek numer="5" id="18392" nazwa="Rubczaka" czas="9"/>
+     <przystanek numer="6" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="10"/>
+     <przystanek numer="7" id="18388" nazwa="LEŚNICA" czas="11"/>
+    </czasy>
+    <tabliczka id="14" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="12">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="17" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="07">
+       </min>
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="02" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="02">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="02">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="27">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="37">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="27" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="57" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="17">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="19">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="19">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18346" nazwa="ŻAR" ulica="Średzka" cechy="1">
+    <czasy>
+     <przystanek numer="0" id="18346" nazwa="ŻAR" czas="0"/>
+     <przystanek numer="1" id="18344" nazwa="Mokrzańska" czas="3"/>
+     <przystanek numer="2" id="18342" nazwa="Leśnica - Hermes" czas="5"/>
+     <przystanek numer="3" id="18311" nazwa="Średzka" czas="5"/>
+     <przystanek numer="4" id="18392" nazwa="Rubczaka" czas="6"/>
+     <przystanek numer="5" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="7"/>
+     <przystanek numer="6" id="18388" nazwa="LEŚNICA" czas="8"/>
+    </czasy>
+    <tabliczka id="15" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="00">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="15">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="20" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="10">
+       </min>
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="05" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="30">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="40">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="30" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="00" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="20">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="22">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="22">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18344" nazwa="Mokrzańska" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18344" nazwa="Mokrzańska" czas="0"/>
+     <przystanek numer="1" id="18342" nazwa="Leśnica - Hermes" czas="2"/>
+     <przystanek numer="2" id="18311" nazwa="Średzka" czas="2"/>
+     <przystanek numer="3" id="18392" nazwa="Rubczaka" czas="3"/>
+     <przystanek numer="4" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="4"/>
+     <przystanek numer="5" id="18388" nazwa="LEŚNICA" czas="5"/>
+    </czasy>
+    <tabliczka id="16" mc="3" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="03">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="18">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="23" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="13">
+       </min>
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="08" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="08">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="08">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="33">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="00">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="33" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="03" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="23">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="25">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="25">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18342" nazwa="Leśnica - Hermes" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18342" nazwa="Leśnica - Hermes" czas="0"/>
+     <przystanek numer="1" id="18311" nazwa="Średzka" czas="0"/>
+     <przystanek numer="2" id="18392" nazwa="Rubczaka" czas="1"/>
+     <przystanek numer="3" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="2"/>
+     <przystanek numer="4" id="18388" nazwa="LEŚNICA" czas="3"/>
+    </czasy>
+    <tabliczka id="17" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="04">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="20">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="25" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="09" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="34">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="01">
+       </min>
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="34" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="04" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="24">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18311" nazwa="Średzka" ulica="Trzmielowicka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18311" nazwa="Średzka" czas="0"/>
+     <przystanek numer="1" id="18392" nazwa="Rubczaka" czas="1"/>
+     <przystanek numer="2" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="2"/>
+     <przystanek numer="3" id="18388" nazwa="LEŚNICA" czas="3"/>
+    </czasy>
+    <tabliczka id="18" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="04">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="20">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="34">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="01">
+       </min>
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="24">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18392" nazwa="Rubczaka" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18392" nazwa="Rubczaka" czas="0"/>
+     <przystanek numer="1" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="1"/>
+     <przystanek numer="2" id="18388" nazwa="LEŚNICA" czas="2"/>
+    </czasy>
+    <tabliczka id="19" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="05">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="21">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="15">
+       </min>
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="35">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="02">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="25">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="27">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="27">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="0"/>
+     <przystanek numer="1" id="18388" nazwa="LEŚNICA" czas="1"/>
+    </czasy>
+    <tabliczka id="20" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="06">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="22">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="16">
+       </min>
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="11">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="11">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="36">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="03">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="28">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="28">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18388" nazwa="LEŚNICA" ulica="Płońskiego" cechy="">
+    <czasy>
+    </czasy>
+   </przystanek>
+  </wariant>
+  <wariant id="3" nazwa="LEŚNICA - Łowęcice - Staw">
+   <przystanek id="18388" nazwa="LEŚNICA" ulica="Płońskiego" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18388" nazwa="LEŚNICA" czas="0"/>
+     <przystanek numer="1" id="18389" nazwa="RUBCZAKA (Stacja kolejowa)" czas="2"/>
+     <przystanek numer="2" id="18391" nazwa="Rubczaka" czas="3"/>
+     <przystanek numer="3" id="18312" nazwa="Średzka" czas="4"/>
+     <przystanek numer="4" id="18341" nazwa="Leśnica - Hermes" czas="5"/>
+     <przystanek numer="5" id="18343" nazwa="Mokrzańska" czas="6"/>
+     <przystanek numer="6" id="18347" nazwa="ŻAR" czas="9"/>
+     <przystanek numer="7" id="91048981" nazwa="Wróblowice Innowacyjna" czas="12"/>
+     <przystanek numer="8" id="91048985" nazwa="Lutynia Rondo" czas="13"/>
+     <przystanek numer="9" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="16"/>
+     <przystanek numer="10" id="90000014" nazwa="Lutynia Centrum" czas="20"/>
+    </czasy>
+    <tabliczka id="1" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="05">
+       </min>
+       <min m="20" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="00">
+       </min>
+       <min m="20" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="10" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="05">
+       </min>
+       <min m="40" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="20">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="45" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="40" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="50">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="45">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="45">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18389" nazwa="RUBCZAKA (Stacja kolejowa)" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18389" nazwa="RUBCZAKA (Stacja kolejowa)" czas="0"/>
+     <przystanek numer="1" id="18391" nazwa="Rubczaka" czas="1"/>
+     <przystanek numer="2" id="18312" nazwa="Średzka" czas="2"/>
+     <przystanek numer="3" id="18341" nazwa="Leśnica - Hermes" czas="3"/>
+     <przystanek numer="4" id="18343" nazwa="Mokrzańska" czas="4"/>
+     <przystanek numer="5" id="18347" nazwa="ŻAR" czas="7"/>
+     <przystanek numer="6" id="91048981" nazwa="Wróblowice Innowacyjna" czas="10"/>
+     <przystanek numer="7" id="91048985" nazwa="Lutynia Rondo" czas="11"/>
+     <przystanek numer="8" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="14"/>
+     <przystanek numer="9" id="90000014" nazwa="Lutynia Centrum" czas="18"/>
+    </czasy>
+    <tabliczka id="2" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="07">
+       </min>
+       <min m="22" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="02">
+       </min>
+       <min m="22" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="12" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="07">
+       </min>
+       <min m="42" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="22">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="47" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="42" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="52">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="47">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="47">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18391" nazwa="Rubczaka" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18391" nazwa="Rubczaka" czas="0"/>
+     <przystanek numer="1" id="18312" nazwa="Średzka" czas="1"/>
+     <przystanek numer="2" id="18341" nazwa="Leśnica - Hermes" czas="2"/>
+     <przystanek numer="3" id="18343" nazwa="Mokrzańska" czas="3"/>
+     <przystanek numer="4" id="18347" nazwa="ŻAR" czas="6"/>
+     <przystanek numer="5" id="91048981" nazwa="Wróblowice Innowacyjna" czas="9"/>
+     <przystanek numer="6" id="91048985" nazwa="Lutynia Rondo" czas="10"/>
+     <przystanek numer="7" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="13"/>
+     <przystanek numer="8" id="90000014" nazwa="Lutynia Centrum" czas="17"/>
+    </czasy>
+    <tabliczka id="3" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="08">
+       </min>
+       <min m="23" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="03">
+       </min>
+       <min m="23" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="13" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="13">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="08">
+       </min>
+       <min m="43" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="23">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="48" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="43" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="53">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="48">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="48">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18312" nazwa="Średzka" ulica="Trzmielowicka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18312" nazwa="Średzka" czas="0"/>
+     <przystanek numer="1" id="18341" nazwa="Leśnica - Hermes" czas="1"/>
+     <przystanek numer="2" id="18343" nazwa="Mokrzańska" czas="2"/>
+     <przystanek numer="3" id="18347" nazwa="ŻAR" czas="5"/>
+     <przystanek numer="4" id="91048981" nazwa="Wróblowice Innowacyjna" czas="8"/>
+     <przystanek numer="5" id="91048985" nazwa="Lutynia Rondo" czas="9"/>
+     <przystanek numer="6" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="12"/>
+     <przystanek numer="7" id="90000014" nazwa="Lutynia Centrum" czas="16"/>
+    </czasy>
+    <tabliczka id="4" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="09">
+       </min>
+       <min m="24" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="04">
+       </min>
+       <min m="24" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="14" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="09">
+       </min>
+       <min m="44" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="24">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="49" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="44" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="54">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="49">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="49">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18341" nazwa="Leśnica - Hermes" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18341" nazwa="Leśnica - Hermes" czas="0"/>
+     <przystanek numer="1" id="18343" nazwa="Mokrzańska" czas="1"/>
+     <przystanek numer="2" id="18347" nazwa="ŻAR" czas="4"/>
+     <przystanek numer="3" id="91048981" nazwa="Wróblowice Innowacyjna" czas="7"/>
+     <przystanek numer="4" id="91048985" nazwa="Lutynia Rondo" czas="8"/>
+     <przystanek numer="5" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="11"/>
+     <przystanek numer="6" id="90000014" nazwa="Lutynia Centrum" czas="15"/>
+    </czasy>
+    <tabliczka id="5" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="10">
+       </min>
+       <min m="25" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="00">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="05">
+       </min>
+       <min m="25" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="15" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="15">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="10">
+       </min>
+       <min m="45" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="00">
+       </min>
+       <min m="50" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="45" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="55">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="50">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="50">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18343" nazwa="Mokrzańska" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18343" nazwa="Mokrzańska" czas="0"/>
+     <przystanek numer="1" id="18347" nazwa="ŻAR" czas="3"/>
+     <przystanek numer="2" id="91048981" nazwa="Wróblowice Innowacyjna" czas="6"/>
+     <przystanek numer="3" id="91048985" nazwa="Lutynia Rondo" czas="7"/>
+     <przystanek numer="4" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="10"/>
+     <przystanek numer="5" id="90000014" nazwa="Lutynia Centrum" czas="14"/>
+    </czasy>
+    <tabliczka id="6" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="11">
+       </min>
+       <min m="26" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="01">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="06">
+       </min>
+       <min m="26" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="16" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="16">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="11">
+       </min>
+       <min m="46" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="01">
+       </min>
+       <min m="51" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="46" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="56">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="31">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="51">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="31">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="51">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18347" nazwa="ŻAR" ulica="Średzka" cechy="1">
+    <czasy>
+     <przystanek numer="0" id="18347" nazwa="ŻAR" czas="0"/>
+     <przystanek numer="1" id="91048981" nazwa="Wróblowice Innowacyjna" czas="3"/>
+     <przystanek numer="2" id="91048985" nazwa="Lutynia Rondo" czas="4"/>
+     <przystanek numer="3" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="7"/>
+     <przystanek numer="4" id="90000014" nazwa="Lutynia Centrum" czas="11"/>
+    </czasy>
+    <tabliczka id="7" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="14">
+       </min>
+       <min m="29" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="04">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="09">
+       </min>
+       <min m="29" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="19" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="14">
+       </min>
+       <min m="49" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="04">
+       </min>
+       <min m="54" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="49" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="59">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="54">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="29">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="54">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048981" nazwa="Wróblowice Innowacyjna" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048981" nazwa="Wróblowice Innowacyjna" czas="0"/>
+     <przystanek numer="1" id="91048985" nazwa="Lutynia Rondo" czas="1"/>
+     <przystanek numer="2" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="4"/>
+     <przystanek numer="3" id="90000014" nazwa="Lutynia Centrum" czas="8"/>
+    </czasy>
+    <tabliczka id="8" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="17">
+       </min>
+       <min m="32" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="07">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="12">
+       </min>
+       <min m="32" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="02">
+       </min>
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="22" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="17">
+       </min>
+       <min m="52" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="07">
+       </min>
+       <min m="57" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="02">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="52" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="02">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="57">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="57">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048985" nazwa="Lutynia Rondo" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048985" nazwa="Lutynia Rondo" czas="0"/>
+     <przystanek numer="1" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="3"/>
+     <przystanek numer="2" id="90000014" nazwa="Lutynia Centrum" czas="7"/>
+    </czasy>
+    <tabliczka id="9" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="18">
+       </min>
+       <min m="33" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="08">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="13">
+       </min>
+       <min m="33" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="03">
+       </min>
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="23" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="18">
+       </min>
+       <min m="53" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="08">
+       </min>
+       <min m="58" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="03">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="53" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="03">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="58">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="58">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048983" nazwa="Lutynia Osiedle ul. Wschodnia" czas="0"/>
+     <przystanek numer="1" id="90000014" nazwa="Lutynia Centrum" czas="4"/>
+    </czasy>
+    <tabliczka id="10" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="21">
+       </min>
+       <min m="36" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="11">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="16">
+       </min>
+       <min m="36" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="06">
+       </min>
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="26" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="21">
+       </min>
+       <min m="56" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="11">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="01" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="06">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="56" ozn="X" przyp="X -  kurs przedłużony do Łowęcic">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="06">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="5">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="01">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="7">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="23">
+       <min m="01">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606003" nazwa="Lutynia - Straż" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606003" nazwa="Lutynia - Straż" czas="0"/>
+     <przystanek numer="1" id="91606005" nazwa="Lutynia I" czas="2"/>
+     <przystanek numer="2" id="91606007" nazwa="Lutynia - Kolonia" czas="4"/>
+     <przystanek numer="3" id="91606009" nazwa="Radakowice - Świetlica" czas="7"/>
+     <przystanek numer="4" id="91606011" nazwa="Łowęcice - Staw" czas="9"/>
+     <przystanek numer="5" id="91606012" nazwa="Łowęcice - Staw" czas="11"/>
+    </czasy>
+    <tabliczka id="21" mc="4">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="00">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="00">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606005" nazwa="Lutynia I" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606005" nazwa="Lutynia I" czas="0"/>
+     <przystanek numer="1" id="91606007" nazwa="Lutynia - Kolonia" czas="2"/>
+     <przystanek numer="2" id="91606009" nazwa="Radakowice - Świetlica" czas="5"/>
+     <przystanek numer="3" id="91606011" nazwa="Łowęcice - Staw" czas="7"/>
+     <przystanek numer="4" id="91606012" nazwa="Łowęcice - Staw" czas="9"/>
+    </czasy>
+    <tabliczka id="22" mc="2" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="02">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="07">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="02">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606007" nazwa="Lutynia - Kolonia" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606007" nazwa="Lutynia - Kolonia" czas="0"/>
+     <przystanek numer="1" id="91606009" nazwa="Radakowice - Świetlica" czas="3"/>
+     <przystanek numer="2" id="91606011" nazwa="Łowęcice - Staw" czas="5"/>
+     <przystanek numer="3" id="91606012" nazwa="Łowęcice - Staw" czas="7"/>
+    </czasy>
+    <tabliczka id="23" mc="2" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="04">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="04">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606009" nazwa="Radakowice - Świetlica" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606009" nazwa="Radakowice - Świetlica" czas="0"/>
+     <przystanek numer="1" id="91606011" nazwa="Łowęcice - Staw" czas="2"/>
+     <przystanek numer="2" id="91606012" nazwa="Łowęcice - Staw" czas="4"/>
+    </czasy>
+    <tabliczka id="24" mc="3" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="07">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="07">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606011" nazwa="Łowęcice - Staw" ulica=" " cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606011" nazwa="Łowęcice - Staw" czas="0"/>
+     <przystanek numer="1" id="91606012" nazwa="Łowęcice - Staw" czas="2"/>
+    </czasy>
+    <tabliczka id="25" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="09">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606012" nazwa="Łowęcice - Staw" ulica=" " cechy="">
+    <czasy>
+    </czasy>
+   </przystanek>
+  </wariant>
+  <wariant id="4" nazwa="Łowęcice - Staw - LEŚNICA" obj="na138">
+   <przystanek id="91606012" nazwa="Łowęcice - Staw" ulica=" " cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606012" nazwa="Łowęcice - Staw" czas="0"/>
+     <przystanek numer="1" id="91606010" nazwa="Radakowice - Świetlica" czas="3"/>
+     <przystanek numer="2" id="91606008" nazwa="Lutynia - Kolonia" czas="5"/>
+     <przystanek numer="3" id="91606006" nazwa="Lutynia I" czas="7"/>
+     <przystanek numer="4" id="91606004" nazwa="Lutynia - Straż" czas="9"/>
+     <przystanek numer="5" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="13"/>
+     <przystanek numer="6" id="91048984" nazwa="Lutynia Rondo" czas="16"/>
+     <przystanek numer="7" id="90094001" nazwa="Krępice" czas="18"/>
+     <przystanek numer="8" id="18346" nazwa="ŻAR" czas="21"/>
+     <przystanek numer="9" id="18344" nazwa="Mokrzańska" czas="24"/>
+     <przystanek numer="10" id="18342" nazwa="Leśnica - Hermes" czas="26"/>
+     <przystanek numer="11" id="18311" nazwa="Średzka" czas="26"/>
+     <przystanek numer="12" id="18392" nazwa="Rubczaka" czas="27"/>
+     <przystanek numer="13" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="28"/>
+     <przystanek numer="14" id="18388" nazwa="LEŚNICA" czas="29"/>
+    </czasy>
+    <tabliczka id="26" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="39" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606010" nazwa="Radakowice - Świetlica" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606010" nazwa="Radakowice - Świetlica" czas="0"/>
+     <przystanek numer="1" id="91606008" nazwa="Lutynia - Kolonia" czas="2"/>
+     <przystanek numer="2" id="91606006" nazwa="Lutynia I" czas="4"/>
+     <przystanek numer="3" id="91606004" nazwa="Lutynia - Straż" czas="6"/>
+     <przystanek numer="4" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="10"/>
+     <przystanek numer="5" id="91048984" nazwa="Lutynia Rondo" czas="13"/>
+     <przystanek numer="6" id="90094001" nazwa="Krępice" czas="15"/>
+     <przystanek numer="7" id="18346" nazwa="ŻAR" czas="18"/>
+     <przystanek numer="8" id="18344" nazwa="Mokrzańska" czas="21"/>
+     <przystanek numer="9" id="18342" nazwa="Leśnica - Hermes" czas="23"/>
+     <przystanek numer="10" id="18311" nazwa="Średzka" czas="23"/>
+     <przystanek numer="11" id="18392" nazwa="Rubczaka" czas="24"/>
+     <przystanek numer="12" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="25"/>
+     <przystanek numer="13" id="18388" nazwa="LEŚNICA" czas="26"/>
+    </czasy>
+    <tabliczka id="27" mc="3" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="42" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606008" nazwa="Lutynia - Kolonia" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606008" nazwa="Lutynia - Kolonia" czas="0"/>
+     <przystanek numer="1" id="91606006" nazwa="Lutynia I" czas="2"/>
+     <przystanek numer="2" id="91606004" nazwa="Lutynia - Straż" czas="4"/>
+     <przystanek numer="3" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="8"/>
+     <przystanek numer="4" id="91048984" nazwa="Lutynia Rondo" czas="11"/>
+     <przystanek numer="5" id="90094001" nazwa="Krępice" czas="13"/>
+     <przystanek numer="6" id="18346" nazwa="ŻAR" czas="16"/>
+     <przystanek numer="7" id="18344" nazwa="Mokrzańska" czas="19"/>
+     <przystanek numer="8" id="18342" nazwa="Leśnica - Hermes" czas="21"/>
+     <przystanek numer="9" id="18311" nazwa="Średzka" czas="21"/>
+     <przystanek numer="10" id="18392" nazwa="Rubczaka" czas="22"/>
+     <przystanek numer="11" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="23"/>
+     <przystanek numer="12" id="18388" nazwa="LEŚNICA" czas="24"/>
+    </czasy>
+    <tabliczka id="28" mc="2" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="24">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="44" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606006" nazwa="Lutynia I" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606006" nazwa="Lutynia I" czas="0"/>
+     <przystanek numer="1" id="91606004" nazwa="Lutynia - Straż" czas="2"/>
+     <przystanek numer="2" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="6"/>
+     <przystanek numer="3" id="91048984" nazwa="Lutynia Rondo" czas="9"/>
+     <przystanek numer="4" id="90094001" nazwa="Krępice" czas="11"/>
+     <przystanek numer="5" id="18346" nazwa="ŻAR" czas="14"/>
+     <przystanek numer="6" id="18344" nazwa="Mokrzańska" czas="17"/>
+     <przystanek numer="7" id="18342" nazwa="Leśnica - Hermes" czas="19"/>
+     <przystanek numer="8" id="18311" nazwa="Średzka" czas="19"/>
+     <przystanek numer="9" id="18392" nazwa="Rubczaka" czas="20"/>
+     <przystanek numer="10" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="21"/>
+     <przystanek numer="11" id="18388" nazwa="LEŚNICA" czas="22"/>
+    </czasy>
+    <tabliczka id="29" mc="2" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="01">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="16">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="46" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91606004" nazwa="Lutynia - Straż" ulica="Kościuszki" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91606004" nazwa="Lutynia - Straż" czas="0"/>
+     <przystanek numer="1" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="4"/>
+     <przystanek numer="2" id="91048984" nazwa="Lutynia Rondo" czas="7"/>
+     <przystanek numer="3" id="90094001" nazwa="Krępice" czas="9"/>
+     <przystanek numer="4" id="18346" nazwa="ŻAR" czas="12"/>
+     <przystanek numer="5" id="18344" nazwa="Mokrzańska" czas="15"/>
+     <przystanek numer="6" id="18342" nazwa="Leśnica - Hermes" czas="17"/>
+     <przystanek numer="7" id="18311" nazwa="Średzka" czas="17"/>
+     <przystanek numer="8" id="18392" nazwa="Rubczaka" czas="18"/>
+     <przystanek numer="9" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="19"/>
+     <przystanek numer="10" id="18388" nazwa="LEŚNICA" czas="20"/>
+    </czasy>
+    <tabliczka id="30" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="03">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="18">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="48" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048982" nazwa="Lutynia Osiedle ul. Wschodnia" czas="0"/>
+     <przystanek numer="1" id="91048984" nazwa="Lutynia Rondo" czas="3"/>
+     <przystanek numer="2" id="90094001" nazwa="Krępice" czas="5"/>
+     <przystanek numer="3" id="18346" nazwa="ŻAR" czas="8"/>
+     <przystanek numer="4" id="18344" nazwa="Mokrzańska" czas="11"/>
+     <przystanek numer="5" id="18342" nazwa="Leśnica - Hermes" czas="13"/>
+     <przystanek numer="6" id="18311" nazwa="Średzka" czas="13"/>
+     <przystanek numer="7" id="18392" nazwa="Rubczaka" czas="14"/>
+     <przystanek numer="8" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="15"/>
+     <przystanek numer="9" id="18388" nazwa="LEŚNICA" czas="16"/>
+    </czasy>
+    <tabliczka id="12" mc="4">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="07">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="12" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="02">
+       </min>
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="27">
+       </min>
+       <min m="57" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="22">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="32">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="22" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="52" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="12">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="14">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="14">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="91048984" nazwa="Lutynia Rondo" ulica="Innowacyjna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="91048984" nazwa="Lutynia Rondo" czas="0"/>
+     <przystanek numer="1" id="90094001" nazwa="Krępice" czas="2"/>
+     <przystanek numer="2" id="18346" nazwa="ŻAR" czas="5"/>
+     <przystanek numer="3" id="18344" nazwa="Mokrzańska" czas="8"/>
+     <przystanek numer="4" id="18342" nazwa="Leśnica - Hermes" czas="10"/>
+     <przystanek numer="5" id="18311" nazwa="Średzka" czas="10"/>
+     <przystanek numer="6" id="18392" nazwa="Rubczaka" czas="11"/>
+     <przystanek numer="7" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="12"/>
+     <przystanek numer="8" id="18388" nazwa="LEŚNICA" czas="13"/>
+    </czasy>
+    <tabliczka id="13" mc="3" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="10">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="15" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="05">
+       </min>
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="00" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="00">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="00">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="25">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="35">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="25" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="55" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="15">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="17">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="12">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="17">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="90094001" nazwa="Krępice" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="90094001" nazwa="Krępice" czas="0"/>
+     <przystanek numer="1" id="18346" nazwa="ŻAR" czas="3"/>
+     <przystanek numer="2" id="18344" nazwa="Mokrzańska" czas="6"/>
+     <przystanek numer="3" id="18342" nazwa="Leśnica - Hermes" czas="8"/>
+     <przystanek numer="4" id="18311" nazwa="Średzka" czas="8"/>
+     <przystanek numer="5" id="18392" nazwa="Rubczaka" czas="9"/>
+     <przystanek numer="6" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="10"/>
+     <przystanek numer="7" id="18388" nazwa="LEŚNICA" czas="11"/>
+    </czasy>
+    <tabliczka id="14" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="4">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="5">
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="12">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="17" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="07">
+       </min>
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="02" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="02">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="02">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="27">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="37">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="32">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="27" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="20">
+       <min m="57" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="17">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="19">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="19">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="14">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="19">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18346" nazwa="ŻAR" ulica="Średzka" cechy="1">
+    <czasy>
+     <przystanek numer="0" id="18346" nazwa="ŻAR" czas="0"/>
+     <przystanek numer="1" id="18344" nazwa="Mokrzańska" czas="3"/>
+     <przystanek numer="2" id="18342" nazwa="Leśnica - Hermes" czas="5"/>
+     <przystanek numer="3" id="18311" nazwa="Średzka" czas="5"/>
+     <przystanek numer="4" id="18392" nazwa="Rubczaka" czas="6"/>
+     <przystanek numer="5" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="7"/>
+     <przystanek numer="6" id="18388" nazwa="LEŚNICA" czas="8"/>
+    </czasy>
+    <tabliczka id="15" mc="3">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="00">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="15">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="20" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="10">
+       </min>
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="05" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="05">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="30">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="40">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="30">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="30" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="00" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="20">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="22">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="17">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="22">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18344" nazwa="Mokrzańska" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18344" nazwa="Mokrzańska" czas="0"/>
+     <przystanek numer="1" id="18342" nazwa="Leśnica - Hermes" czas="2"/>
+     <przystanek numer="2" id="18311" nazwa="Średzka" czas="2"/>
+     <przystanek numer="3" id="18392" nazwa="Rubczaka" czas="3"/>
+     <przystanek numer="4" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="4"/>
+     <przystanek numer="5" id="18388" nazwa="LEŚNICA" czas="5"/>
+    </czasy>
+    <tabliczka id="16" mc="3" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="03">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="18">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="23" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="13">
+       </min>
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="08" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="08">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="08">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="33">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="00">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="33" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="03" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="23">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="25">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="25">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="20">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="25">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18342" nazwa="Leśnica - Hermes" ulica="Średzka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18342" nazwa="Leśnica - Hermes" czas="0"/>
+     <przystanek numer="1" id="18311" nazwa="Średzka" czas="0"/>
+     <przystanek numer="2" id="18392" nazwa="Rubczaka" czas="1"/>
+     <przystanek numer="3" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="2"/>
+     <przystanek numer="4" id="18388" nazwa="LEŚNICA" czas="3"/>
+    </czasy>
+    <tabliczka id="17" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="04">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="20">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="25" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="09" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="34">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="01">
+       </min>
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="19">
+       <min m="34" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="21">
+       <min m="04" ozn="L" przyp="L -  kurs do Leśnicy z pominięciem ul. Rubczaka">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="24">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18311" nazwa="Średzka" ulica="Trzmielowicka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18311" nazwa="Średzka" czas="0"/>
+     <przystanek numer="1" id="18392" nazwa="Rubczaka" czas="1"/>
+     <przystanek numer="2" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="2"/>
+     <przystanek numer="3" id="18388" nazwa="LEŚNICA" czas="3"/>
+    </czasy>
+    <tabliczka id="18" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="04">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="20">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="09">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="34">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="01">
+       </min>
+       <min m="39">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="24">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="26">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="21">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18392" nazwa="Rubczaka" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18392" nazwa="Rubczaka" czas="0"/>
+     <przystanek numer="1" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="1"/>
+     <przystanek numer="2" id="18388" nazwa="LEŚNICA" czas="2"/>
+    </czasy>
+    <tabliczka id="19" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="05">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="21">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="15">
+       </min>
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="10">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="35">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="02">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="25">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="27">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="27">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="22">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="27">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" ulica="Rubczaka" cechy="">
+    <czasy>
+     <przystanek numer="0" id="18390" nazwa="RUBCZAKA (Stacja kolejowa)" czas="0"/>
+     <przystanek numer="1" id="18388" nazwa="LEŚNICA" czas="1"/>
+    </czasy>
+    <tabliczka id="20" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="06">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="22">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="16">
+       </min>
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="11">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="11">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="36">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="03">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="26">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Sobota">
+      <godz h="6">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="28">
+       </min>
+      </godz>
+     </dzien>
+     <dzien nazwa="Niedziela">
+      <godz h="8">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="28">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="23">
+       </min>
+      </godz>
+      <godz h="22">
+       <min m="28">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="18388" nazwa="LEŚNICA" ulica="Płońskiego" cechy="">
+    <czasy>
+    </czasy>
+   </przystanek>
+  </wariant>
+ </linia>
+</linie>

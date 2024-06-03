@@ -260,10 +260,15 @@ def main():
         port='5432'
     )
 
+#     schema_details = get_schema_details(conn)
+#     save_to_json(schema_details, "schema_details.json")
+#     conn.close()
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+def sql_to_json(conn):
     schema_details = get_schema_details(conn)
     save_to_json(schema_details, "schema_details.json")
-    conn.close()
-
-
-if __name__ == "__main__":
-    main()
