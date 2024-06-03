@@ -1,0 +1,8 @@
+Erorr CSV deserialize error: record 1 (line: 1, byte: 35): missing field `route_id`
+Erorr CSV deserialize error: record 2 (line: 2, byte: 61): missing field `route_id`
+Erorr CSV deserialize error: record 3 (line: 3, byte: 87): missing field `route_id`
+Erorr CSV deserialize error: record 4 (line: 4, byte: 113): missing field `route_id`
+Erorr CSV deserialize error: record 5 (line: 5, byte: 141): missing field `route_id`
+Erorr CSV deserialize error: record 6 (line: 6, byte: 169): missing field `route_id`
+Erorr CSV deserialize error: record 7 (line: 7, byte: 195): missing field `route_id`
+id,type

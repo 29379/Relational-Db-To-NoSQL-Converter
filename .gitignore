@@ -20,3 +20,9 @@ __pycache__/
 # Dependency directories
 lib/
 lib64/
+
+#Rust cargo
+
+insert_data_into_db/target/**
+
+tatq
