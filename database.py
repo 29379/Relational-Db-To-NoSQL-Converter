@@ -5,12 +5,12 @@ import pymongo
 POSTGRE_CONFIG = {
     "dbname": "zbd_czy_dojade",
     "user": "postgres",
-    "password": "123456",
+    "password": "asdlkj000",
     "host": "localhost",
     "port": "5432",
 }
 
-OUTPUT_PATH = "diagram.png"
+OUTPUT_PATH = "resources/diagram.png"
 
 
 def create_connection():

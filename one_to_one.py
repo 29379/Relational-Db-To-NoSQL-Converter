@@ -121,24 +121,36 @@ def handle_relationships(db, relationships, rel_choice):
                 #     )
 
 
-def main():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = client["zbd_czy_dojade"]
-    conn = psycopg2.connect(
-        dbname='zbd_czy_dojade',
-        user='postgres',
-        password='asdlkj000',
-        host='localhost',
-        port='5432'
-    )
-    cursor = conn.cursor()
+# def main():
+#     client = pymongo.MongoClient("mongodb://localhost:27017/")
+#     db = client["zbd_czy_dojade"]
+#     conn = psycopg2.connect(
+#         dbname='zbd_czy_dojade',
+#         user='postgres',
+#         password='asdlkj000',
+#         host='localhost',
+#         port='5432'
+#     )
+#     cursor = conn.cursor()
 
-    with open("schema_details.json", "r") as file:
+#     with open("resources/schema_details.json", "r") as file:
+#         schema = json.load(file)
+#         relationships = schema.pop("relationships", [])
+
+#     create_db(cursor, db, schema)
+#     verify_and_clean_foreign_keys(db, schema)
+#     handle_relationships(db, relationships, rel_choice)
+
+#     cursor.close()
+
+
+def one_to_one(conn, db, rel_choice):
+    cursor = conn.cursor()
+    with open("resources/schema_details.json", "r") as file:
         schema = json.load(file)
         relationships = schema.pop("relationships", [])
 
     create_db(cursor, db, schema)
     verify_and_clean_foreign_keys(db, schema)
     handle_relationships(db, relationships, rel_choice)
-
     cursor.close()

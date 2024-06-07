@@ -175,7 +175,7 @@ def drop_junction_tables(db, relationships):
 def many_to_many(conn, db, rel_choice, user_choices):
     cursor = conn.cursor()
 
-    with open("schema_details.json", "r") as file:
+    with open("resources/schema_details.json", "r") as file:
         schema = json.load(file)
         relationships = schema.pop("relationships", [])
 

@@ -261,7 +261,7 @@ def main():
     )
 
 #     schema_details = get_schema_details(conn)
-#     save_to_json(schema_details, "schema_details.json")
+#     save_to_json(schema_details, "resources/schema_details.json")
 #     conn.close()
 
 
@@ -271,4 +271,4 @@ def main():
 
 def sql_to_json(conn):
     schema_details = get_schema_details(conn)
-    save_to_json(schema_details, "schema_details.json")
+    save_to_json(schema_details, "resources/schema_details.json")

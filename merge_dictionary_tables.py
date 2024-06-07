@@ -9,8 +9,7 @@ from decimal import Decimal
 from collections import defaultdict
 
 
-# TODO: handling self referencing tables - ????
-# TODO: mapping the foreign keys to the merged table
+# TODO: map the keys inside all the other tables, not only the base one
 
 
 class ForeignKeyMappingTuple:
@@ -21,6 +20,275 @@ class ForeignKeyMappingTuple:
     def __iter__(self):
         yield self.disappearing_table_key
         yield self.expanding_table_key
+
+
+class ForeignKeyInfo:
+    def __init__(self, table_from, index_of_attribute, table_to):
+        self.table_from = table_from
+        self.index_of_attribute = index_of_attribute
+        self.table_to = table_to
+
+
+def get_column_index(table, column_name, schema):
+    for i, col in enumerate(schema[table]):
+        if col["column_name"] == column_name:
+            return i
+    return None
+
+
+def find_base_table(merged_table, merged_data):
+    base_table = None
+    for table_name in merged_data:
+        if merged_table.startswith(table_name):
+            base_table = table_name
+            break
+    return base_table
+
+
+def check_if_a_part_of_merged_table(name, merged_table_names):
+    for table_name in merged_table_names:
+        if name in table_name:
+            return True
+        split = table_name.split("__")
+        if name in split:
+            return True
+    return False
+
+
+def update_foreign_keys(schema_after, schema_before, relationships_before, relationships_after, merged_data, foreign_key_mapping):
+    merged_table_names = []
+    merged_table_relationship_info = []
+    tables_before_relationship_info = []
+
+    #   gather info from schema_after
+    for collection_name, fields in schema_after.items():
+        split = collection_name.split("__")
+        if len(split) != 1 and not is_a_junction_table(collection_name, relationships_after):
+            merged_table_names.append(collection_name)
+    for collection_name, fields in schema_after.items():
+        for field_id, field in enumerate(fields):
+            if "FOREIGN KEY" in field.get("constraints", []) and check_if_a_part_of_merged_table(field.get("foreign_table"), merged_table_names):
+                merged_table_relationship_info.append(ForeignKeyInfo(collection_name, field_id, field.get("foreign_table")))
+    
+    #   gather info from schema_before
+    for collection_name, fields in schema_before.items():
+        if not check_if_a_part_of_merged_table(collection_name, merged_table_names):
+            continue
+        for field_id, field in enumerate(fields):
+            if "FOREIGN KEY" in field.get("constraints", []) and check_if_a_part_of_merged_table(field.get("foreign_table"), merged_table_names):
+                tables_before_relationship_info.append(ForeignKeyInfo(collection_name, field_id, field.get("foreign_table")))
+    
+    #   go through merged_data
+    for collection_name, rows in merged_data.items():
+        if collection_name not in merged_table_names:
+            continue
+        split_table_name = collection_name.split("__")
+        
+        #   REMEMBER TO USE - merged_table_names, merged_table_relationship_info, tables_before_relationship_info
+        #TODO: update foreign_key_mapping here - for example for 'report'
+        path = find_the_mapping_path(collection_name, split_table_name, foreign_key_mapping)    #TODO: fix
+        find_the_mapping_keys(path, foreign_key_mapping, merged_data)   #TODO: fix
+        
+
+def find_the_mapping_path(table_name, split_table_name, foreign_key_mapping, path=[]):
+    if table_name == split_table_name[0]:
+        path.append((table_name, split_table_name[0]))
+        return path
+    for table_from, connections in foreign_key_mapping.items():
+        for table_to, _ in connections.items():
+            if table_to == table_name:
+                path.append((table_from, table_to))
+                return find_the_mapping_path(table_from, split_table_name, foreign_key_mapping, path)
+    return path
+
+def find_the_mapping_keys(path, foreign_key_mapping, merged_data):
+    keys = []
+    for i, step in enumerate(path):
+        table_from, table_to = step
+        mapping = foreign_key_mapping[table_from][table_to]
+        for disappearing_key, expanding_key in mapping:
+            if i == 0:
+                keys.append((disappearing_key, expanding_key))
+            else:
+                pass
+
+    # for i in range(1, len(split_table_name)):
+    #     if split_table_name[i] in foreign_key_mapping:
+    #         path.append((split_table_name[i - 1], split_table_name[i]))
+    #     else:
+    #         for table_from, tables_to in foreign_key_mapping.items():
+    #             for table_to, mappings in tables_to.items():
+    #                 if table_to == split_table_name[i]:
+    #                     path.append((table_from, table_to))
+    # return path
+    
+
+"""
+3   loop through merged_data table by table (only tables saved as 'table_from' in the 1.2.1 step)
+        (if one table_from has multiple table_to's, then do them back to back in order how they were saved in the 1.2.1 step)
+    3.1     split the table name
+    3.2     is table_to saved in 1.2.1 the first element in the split table name?
+        3.2.1   if yes, skip the iteration
+        3.2.2   if not - find the 'path' to the beginning of the split table name by recurrently examining foreign_key_mapping
+                for example: i have 'trip_destination' - it is one of the values for a key 'trip', so i go to 'trip' and check if 
+                it is the first value in split_table name - it is not, so it must be a value for something else
+                it happens that it is one of the values for 'accident' so that I know it is the end of the path
+                I need to save the path, so that later I will know, that I have to do this:
+                    *finding_path_pseudocode:
+                        - find trip_destination as a value to trip key - to a path list append: (trip, trip_destination)
+                        - go to where 'trip' is the value and not the key (accident > trip) - to a path list append: (accident, trip)
+                        - accident is the first part of split_table_name, so that is all
+                    *finding_keys_pseudocode:
+                        - using previously found path, in a loop, save a list of keys:
+                            -- using the path go through foreign_key_mapping to find your way all the way to the first table in split_table_name
+                                --- save two values: the original, and the last value in the path
+                
+    3.3    execute finding_keys_pseudocode
+    3.4    go through all rows and based on what was saved while executing finding_keys_pseudocode, save the values to the right table in merged_data
+"""
+    # for table, rows in merged_data.items():
+    #     split_table_name = table.split("__")
+    #     for row in rows:
+    #         for i, value in enumerate(row):
+    #             if i == 0:
+    #                 continue
+    #             if split_table_name[i] in foreign_key_mapping:
+    #                 for table_from, tables_to in foreign_key_mapping[split_table_name[i]].items():
+    #                     for table_to, mappings in tables_to.items():
+    #                         if table_to == split_table_name[i - 1]:
+    #                             if value in mappings:
+    #                                 row[i] = mappings[value]
+    #                             else:
+    #                                 print("Foreign key not found in mapping: " + str(value))
+    #             else:
+    #                 for table_from, tables_to in foreign_key_mapping.items():
+    #                     for table_to, mappings in tables_to.items():
+    #                         if table_to == split_table_name[i]:
+    #                             if value in mappings:
+    #                                 row[i] = mappings[value]
+    #                             else:
+    #                                 print("Foreign key not found in mapping: " + str(value))
+
+#   -------- ----- ------ ----- - ------
+
+    # for table, fields in schema_before.items():
+    #     for field in fields:
+    #         if "FOREIGN KEY" in field.get("constraints", []):
+    #             foreign_table = field["foreign_table"]
+
+    #             is_in_fk_mapping = False
+    #             if foreign_table in foreign_key_mapping:
+    #                 is_in_fk_mapping = True
+    #             else:
+    #                 for k, v in foreign_key_mapping:
+    #                     if foreign_table in v:
+    #                         is_in_fk_mapping = True
+    #                         break
+                
+    #             if is_in_fk_mapping:
+    #                 column_index = get_column_index(table, field["column_name"], schema_before)
+    #                 if column_index is not None:
+    #                     for row in postgres_data[table]:
+    #                         foreign_key = row[column_index]
+    #                         if foreign_key in foreign_key_mapping[foreign_table]:
+    #                             row[column_index] = foreign_key_mapping[foreign_table][foreign_key]
+    #                         else:
+    #                             print("Foreign key not found in mapping: " + str(foreign_key))
+
+
+
+def replace_names(value, old_name, new_name):
+    if value == old_name:
+        return new_name
+    elif value == f"{old_name}id":
+        return f"{new_name}id"
+    elif value == f"{old_name}_id":
+        return f"{new_name}_id"
+    return value
+
+
+def verify_and_clean_foreign_keys(relationships, schema):
+    valid_ones = {}
+    sus_ones = {}
+
+    for collection_name, fields in schema.items():
+        foreign_keys = [
+            (collection_name, field)
+            for field in fields
+            if "FOREIGN KEY" in field["constraints"]
+        ]
+        for name, fields in foreign_keys:
+            
+            if (name, fields["foreign_table"]) not in valid_ones:
+                valid_ones[(name, fields["foreign_table"])] = []
+            if fields["column_name"] == fields["foreign_table"] + "id" or fields["column_name"] == fields["foreign_table"] + "_id":
+                valid_ones[(name, fields["foreign_table"])].append(fields["column_name"])
+            else:
+                if (name, fields["foreign_table"]) not in sus_ones:
+                    sus_ones[(name, fields["foreign_table"])] = []
+                sus_ones[(name, fields["foreign_table"])].append(fields["column_name"])
+
+    # clean up schema
+    fields_to_remove = []
+    visited = set()
+    for key, value in sus_ones.items():
+        if key in valid_ones:
+            for collection_name, fields in schema.items():
+                if collection_name == key[0]:
+                    for field in fields:
+                        if field["column_name"] in value:
+                            fields_to_remove.append((collection_name, field))
+        # print("SUS ONES: " + key + " - " + str(value))
+    for collection_name, field in fields_to_remove:
+        schema[collection_name].remove(field)
+    fields_to_remove.clear()
+
+    # clean up relationships
+    for key, value in sus_ones.items():
+        if key in valid_ones:
+            for rel in relationships:
+                tmp = tuple((k, v) for k, v in rel.items() if k != "foreign_column")
+                if tmp not in visited:
+                    visited.add(tmp)
+                else:
+                    fields_to_remove.append(rel)
+                    continue
+                if rel["from"] == key[0] and rel["to"] == key[1]:
+                    if rel["column"] in value:
+                        fields_to_remove.append(rel)
+                    
+    for field in fields_to_remove:
+        relationships.remove(field)
+
+
+
+def find_first_foreign_key(split_table_name, foreign_keys, current_table_index):
+    for element in split_table_name[current_table_index:]:
+        if element in foreign_keys:
+            return element
+    return None
+
+
+def backtrack_looking_for_a_mapping(current_table, foreign_key_mapping):
+    for table_from, tables_to in foreign_key_mapping.items():
+        for table_to, mappings in tables_to.items():
+            if table_to == current_table:
+                return table_from
+    return None
+
+
+def find_mapping_name(schema, current_table_schema, split_table_name, current_table, foreign_key_mapping):
+    if current_table not in split_table_name:
+        return None
+    foreign_keys = []
+    
+    for column_info in current_table_schema:
+        if "FOREIGN KEY" in column_info["constraints"] and column_info["foreign_table"] in split_table_name:
+            foreign_keys.append(column_info["foreign_table"])
+    if len(foreign_keys) == 0:
+        return backtrack_looking_for_a_mapping(current_table, foreign_key_mapping)
+    return None
+    # return find_first_foreign_key(split_table_name, foreign_keys, split_table_name.index(current_table))
 
 
 def is_id_column(column_name, pattern, patterns=None):
@@ -155,12 +423,49 @@ def find_base_name(table_name_part_in_order, foreign_key_indexes):
     return None
 
 
+def cleanup_junction_table_names(schema, relationships):
+    with open("resources/schema_after.json", "r") as file:
+        data = json.load(file)
+    junction_tables = data.get('junction_tables', {})   # key - old name, value - new name
+
+    updated_relationships = []
+    for relation in relationships:
+        updated_rel = {}
+        for key, value in relation.items():
+            if isinstance(value, str):
+                for old_name, new_name in junction_tables.items():
+                    value = replace_names(value, old_name, new_name)
+            updated_rel[key] = value
+        updated_relationships.append(updated_rel)
+    updated_relationships
+
+    for _, fields in schema.items():
+        for field in fields:
+            for key, value in field.items():
+                if isinstance(value, str):
+                    for old_name, new_name in junction_tables.items():
+                        field[key] = replace_names(value, old_name, new_name)
+
+    with open('resources/schema_after.json', 'w') as after_file:
+        json.dump(
+            {
+                "schema": schema, 
+                "relationships": updated_relationships,
+                "junction_tables": junction_tables
+            }, 
+            after_file, 
+            indent=4
+        )
+
+
 def handle_merging_tables_relationships(schema, relationships, merged_tables=set(), junction_tables={}):
     # Process one-to-one relationships first
     for relation in relationships:
         if relation["from"] in merged_tables or relation["to"] in merged_tables:
             continue
-        if relation.get("type") == "one-to-one":
+        if relation.get("type") == "one-to-one" and \
+                relation.get("to") not in junction_tables and \
+                relation.get("from") not in junction_tables: # self referencing tables do not count here
             merge_one_to_one(schema, relationships, relation, merged_tables, junction_tables)
             
     # Process many-to-one relationships afterwards
@@ -168,8 +473,11 @@ def handle_merging_tables_relationships(schema, relationships, merged_tables=set
         if relation["from"] in merged_tables or relation["to"] in merged_tables:
             continue
         if relation.get("type") == "many-to-one" and \
-              (relation.get("from") != relation.get("to")): # self referencing tables do not count here
+                relation.get("to") not in junction_tables and \
+                (relation.get("from") != relation.get("to")): # self referencing tables do not count here
             merge_many_to_one(schema, relationships, relation, merged_tables, junction_tables)
+
+    
 
 
 def merge_many_to_one(schema, relationships, relation, merged_tables, junction_tables):
@@ -248,10 +556,6 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many,
             relations_tmp.append(relation)
     relationships[:] = relations_tmp
 
-    # for junction_table in junction_tables:
-    #     if junction_table in schema and "old_name" not in schema[junction_table]:
-    #         schema[junction_table].append({"old_name": junction_table})
-
     #   modifying schema
     if cardinality_many in schema and cardinality_one in schema:
         cardinality_many_schema_accumulator = schema.pop(cardinality_many)
@@ -308,7 +612,7 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many,
     rename_merged_table(schema, cardinality_one, cardinality_many, merged_table_name)
     rename_merged_table(relationships, cardinality_one, cardinality_many, merged_table_name)
 
-    with open('after.json', 'w') as after_file:
+    with open('resources/schema_after.json', 'w') as after_file:
         json.dump(
             {"schema": schema, 
              "relationships": relationships,
@@ -320,10 +624,13 @@ def fix_schema_details(schema, relationships, cardinality_one, cardinality_many,
 
 
 def create_db(cursor, db, schema_before, relationships_before):
+    verify_and_clean_foreign_keys(relationships_before, schema_before)
     cloned_schema_before = copy.deepcopy(schema_before)
-    handle_merging_tables_relationships(schema_before, relationships_before)
     
-    with open("after.json", "r") as file:
+    handle_merging_tables_relationships(schema_before, relationships_before)
+    cleanup_junction_table_names(schema_before, relationships_before)
+    
+    with open("resources/schema_after.json", "r") as file:
         data = json.load(file)
     schema_after = data.get('schema', {})
     relationships_after = data.get('relationships', {})
@@ -340,6 +647,7 @@ def create_db(cursor, db, schema_before, relationships_before):
     
 
     # handle the tables
+    foreign_key_mapping = defaultdict(lambda: defaultdict(list))
     for collection_name, columns_info in schema_after.items():
         split_table_name = collection_name.split("__")
 
@@ -360,8 +668,8 @@ def create_db(cursor, db, schema_before, relationships_before):
             # list of rows to save - list of lists, which will then be converted to list of tuples as in postgres_data
             rows_to_save = [[] for _ in range(find_max_row_number(postgres_data))]
 
-            foreign_key_mapping = defaultdict(lambda: defaultdict(list))
             foreign_key_indexes = {}   
+            handled_tables = set()
             
             for table_part_index, table_name_part_in_order in enumerate(split_table_name):
                 foreign_key_indexes[table_name_part_in_order] = []
@@ -385,42 +693,45 @@ def create_db(cursor, db, schema_before, relationships_before):
                             indicies_to_add[table_name_part_in_order].append(column_index)
 
 
-                    # IF YES - GO THROUGH IT IN A LOOP AND ADD THE MAPPING BY HAND
                     name_to_find_mapping = previous_table_part_name if previous_table_part_name is not None else table_name_part_in_order
-                    #   if i don't find it, it means that the relationship is inverted and i'll have to handle it differently
-                    is_inverted_relationship = True
-                    if table_name_part_in_order != split_table_name[0]:
-                        for rel_from, out in foreign_key_mapping.items():
-                            for rel_out, keys in out.items():
-                                if rel_out == table_name_part_in_order:
-                                    is_inverted_relationship = False
-                                    break
+
+                    # #   if i don't find it, it means that the relationship is inverted and i'll have to handle it differently
+                    # is_inverted_relationship = True
+                    # if table_name_part_in_order != split_table_name[0]:
+                    #     for rel_from, out in foreign_key_mapping.items():
+                    #         for rel_out, keys in out.items():
+                    #             if rel_out == table_name_part_in_order:
+                    #                 is_inverted_relationship = False
+                    #                 break
 
                     #   i have to go through the relationships manually and add mapping of keys to foreign_key_mapping
-                    mapping_to_table = None
-                    mapping_to_table_index = None
-                    if is_inverted_relationship:
-                        # mapping_to_table = None
-                        # mapping_to_table_index = None
-                        for column_index, column in enumerate(cloned_schema_before[table_name_part_in_order]):
-                            if "FOREIGN KEY" in column["constraints"] and column["foreign_table"] in split_table_name:
-                                mapping_to_table = column["column_name"]
-                                mapping_to_table_index = column_index
-                                break
+                    # mapping_to_table = None
+                    # mapping_to_table_index = None
+                    # if is_inverted_relationship:
+                    #     # mapping_to_table = None
+                    #     # mapping_to_table_index = None
+                    #     for column_index, column in enumerate(cloned_schema_before[table_name_part_in_order]):
+                    #         if "FOREIGN KEY" in column["constraints"] and column["foreign_table"] in split_table_name:
+                    #             mapping_to_table = column["column_name"]
+                    #             mapping_to_table_index = column_index
+                    #             break
                                 
-                        if mapping_to_table_index is not None:
-                            for row_index, row in postgres_data[table_name_part_in_order]:
-                                foreign_key_mapping[table_name_part_in_order][mapping_to_table].append(
-                                    ForeignKeyMappingTuple(
-                                        row[mapping_to_table_index],
-                                        row[0] #row_index
-                                    )
-                                )
+                    #     if mapping_to_table_index is not None:
+                    #         for row_index, row in enumerate(postgres_data[table_name_part_in_order]):
+                    #             foreign_key_mapping[table_name_part_in_order][mapping_to_table].append(
+                    #                 ForeignKeyMappingTuple(
+                    #                     row[mapping_to_table_index],
+                    #                     row[0] #row_index
+                    #                 )
+                    #             )
 
-
-
-
+                    if table_name_part_in_order == 'trip_destination':
+                        pass
+                    real_mapping_name = find_mapping_name(cloned_schema_before, cloned_schema_before[table_name_part_in_order], split_table_name, table_name_part_in_order, foreign_key_mapping) or name_to_find_mapping
+                    
                     for row_index, row in enumerate(postgres_data[table_name_part_in_order]):
+                        if real_mapping_name in handled_tables and table_name_part_in_order in handled_tables:
+                            continue
                         tmp_base_table_values = []
 
                         if table_name_part_in_order == split_table_name[0]:
@@ -434,37 +745,35 @@ def create_db(cursor, db, schema_before, relationships_before):
                                     )
                                 )
                             
-                        else:
-
-                            
-
-                            for fk_table, index_mapping in foreign_key_mapping[name_to_find_mapping].items():
-                                present_id = row[0]
-                                # for disappearing_id, expanding_id in index_mapping:
-                                #     if disappearing_id == present_id and expanding_id:
-                                #         row_to_add = find_the_right_row_in_foreign_table(
-                                #             postgres_data[fk_table],
-                                #             find_what_to_add_from_foreign_table(cloned_schema_before, fk_table, split_table_name),
-                                #             disappearing_id
-                                #         )
-                                #         if row_to_add is not None:
-                                #             tmp_base_table_values.extend(row_to_add)
-                                #         break
-                                row_to_add = find_the_right_row_in_foreign_table(
-                                    postgres_data[fk_table],
-                                    find_what_to_add_from_foreign_table(cloned_schema_before, fk_table, split_table_name),
-                                    present_id
-                                )
-                                if row_to_add is not None:
-                                    tmp_base_table_values.extend(row_to_add)
-                                break
-                            for fk_table, fk_col_index in foreign_key_indexes[table_name_part_in_order]:
-                                foreign_key_mapping[table_name_part_in_order][fk_table].append(
-                                    ForeignKeyMappingTuple(
-                                        row[fk_col_index],
-                                        row[0] #row_index
+                        else:   
+                            if real_mapping_name is not None:
+                                for fk_table, index_mapping in foreign_key_mapping[real_mapping_name].items():
+                                    present_id = row[0]
+                                    # for disappearing_id, expanding_id in index_mapping:
+                                    #     if disappearing_id == present_id and expanding_id:
+                                    #         row_to_add = find_the_right_row_in_foreign_table(
+                                    #             postgres_data[fk_table],
+                                    #             find_what_to_add_from_foreign_table(cloned_schema_before, fk_table, split_table_name),
+                                    #             disappearing_id
+                                    #         )
+                                    #         if row_to_add is not None:
+                                    #             tmp_base_table_values.extend(row_to_add)
+                                    #         break
+                                    row_to_add = find_the_right_row_in_foreign_table(
+                                        postgres_data[fk_table],
+                                        find_what_to_add_from_foreign_table(cloned_schema_before, fk_table, split_table_name),
+                                        present_id
                                     )
-                                )
+                                    if row_to_add is not None:
+                                        tmp_base_table_values.extend(row_to_add)
+
+                                for fk_table, fk_col_index in foreign_key_indexes[table_name_part_in_order]:
+                                    foreign_key_mapping[table_name_part_in_order][fk_table].append(
+                                        ForeignKeyMappingTuple(
+                                            row[fk_col_index],
+                                            row[0] #row_index
+                                        )
+                                    )
 
                             # foreign_key_values[table_name_part_in_order].append(
                             #     row[foreign_key_indexes[table_name_part_in_order]]
@@ -472,13 +781,17 @@ def create_db(cursor, db, schema_before, relationships_before):
                         
                         if all(element is not None for element in tmp_base_table_values):
                             rows_to_save[row_index] += tmp_base_table_values   
+                    
+                handled_tables.add(table_name_part_in_order)
+                    
 
             rows_to_save = clip_row_list_size(rows_to_save)
             for i in range(len(rows_to_save)):
                 rows_to_save[i] = tuple(rows_to_save[i])
             merged_data[collection_name] = rows_to_save
-        
     
+
+    update_foreign_keys(schema_after, cloned_schema_before, relationships_before, relationships_after, merged_data, foreign_key_mapping)
     print("MERGED DATA: ")
     for x, y in merged_data.items():
         print(x + " - " + str(len(y)))
@@ -494,7 +807,7 @@ def create_db(cursor, db, schema_before, relationships_before):
 
         for row in data:
             document = {
-                col["column_name"]: convert_to_compatible_types(row[idx])
+                col["column_name"]: convert_to_compatible_types(row[idx]) # tuple index out of range for 'accident__trip__route__route_type__trip_destination'
                 for idx, col in enumerate(columns_info)
             }
             document["_id"] = ObjectId()
@@ -586,7 +899,7 @@ def main():
     )
     cursor = conn.cursor()
 
-    with open("schema_details.json", "r") as file:
+    with open("resources/schema_details.json", "r") as file:
         schema_before = json.load(file)
         relationships_before = schema_before.pop("relationships", [])
 
@@ -603,3 +916,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def merging_tables(conn, db, rel_choice):
+    cursor = conn.cursor()
+
+    with open("resources/schema_details.json", "r") as file:
+        schema_before = json.load(file)
+        relationships_before = schema_before.pop("relationships", [])
+
+    relationships_after = create_db(
+        cursor, db,
+        schema_before,
+        relationships_before
+    )
+    handle_relationships(db, relationships_after)
+
+    cursor.close()
