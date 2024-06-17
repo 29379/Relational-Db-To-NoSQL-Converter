@@ -771,15 +771,12 @@ def convert_to_compatible_types(value):
     return value
 
 
-def handle_relationships(db, relationships):
+def handle_relationships(db, relationships, rel_choice):
     # relationships between collections
-    print("HANDLE RELATIONSHIPS")
     for relation in relationships:
         from_collection = db[relation["from"]]
         to_collection = db[relation["to"]]
         column_key = relation.get("column", relation.get("foreign_key"))
-
-        print("\nRELATION: from " + str(relation["from"]) + " to " + str(relation["to"]) + " column_key: " + str(column_key))
 
         for document in from_collection.find():
             related_document_id = None
@@ -794,9 +791,7 @@ def handle_relationships(db, relationships):
                 relation["to"].capitalize() + "_ID",
                 relation["to"].capitalize() + "_ID",
                 ]:
-                print("KEY: " + key)
                 if key in document:
-                    print("KEY FOUND - " + str(document[key]))
                     related_document_id = document[key]
                     break
             
@@ -804,59 +799,58 @@ def handle_relationships(db, relationships):
                 # using the object itself
                 related_document = to_collection.find_one({"id": related_document_id})
                 if related_document:
+                    if rel_choice == "ReferencingType.id":
+                        related_document = ObjectId(related_document["_id"])
                     from_collection.update_one(
                         {"_id": document["_id"]},
                         {"$set": {column_key: related_document}},
                     )
 
-                # using the id
-                # from_collection.update_one(
-                #         {"_id": document["_id"]},
-                #         {"$set": {column_key: related_document_id}},
-                #     )    
+                    # # using the id
+                    # from_collection.update_one(
+                    #         {"_id": document["_id"]},
+                    #         {"$set": {column_key: related_document_id}},
+                    #     )    
 
-                # using the object id
-                # related_document = to_collection.find_one({"id": related_document_id})
-                # if related_document_id and related_document is not None and related_document["_id"]:
-                #     from_collection.update_one(
-                #         {"_id": document["_id"]},
-                #         {"$set": {column_key: related_document.get("_id")}},
-                #     )
+                    # # using the object id
+                    # from_collection.update_one(
+                    #     {"_id": document["_id"]},
+                    #     {"$set": {column_key: related_document.get("_id")}},
+                    # )
 
 
-def main():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = client["zbd_czy_dojade"]
-    conn = psycopg2.connect(
-        dbname='zbd_czy_dojade',
-        user='postgres',
-        password='asdlkj000',
-        host='localhost',
-        port='5432'
-    )
-    cursor = conn.cursor()
+# def main():
+#     client = pymongo.MongoClient("mongodb://localhost:27017/")
+#     db = client["zbd_czy_dojade"]
+#     conn = psycopg2.connect(
+#         dbname='zbd_czy_dojade',
+#         user='postgres',
+#         password='asdlkj000',
+#         host='localhost',
+#         port='5432'
+#     )
+#     cursor = conn.cursor()
 
-    with open("resources/schema_details.json", "r") as file:
-        schema_before = json.load(file)
-        relationships_before = schema_before.pop("relationships", [])
+#     with open("resources/schema_details.json", "r") as file:
+#         schema_before = json.load(file)
+#         relationships_before = schema_before.pop("relationships", [])
 
-    relationships_after = create_db(
-        cursor, db,
-        schema_before,
-        relationships_before
-    )
-    handle_relationships(db, relationships_after)
+#     relationships_after = create_db(
+#         cursor, db,
+#         schema_before,
+#         relationships_before
+#     )
+#     handle_relationships(db, relationships_after)
 
-    cursor.close()
-    conn.close()
+#     cursor.close()
+#     conn.close()
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 def merging_tables(conn, db, rel_choice):
     cursor = conn.cursor()
-
     with open("resources/schema_details.json", "r") as file:
         schema_before = json.load(file)
         relationships_before = schema_before.pop("relationships", [])
@@ -866,6 +860,5 @@ def merging_tables(conn, db, rel_choice):
         schema_before,
         relationships_before
     )
-    handle_relationships(db, relationships_after)
-
+    handle_relationships(db, relationships_after, rel_choice)
     cursor.close()
