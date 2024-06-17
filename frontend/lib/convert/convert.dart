@@ -159,7 +159,7 @@ class _ConvertState extends State<Convert> {
           chosenTable = [];
           chosenTable = [
             {'junction': 'route_app_user', 'table': 'app_user'},
-            {'junction': 'route_app_user', 'table': 'stop'}
+            {'junction': 'route_stop', 'table': 'stop'}
           ];
         });
       }

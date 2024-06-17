@@ -114,7 +114,7 @@ class _ConfigureState extends State<Configure> {
                 },
               ),
               MyCheckBoxTile(
-                title: "Delete juntion tables",
+                title: "Delete junction tables",
                 value: relationType.contains(RelationshipType.mtm),
                 onChanged: (value) {
                   setState(() {
