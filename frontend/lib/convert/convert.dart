@@ -188,6 +188,7 @@ class _ConvertState extends State<Convert> {
                     if (checkIfConfigurationIsNotValid()) {
                       message(context, 'Failure',
                           'Choose at least one relation type.');
+                      isLoading = false;
                       return;
                     }
 
