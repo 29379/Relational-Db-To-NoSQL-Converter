@@ -3,11 +3,12 @@ from flask_cors import CORS
 import os
 import json
 from database import create_connection, get_sqlalchemy_uri, OUTPUT_PATH, mongo_database
-from create_erd import create_erd
+# from create_erd import create_erd
 from sql_to_json import sql_to_json
 from one_to_one import one_to_one
 from many_to_many import many_to_many, findUserPromptChoices
 from rename_by_json import apply_changes_to_database
+from merge_dictionary_tables import merging_tables
 
 app = Flask(__name__)
 CORS(app)
@@ -31,7 +32,7 @@ def convert_sql_to_json():
 @app.route("/view-json", methods=["GET"])
 def view_json():
     directory_path = os.getcwd()
-    filename = "schema_details.json"
+    filename = "resources/schema_details.json"
     file_path = os.path.join(directory_path, filename)
     with open(file_path, "r") as json_file:
         data = json.load(json_file)
@@ -47,12 +48,12 @@ def update_json():
     return jsonify({"message": "Changes applied successfully"}), 200
 
 
-@app.route("/generate-erd", methods=["GET"])
-def generate_and_view_erd():
-    uri = get_sqlalchemy_uri()
-    create_erd(uri, OUTPUT_PATH)
-    directory_path = os.getcwd()
-    return send_from_directory(directory_path, OUTPUT_PATH, as_attachment=False)
+# @app.route("/generate-erd", methods=["GET"])
+# def generate_and_view_erd():
+#     uri = get_sqlalchemy_uri()
+#     create_erd(uri, OUTPUT_PATH)
+#     directory_path = os.getcwd()
+#     return send_from_directory(directory_path, OUTPUT_PATH, as_attachment=False)
 
 
 @app.route("/get-relationship-details", methods=["GET"])
@@ -95,7 +96,8 @@ def handle_relationship():
                     apply_changes_to_database(db, jsonChanges)
 
             # TODO: apply jsonChanges to one - to - one and many - to - many
-            # if "RelationshipType.oto" in relationType:
+            if "RelationshipType.oto" in relationType:
+                merging_tables(conn, db, referencingType)
             # TODO" one - to - one
             # if "RelationshipType.otm" in relationType:
             # TODO" one - to - many

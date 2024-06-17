@@ -246,17 +246,22 @@ def save_to_json(data, filename):
         json.dump(data, json_file, indent=4)
 
 
-# def main():
-#     conn = psycopg2.connect(
-#         dbname="zbd_czy_dojade",
-#         user="postgres",
-#         password="123456",
-#         host="localhost",
-#         port="5432",
-#     )
+def save_to_json(data, filename):
+    with open(filename, "w") as json_file:
+        json.dump(data, json_file, indent=4)
+
+
+def main():
+    conn = psycopg2.connect(
+        dbname='zbd_czy_dojade',
+        user='postgres',
+        password='asdlkj000',
+        host='localhost',
+        port='5432'
+    )
 
 #     schema_details = get_schema_details(conn)
-#     save_to_json(schema_details, "schema_details.json")
+#     save_to_json(schema_details, "resources/schema_details.json")
 #     conn.close()
 
 
@@ -266,4 +271,4 @@ def save_to_json(data, filename):
 
 def sql_to_json(conn):
     schema_details = get_schema_details(conn)
-    save_to_json(schema_details, "schema_details.json")
+    save_to_json(schema_details, "resources/schema_details.json")

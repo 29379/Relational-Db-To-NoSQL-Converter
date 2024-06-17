@@ -80,12 +80,23 @@ def handle_relationships(db, relationships, rel_choice):
 
         for document in from_collection.find():
             related_document_id = None
-            for key in [relation["to"] + "id", relation["to"] + "_id"]:
+            for key in [
+                relation["to"] + "id",
+                relation["to"] + "_id",
+                relation["to"] + "_ID",
+                relation["to"].title() + "id",
+                relation["to"].title() + "_id",
+                relation["to"].title() + "_ID",
+                relation["to"].capitalize() + "_ID",
+                relation["to"].capitalize() + "_ID",
+                relation["to"].capitalize() + "_ID",
+                ]:
                 if key in document:
                     related_document_id = document[key]
                     break
-
+            
             if related_document_id:
+                # using the object itself
                 related_document = to_collection.find_one({"id": related_document_id})
                 if related_document:
                     if rel_choice == "ReferencingType.id":
@@ -95,43 +106,51 @@ def handle_relationships(db, relationships, rel_choice):
                         {"$set": {column_key: related_document}},
                     )
 
+                # using the id
+                # from_collection.update_one(
+                #         {"_id": document["_id"]},
+                #         {"$set": {column_key: related_document_id}},
+                #     )    
+
+                # using the object id
+                # related_document = to_collection.find_one({"id": related_document_id})
+                # if related_document_id and related_document is not None and related_document["_id"]:
+                #     from_collection.update_one(
+                #         {"_id": document["_id"]},
+                #         {"$set": {column_key: related_document.get("_id")}},
+                #     )
+
 
 # def main():
 #     client = pymongo.MongoClient("mongodb://localhost:27017/")
 #     db = client["zbd_czy_dojade"]
 #     conn = psycopg2.connect(
-#         dbname="zbd_czy_dojade",
-#         user="postgres",
-#         password="123456",
-#         host="localhost",
-#         port="5432",
+#         dbname='zbd_czy_dojade',
+#         user='postgres',
+#         password='asdlkj000',
+#         host='localhost',
+#         port='5432'
 #     )
 #     cursor = conn.cursor()
 
-#     with open("schema_details.json", "r") as file:
+#     with open("resources/schema_details.json", "r") as file:
 #         schema = json.load(file)
 #         relationships = schema.pop("relationships", [])
 
 #     create_db(cursor, db, schema)
-#     handle_relationships(db, relationships)
+#     verify_and_clean_foreign_keys(db, schema)
+#     handle_relationships(db, relationships, rel_choice)
 
 #     cursor.close()
-#     conn.close()
-
-
-# if __name__ == "__main__":
-#     main()
 
 
 def one_to_one(conn, db, rel_choice):
     cursor = conn.cursor()
-
-    with open("schema_details.json", "r") as file:
+    with open("resources/schema_details.json", "r") as file:
         schema = json.load(file)
         relationships = schema.pop("relationships", [])
 
     create_db(cursor, db, schema)
     verify_and_clean_foreign_keys(db, schema)
     handle_relationships(db, relationships, rel_choice)
-
     cursor.close()
