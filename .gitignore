@@ -26,3 +26,6 @@ lib64/
 insert_data_into_db/target/**
 
 tatq
+
+!frontend/build
+!frontend/lib

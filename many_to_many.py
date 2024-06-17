@@ -41,6 +41,25 @@ def create_db(cursor, db, schema):
             collection.insert_one(document)
 
 
+def create_db_for_oto(cursor, db, schema):
+    # populate with data
+    for collection_name, columns_info in schema.items():
+        if collection_name in ["stop", "route_stop", "route_app_user", "app_user"]:
+            collection = db[collection_name]
+            column_names = [col["column_name"] for col in columns_info]
+            data_from_pg = fetch_data_from_postgres(
+                cursor, collection_name, column_names
+            )
+
+            for row in data_from_pg:
+                document = {
+                    col["column_name"]: convert_to_compatible_types(row[idx])
+                    for idx, col in enumerate(columns_info)
+                }
+                document["_id"] = ObjectId()
+                collection.insert_one(document)
+
+
 def verify_and_clean_foreign_keys(db, schema):
     suffixes = ["id", "_id"]
 
@@ -172,14 +191,20 @@ def drop_junction_tables(db, relationships):
             db[relation["junction_table"]].drop()
 
 
-def many_to_many(conn, db, rel_choice, user_choices):
+def many_to_many(conn, db, rel_choice, user_choices, hasOto):
     cursor = conn.cursor()
 
     with open("resources/schema_details.json", "r") as file:
         schema = json.load(file)
         relationships = schema.pop("relationships", [])
 
-    create_db(cursor, db, schema)
+    if not hasOto:
+        create_db(cursor, db, schema)
+    else:
+        db["app_user"].drop()
+        db["stop"].drop()
+        create_db_for_oto(cursor, db, schema)
+
     verify_and_clean_foreign_keys(db, schema)
     handle_relationships(db, relationships, rel_choice)
     handle_many_to_many_relations(db, relationships, user_choices, rel_choice)
@@ -193,7 +218,7 @@ def findUserPromptChoices(conn, db):
     choices = []
     cursor = conn.cursor()
 
-    with open("schema_details.json", "r") as file:
+    with open("resources/schema_details.json", "r") as file:
         schema = json.load(file)
         relationships = schema.pop("relationships", [])
 
