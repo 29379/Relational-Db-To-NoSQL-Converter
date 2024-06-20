@@ -43,28 +43,7 @@ pub fn get_collections() -> (
         .for_each(|record_result| match record_result {
             Ok(record) => {
                 route.push((record.route_id.clone(), record.route_type));
-                record
-                    .route_desc
-                    .split(" - ")
-                    .enumerate()
-                    .for_each(|(i, stop_name)| {
-                        id_route_stop = id_route_stop + 1;
-                        let current_id = id_route_stop;
-                        route_stop.push((
-                            current_id,
-                            record.route_id.clone(),
-                            {
-                                let stop =
-                                    stops_id.entry((*stop_name).to_string()).or_insert_with(|| {
-                                        println!("Brak entry dla przystanku: {}", stop_name);
-                                        last_stop_id = last_stop_id + 1;
-                                        (last_stop_id, 0usize, 0f64, 0f64)
-                                    });
-                                stop.1.clone()
-                            },
-                            i,
-                        ))
-                    })
+
             }
             Err(e) => println!("{}", e),
         });
