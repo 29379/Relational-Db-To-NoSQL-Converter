@@ -949,18 +949,6 @@ def handle_relationships(db, relationships, rel_choice):
                         {"$set": {column_key: related_document}},
                     )
 
-                    # # using the id
-                    # from_collection.update_one(
-                    #         {"_id": document["_id"]},
-                    #         {"$set": {column_key: related_document_id}},
-                    #     )
-
-                    # # using the object id
-                    # from_collection.update_one(
-                    #     {"_id": document["_id"]},
-                    #     {"$set": {column_key: related_document.get("_id")}},
-                    # )
-
 
 def main():
     client = pymongo.MongoClient("mongodb://localhost:27017/")

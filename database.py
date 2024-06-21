@@ -5,7 +5,7 @@ import pymongo
 POSTGRE_CONFIG = {
     "dbname": "zbd_czy_dojade",
     "user": "postgres",
-    "password": "er676KL1",
+    "password": "123456",
     "host": "localhost",
     "port": "5432",
 }
