@@ -15,11 +15,13 @@ pub struct Record {
     drop_off_type: usize,
 }
 
+
 pub fn get_route_stop(trip: HashMap<String, (u32, String, u32, u32)>) -> (HashMap<(String, usize), (usize, u8)>, Vec<(usize, String, String, usize, usize, String)>){
     let mut route_stop: HashMap<(String, usize), (usize, u8)> = HashMap::new();
     // (route_id, stop_id), (id, current_stop_in_route)
+
     let mut schedule_stop_time: Vec<(usize, String, String, usize, usize, String)> = Vec::new();
-    // IM NOT SURE IF ITS ALL       //id , arr, departure, stop_id, route_stop_id, trip_id
+    //                    //id , arr, departure, stop_id, route_stop_id, trip_id
 
     let mut route_stop_id_counter = 0usize;
     let mut schedule_stop_time_id = 0usize;
