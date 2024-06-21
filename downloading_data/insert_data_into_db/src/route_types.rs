@@ -2,8 +2,8 @@ use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct Record {
-    route_id: u8,
-    route_type_name: String,
+    route_type2_id: u8,
+    route_type2_name: String,
 }
 
 pub fn get_route_types() -> Vec<(u8, String)> {
@@ -17,7 +17,7 @@ pub fn get_route_types() -> Vec<(u8, String)> {
         .deserialize::<Record>()
         .for_each(|record_result| match record_result {
             Ok(record) => {
-                route_types.push((record.route_id, record.route_type_name));
+                route_types.push((record.route_type2_id, record.route_type2_name));
             }
             Err(e) => println!("Erorr {}", e),
         });
