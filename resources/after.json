@@ -1,0 +1,367 @@
+{
+    "schema": {
+        "app_user": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "first_name",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 50
+            },
+            {
+                "column_name": "last_name",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 50
+            },
+            {
+                "column_name": "email",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 320
+            },
+            {
+                "column_name": "hash_password",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 50
+            },
+            {
+                "column_name": "subscriber",
+                "data_type": "boolean",
+                "constraints": []
+            },
+            {
+                "column_name": "role",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 10
+            }
+        ],
+        "report": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "description",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 500
+            },
+            {
+                "column_name": "time_of_report",
+                "data_type": "time without time zone",
+                "constraints": []
+            },
+            {
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
+                "data_type": "bigint",
+                "constraints": [
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "app_userid",
+                "data_type": "bigint",
+                "constraints": [
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "app_user",
+                "foreign_column": "id"
+            }
+        ],
+        "stop": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "code",
+                "data_type": "integer",
+                "constraints": []
+            },
+            {
+                "column_name": "name",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 255
+            },
+            {
+                "column_name": "latitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "longitude",
+                "data_type": "numeric",
+                "constraints": []
+            }
+        ],
+        "vehicle": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "curr_latitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "curr_longitude",
+                "data_type": "numeric",
+                "constraints": []
+            }
+        ],
+        "live_stop_time__schedule_stop_time": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "arrival_delay",
+                "data_type": "time without time zone",
+                "constraints": []
+            },
+            {
+                "column_name": "departure_delay",
+                "data_type": "time without time zone",
+                "constraints": []
+            },
+            {
+                "column_name": "scheduled_arrival_time",
+                "data_type": "time without time zone",
+                "constraints": []
+            },
+            {
+                "column_name": "scheduled_departure_time",
+                "data_type": "time without time zone",
+                "constraints": []
+            },
+            {
+                "column_name": "accident__trip__route__route_type__trip_destination_stopid",
+                "data_type": "bigint",
+                "constraints": [
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "accident__trip__route__route_type__trip_destination_stop",
+                "foreign_column": "stopid"
+            }
+        ],
+        "accident__trip__route__route_type__trip_destination": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "time_of_accident",
+                "data_type": "date",
+                "constraints": []
+            },
+            {
+                "column_name": "acc_latitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "acc_longitude",
+                "data_type": "numeric",
+                "constraints": []
+            },
+            {
+                "column_name": "is_verified",
+                "data_type": "boolean",
+                "constraints": []
+            },
+            {
+                "column_name": "direction_id",
+                "data_type": "boolean",
+                "constraints": []
+            },
+            {
+                "column_name": "vehicleid",
+                "data_type": "bigint",
+                "constraints": [
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "vehicle",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "type",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 50
+            },
+            {
+                "column_name": "trip_headsign",
+                "data_type": "character varying",
+                "constraints": [],
+                "max_length": 100
+            }
+        ],
+        "accident__trip__route__route_type__trip_destination_app_user": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
+                "data_type": "character varying",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "max_length": 50,
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "app_userid",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "app_user",
+                "foreign_column": "id"
+            }
+        ],
+        "accident__trip__route__route_type__trip_destination_stop": [
+            {
+                "column_name": "id",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY"
+                ]
+            },
+            {
+                "column_name": "accident__trip__route__route_type__trip_destinationid",
+                "data_type": "character varying",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "max_length": 50,
+                "foreign_table": "accident__trip__route__route_type__trip_destination",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "stopid",
+                "data_type": "bigint",
+                "constraints": [
+                    "PRIMARY KEY",
+                    "FOREIGN KEY"
+                ],
+                "foreign_table": "stop",
+                "foreign_column": "id"
+            },
+            {
+                "column_name": "currentstopinroute",
+                "data_type": "integer",
+                "constraints": []
+            }
+        ]
+    },
+    "relationships": [
+        {
+            "junction_table": "accident__trip__route__route_type__trip_destination_app_user",
+            "from": "accident__trip__route__route_type__trip_destination_app_user",
+            "to": "app_user",
+            "type": "many-to-many",
+            "column": "app_userid",
+            "foreign_key_to": "id"
+        },
+        {
+            "junction_table": "accident__trip__route__route_type__trip_destination_app_user",
+            "from": "accident__trip__route__route_type__trip_destination_app_user",
+            "to": "accident__trip__route__route_type__trip_destination",
+            "type": "many-to-many",
+            "column": "accident__trip__route__route_type__trip_destinationid",
+            "foreign_key_to": "id"
+        },
+        {
+            "junction_table": "accident__trip__route__route_type__trip_destination_stop",
+            "from": "accident__trip__route__route_type__trip_destination_stop",
+            "to": "stop",
+            "type": "many-to-many",
+            "column": "stopid",
+            "foreign_key_to": "id"
+        },
+        {
+            "junction_table": "accident__trip__route__route_type__trip_destination_stop",
+            "from": "accident__trip__route__route_type__trip_destination_stop",
+            "to": "accident__trip__route__route_type__trip_destination",
+            "type": "many-to-many",
+            "column": "accident__trip__route__route_type__trip_destinationid",
+            "foreign_key_to": "id"
+        },
+        {
+            "from": "accident__trip__route__route_type__trip_destination",
+            "to": "vehicle",
+            "type": "many-to-one",
+            "column": "vehicleid",
+            "foreign_table": "vehicle",
+            "foreign_column": "id",
+            "foreign_key": "vehicleid"
+        },
+        {
+            "from": "report",
+            "to": "accident__trip__route__route_type__trip_destination",
+            "type": "many-to-one",
+            "column": "accident__trip__route__route_type__trip_destinationid",
+            "foreign_table": "accident__trip__route__route_type__trip_destination",
+            "foreign_column": "id",
+            "foreign_key": "accident__trip__route__route_type__trip_destinationid"
+        },
+        {
+            "from": "report",
+            "to": "app_user",
+            "type": "many-to-one",
+            "column": "app_userid",
+            "foreign_table": "app_user",
+            "foreign_column": "id",
+            "foreign_key": "app_userid"
+        },
+        {
+            "from": "live_stop_time__schedule_stop_time",
+            "to": "accident__trip__route__route_type__trip_destination_stop",
+            "type": "many-to-one",
+            "column": "accident__trip__route__route_type__trip_destination_stopid",
+            "foreign_table": "accident__trip__route__route_type__trip_destination_stop",
+            "foreign_column": "id",
+            "foreign_key": "accident__trip__route__route_type__trip_destination_stopid"
+        }
+    ],
+    "junction_tables": {
+        "route_app_user": "accident__trip__route__route_type__trip_destination_app_user",
+        "route_stop": "accident__trip__route__route_type__trip_destination_stop"
+    }
+}

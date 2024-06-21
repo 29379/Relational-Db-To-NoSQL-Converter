@@ -1,0 +1,158 @@
+id,trip_headsign
+149,Godzieszowa - transformator
+106,Pułtuska
+124,Psary - Wolności
+129,Strzegomska (krzyżówka)
+153,Łowęcice - Staw
+47,ŚWINIARY
+151,Brzezinka Średzka - PKP
+108,Parafialna
+125,SZYMANÓW-pętla
+70,TRESTNO (pętla)
+71,OPATOWICE
+84,ZAKRZÓW
+88,AUCHAN
+38,MOKRY DWÓR
+122,Pietrzykowice - Sportowa/pętla
+123,Smolec - Lipowa/pętla
+82,Kozia
+92,ŻAR
+89,C.H. Aleja Bielany
+100,MULICKA
+62,RATYŃ
+54,GALERIA DOMINIKAŃSKA
+81,Paprotna
+119,Łozina - Kościół
+33,TARCZYŃSKI ARENA (Królewiecka)
+103,BLACHARSKA
+121,Szewce - cmentarz
+126,KRZYŻANOWICE
+67,Broniewskiego
+3,KRZYKI
+17,Zajezdnia GAJ
+133,Kiełczów - pętla (Plac Jana Gdaka)
+139,Oleśniczka
+85,POŚWIĘCKA (Ośrodek zdrowia)
+140,BRZEZINA (pętla)
+69,Awicenny (Poczta Polska)
+57,PL. GRUNWALDZKI
+43,Janówek
+134,Rzeplin - pętla
+155,Małkowice - Główna
+61,Reja
+127,Kryniczno - Kościół
+141,Wilkszyn (pętla)
+74,Muchobór Wielki (Roślinna)
+12,Dworzec Główny (Dworcowa)
+157,Księginice P&R
+101,KUŹNIKI
+26,SĘPOLNO
+117,Łozina - skrzy.
+2,KOSZAROWA (Szpital)
+31,DWORZEC NADODRZE
+42,PRACZE ODRZAŃSKIE
+111,Bezpieczna
+15,BISKUPIN
+28,Górnicza
+48,PORT LOTNICZY
+152,Lutynia Centrum
+19,KSIĘŻE MAŁE
+40,Kosmonautów (Szpital)
+79,KOZANÓW
+60,WOJNÓW (pętla)
+29,Stadion Olimpijski
+137,GAŁÓW (pętla)
+138,Raków - skrzy.
+59,BIEŃKOWICE
+143,Kamień - Diamentowa
+83,ZWYCIĘSKA
+52,PRACZE WIDAWSKIE
+77,TYNIECKA (pętla)
+58,KMINKOWA
+115,Żórawina - Niepodległości (Mostek)
+1,Zajezdnia Obornicka
+41,PL. JANA PAWŁA II
+49,DWORZEC GŁÓWNY
+75,Metalowców
+76,KSIĘŻE WIELKIE
+109,Swojczyce
+113,Hallera
+98,KŁOKOCZYCE
+37,PILCZYCE
+147,Brzezia Łąka - Główna pętla
+107,Vivaldiego
+7,PETRUSEWICZA
+8,GAJ - pętla
+91,Las Mokrzański
+99,Psie Pole (Rondo Lotników Polskich)
+39,Kwiska
+150,Mirków - skrzy. Polna
+132,Bielawa
+148,Zabrodzie - pętla
+66,Kowalska I
+146,Kiełczówek - pętla
+11,LITEWSKA
+36,GRABISZYNEK
+114,OSOBOWICKA (Cmentarz II)
+135,Rzeplin - Al. Lipowa 
+63,Jerzmanowo (Cmentarz I)
+116,Świeradowska
+53,Obornicka (Obwodnica)
+23,KLECINA
+46,OSOBOWICE
+50,DWORZEC AUTOBUSOWY
+96,BARTOSZOWICE
+102,PAWŁOWICE (Widawska)
+120,Szewce - Kościół
+136,Pruszowice
+34,ZOO
+13,POŚWIĘTNE
+14,Zajezdnia OŁBIN
+87,Połabian
+112,Biskupice Podg. LG Energy Solution Wr. I
+64,Krępicka - szkoła
+131,Piecowice
+18,LEŚNICA
+105,Dworzec Główny (Stawowa)
+86,POLANOWICE
+110,KLECINA (Stacja kolejowa)
+68,RACŁAWICKA
+55,Iwiny - rondo
+16,Zajezdnia BOREK
+95,Hala Stulecia
+56,IWINY - pętla
+145,Smolec - Wiśniowa
+65,RĘDZIN
+73,Kiełczowska (Cmentarz)
+30,Wrocław Nowy Dwór (P+R)
+156,Miękinia - pętla
+154,Szczodre - pętla
+20,OPORÓW
+22,KOWALE
+9,KAMIEŃSKIEGO (pętla)
+142,Stępin - Kościół
+128,Samotwór - Leśna
+25,TARNOGAJ
+80,Wojszycka
+44,ŚLAZOWA
+104,Świdnicka
+93,JARNOŁTÓW
+10,KROMERA
+4,SOŁTYSOWICE
+97,Morwowa
+21,GRABISZYŃSKA (Cmentarz)
+24,KARŁOWICE
+32,GAJ
+45,RĘDZIŃSKA
+27,PARK POŁUDNIOWY
+35,KOZANÓW (Dokerska)
+90,ROD Bielany
+78,BROCHÓW
+51,FAT
+130,Kębłowice
+94,Fiołkowa
+5,OSIEDLE SOBIESKIEGO
+118,Jaksonowice - skrzy.
+72,BLIZANOWICE
+6,GIEŁDOWA (Centrum Hurtu)
+144,Borowa - szkoła

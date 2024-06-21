@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linie>
+ <linia nazwa="310" typ="Normalna autobusowa" wazny_od="24.02.2024" wazny_do="">
+  <wariant id="1" nazwa="Vivaldiego - Parafialna">
+   <przystanek id="26118" nazwa="Vivaldiego" ulica="Buforowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26118" nazwa="Vivaldiego" czas="0"/>
+     <przystanek numer="1" id="26110" nazwa="Kajdasza" czas="2"/>
+     <przystanek numer="2" id="26108" nazwa="Jagodzińska" czas="4"/>
+     <przystanek numer="3" id="26120" nazwa="Malinowskiego" czas="6"/>
+     <przystanek numer="4" id="26122" nazwa="Lutosławskiego" czas="7"/>
+     <przystanek numer="5" id="26352" nazwa="Asfaltowa (szkoła)" czas="9"/>
+     <przystanek numer="6" id="26354" nazwa="Klasztorna" czas="10"/>
+     <przystanek numer="7" id="26355" nazwa="Parafialna" czas="12"/>
+    </czasy>
+    <tabliczka id="1" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="10">
+       </min>
+       <min m="25">
+       </min>
+       <min m="40">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="11">
+       </min>
+       <min m="32">
+       </min>
+       <min m="41">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="09">
+       </min>
+       <min m="23">
+       </min>
+       <min m="32">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="04">
+       </min>
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="04">
+       </min>
+       <min m="34">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="12">
+       </min>
+       <min m="21">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="02">
+       </min>
+       <min m="11">
+       </min>
+       <min m="29">
+       </min>
+       <min m="44">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="17">
+       </min>
+       <min m="26">
+       </min>
+       <min m="44">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="09">
+       </min>
+       <min m="17">
+       </min>
+       <min m="36">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="06">
+       </min>
+       <min m="27">
+       </min>
+       <min m="47">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="16">
+       </min>
+       <min m="31">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="01">
+       </min>
+       <min m="31">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="01">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26110" nazwa="Kajdasza" ulica="Buforowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26110" nazwa="Kajdasza" czas="0"/>
+     <przystanek numer="1" id="26108" nazwa="Jagodzińska" czas="2"/>
+     <przystanek numer="2" id="26120" nazwa="Malinowskiego" czas="4"/>
+     <przystanek numer="3" id="26122" nazwa="Lutosławskiego" czas="5"/>
+     <przystanek numer="4" id="26352" nazwa="Asfaltowa (szkoła)" czas="7"/>
+     <przystanek numer="5" id="26354" nazwa="Klasztorna" czas="8"/>
+     <przystanek numer="6" id="26355" nazwa="Parafialna" czas="10"/>
+    </czasy>
+    <tabliczka id="2" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="12">
+       </min>
+       <min m="27">
+       </min>
+       <min m="42">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="13">
+       </min>
+       <min m="34">
+       </min>
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="01">
+       </min>
+       <min m="11">
+       </min>
+       <min m="25">
+       </min>
+       <min m="34">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="06">
+       </min>
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="06">
+       </min>
+       <min m="36">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="14">
+       </min>
+       <min m="23">
+       </min>
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="04">
+       </min>
+       <min m="13">
+       </min>
+       <min m="31">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="01">
+       </min>
+       <min m="19">
+       </min>
+       <min m="28">
+       </min>
+       <min m="46">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="11">
+       </min>
+       <min m="19">
+       </min>
+       <min m="38">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="08">
+       </min>
+       <min m="29">
+       </min>
+       <min m="49">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="18">
+       </min>
+       <min m="33">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="03">
+       </min>
+       <min m="33">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="03">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26108" nazwa="Jagodzińska" ulica="Buforowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26108" nazwa="Jagodzińska" czas="0"/>
+     <przystanek numer="1" id="26120" nazwa="Malinowskiego" czas="2"/>
+     <przystanek numer="2" id="26122" nazwa="Lutosławskiego" czas="3"/>
+     <przystanek numer="3" id="26352" nazwa="Asfaltowa (szkoła)" czas="5"/>
+     <przystanek numer="4" id="26354" nazwa="Klasztorna" czas="6"/>
+     <przystanek numer="5" id="26355" nazwa="Parafialna" czas="8"/>
+    </czasy>
+    <tabliczka id="3" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="5">
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="6">
+       <min m="14">
+       </min>
+       <min m="29">
+       </min>
+       <min m="44">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="15">
+       </min>
+       <min m="36">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="03">
+       </min>
+       <min m="13">
+       </min>
+       <min m="27">
+       </min>
+       <min m="36">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="08">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="08">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="16">
+       </min>
+       <min m="25">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="06">
+       </min>
+       <min m="15">
+       </min>
+       <min m="33">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="03">
+       </min>
+       <min m="21">
+       </min>
+       <min m="30">
+       </min>
+       <min m="48">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="13">
+       </min>
+       <min m="21">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="01">
+       </min>
+       <min m="10">
+       </min>
+       <min m="31">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="00">
+       </min>
+       <min m="20">
+       </min>
+       <min m="35">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="05">
+       </min>
+       <min m="35">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="05">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26120" nazwa="Malinowskiego" ulica="Lutosławskiego" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26120" nazwa="Malinowskiego" czas="0"/>
+     <przystanek numer="1" id="26122" nazwa="Lutosławskiego" czas="1"/>
+     <przystanek numer="2" id="26352" nazwa="Asfaltowa (szkoła)" czas="3"/>
+     <przystanek numer="3" id="26354" nazwa="Klasztorna" czas="4"/>
+     <przystanek numer="4" id="26355" nazwa="Parafialna" czas="6"/>
+    </czasy>
+    <tabliczka id="4" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="01">
+       </min>
+       <min m="16">
+       </min>
+       <min m="31">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="01">
+       </min>
+       <min m="17">
+       </min>
+       <min m="38">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="05">
+       </min>
+       <min m="15">
+       </min>
+       <min m="29">
+       </min>
+       <min m="38">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="10">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="10">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="18">
+       </min>
+       <min m="27">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="08">
+       </min>
+       <min m="17">
+       </min>
+       <min m="35">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="05">
+       </min>
+       <min m="23">
+       </min>
+       <min m="32">
+       </min>
+       <min m="50">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="15">
+       </min>
+       <min m="23">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="03">
+       </min>
+       <min m="12">
+       </min>
+       <min m="33">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="02">
+       </min>
+       <min m="22">
+       </min>
+       <min m="37">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="07">
+       </min>
+       <min m="37">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="07">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26122" nazwa="Lutosławskiego" ulica="Lutosławskiego" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26122" nazwa="Lutosławskiego" czas="0"/>
+     <przystanek numer="1" id="26352" nazwa="Asfaltowa (szkoła)" czas="2"/>
+     <przystanek numer="2" id="26354" nazwa="Klasztorna" czas="3"/>
+     <przystanek numer="3" id="26355" nazwa="Parafialna" czas="5"/>
+    </czasy>
+    <tabliczka id="5" mc="1" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="02">
+       </min>
+       <min m="17">
+       </min>
+       <min m="32">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="02">
+       </min>
+       <min m="18">
+       </min>
+       <min m="39">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="06">
+       </min>
+       <min m="16">
+       </min>
+       <min m="30">
+       </min>
+       <min m="39">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="11">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="11">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="19">
+       </min>
+       <min m="28">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="09">
+       </min>
+       <min m="18">
+       </min>
+       <min m="36">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="06">
+       </min>
+       <min m="24">
+       </min>
+       <min m="33">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="00">
+       </min>
+       <min m="16">
+       </min>
+       <min m="24">
+       </min>
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="04">
+       </min>
+       <min m="13">
+       </min>
+       <min m="34">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="03">
+       </min>
+       <min m="23">
+       </min>
+       <min m="38">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="08">
+       </min>
+       <min m="38">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="08">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26352" nazwa="Asfaltowa (szkoła)" ulica="Asfaltowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26352" nazwa="Asfaltowa (szkoła)" czas="0"/>
+     <przystanek numer="1" id="26354" nazwa="Klasztorna" czas="1"/>
+     <przystanek numer="2" id="26355" nazwa="Parafialna" czas="3"/>
+    </czasy>
+    <tabliczka id="6" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="04">
+       </min>
+       <min m="19">
+       </min>
+       <min m="34">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="04">
+       </min>
+       <min m="20">
+       </min>
+       <min m="41">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="08">
+       </min>
+       <min m="18">
+       </min>
+       <min m="32">
+       </min>
+       <min m="41">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="13">
+       </min>
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="13">
+       </min>
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="21">
+       </min>
+       <min m="30">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="11">
+       </min>
+       <min m="20">
+       </min>
+       <min m="38">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="08">
+       </min>
+       <min m="26">
+       </min>
+       <min m="35">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="02">
+       </min>
+       <min m="18">
+       </min>
+       <min m="26">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="06">
+       </min>
+       <min m="15">
+       </min>
+       <min m="36">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="05">
+       </min>
+       <min m="25">
+       </min>
+       <min m="40">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="10">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="10">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26354" nazwa="Klasztorna" ulica="Pawia" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26354" nazwa="Klasztorna" czas="0"/>
+     <przystanek numer="1" id="26355" nazwa="Parafialna" czas="2"/>
+    </czasy>
+    <tabliczka id="7" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="05">
+       </min>
+       <min m="20">
+       </min>
+       <min m="35">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="05">
+       </min>
+       <min m="21">
+       </min>
+       <min m="42">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="09">
+       </min>
+       <min m="19">
+       </min>
+       <min m="33">
+       </min>
+       <min m="42">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="14">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="14">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="22">
+       </min>
+       <min m="31">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="12">
+       </min>
+       <min m="21">
+       </min>
+       <min m="39">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="09">
+       </min>
+       <min m="27">
+       </min>
+       <min m="36">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="03">
+       </min>
+       <min m="19">
+       </min>
+       <min m="27">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="07">
+       </min>
+       <min m="16">
+       </min>
+       <min m="37">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="06">
+       </min>
+       <min m="26">
+       </min>
+       <min m="41">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="11">
+       </min>
+       <min m="41">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="11">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26355" nazwa="Parafialna" ulica="Parafialna" cechy="">
+    <czasy>
+    </czasy>
+   </przystanek>
+  </wariant>
+  <wariant id="2" nazwa="Parafialna - Vivaldiego">
+   <przystanek id="26355" nazwa="Parafialna" ulica="Parafialna" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26355" nazwa="Parafialna" czas="0"/>
+     <przystanek numer="1" id="26353" nazwa="Klasztorna" czas="1"/>
+     <przystanek numer="2" id="26351" nazwa="Asfaltowa (szkoła)" czas="2"/>
+     <przystanek numer="3" id="26119" nazwa="Lutosławskiego" czas="4"/>
+     <przystanek numer="4" id="26105" nazwa="Malinowskiego" czas="6"/>
+     <przystanek numer="5" id="26107" nazwa="Jagodzińska" czas="8"/>
+     <przystanek numer="6" id="26109" nazwa="Kajdasza" czas="10"/>
+     <przystanek numer="7" id="26117" nazwa="Vivaldiego" czas="12"/>
+    </czasy>
+    <tabliczka id="8" mc="0">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="10">
+       </min>
+       <min m="25">
+       </min>
+       <min m="40">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="10">
+       </min>
+       <min m="25">
+       </min>
+       <min m="48">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="12">
+       </min>
+       <min m="21">
+       </min>
+       <min m="38">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="02">
+       </min>
+       <min m="17">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="17">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="28">
+       </min>
+       <min m="38">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="18">
+       </min>
+       <min m="27">
+       </min>
+       <min m="42">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="12">
+       </min>
+       <min m="33">
+       </min>
+       <min m="42">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="05">
+       </min>
+       <min m="23">
+       </min>
+       <min m="32">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="13">
+       </min>
+       <min m="22">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="03">
+       </min>
+       <min m="12">
+       </min>
+       <min m="29">
+       </min>
+       <min m="44">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="14">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="14">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26353" nazwa="Klasztorna" ulica="Pawia" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26353" nazwa="Klasztorna" czas="0"/>
+     <przystanek numer="1" id="26351" nazwa="Asfaltowa (szkoła)" czas="1"/>
+     <przystanek numer="2" id="26119" nazwa="Lutosławskiego" czas="3"/>
+     <przystanek numer="3" id="26105" nazwa="Malinowskiego" czas="5"/>
+     <przystanek numer="4" id="26107" nazwa="Jagodzińska" czas="7"/>
+     <przystanek numer="5" id="26109" nazwa="Kajdasza" czas="9"/>
+     <przystanek numer="6" id="26117" nazwa="Vivaldiego" czas="11"/>
+    </czasy>
+    <tabliczka id="9" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="11">
+       </min>
+       <min m="26">
+       </min>
+       <min m="41">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="11">
+       </min>
+       <min m="26">
+       </min>
+       <min m="49">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="13">
+       </min>
+       <min m="22">
+       </min>
+       <min m="39">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="03">
+       </min>
+       <min m="18">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="18">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="29">
+       </min>
+       <min m="39">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="19">
+       </min>
+       <min m="28">
+       </min>
+       <min m="43">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="13">
+       </min>
+       <min m="34">
+       </min>
+       <min m="43">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="06">
+       </min>
+       <min m="24">
+       </min>
+       <min m="33">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="14">
+       </min>
+       <min m="23">
+       </min>
+       <min m="43">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="04">
+       </min>
+       <min m="13">
+       </min>
+       <min m="30">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="00">
+       </min>
+       <min m="15">
+       </min>
+       <min m="45">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="15">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26351" nazwa="Asfaltowa (szkoła)" ulica="Asfaltowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26351" nazwa="Asfaltowa (szkoła)" czas="0"/>
+     <przystanek numer="1" id="26119" nazwa="Lutosławskiego" czas="2"/>
+     <przystanek numer="2" id="26105" nazwa="Malinowskiego" czas="4"/>
+     <przystanek numer="3" id="26107" nazwa="Jagodzińska" czas="6"/>
+     <przystanek numer="4" id="26109" nazwa="Kajdasza" czas="8"/>
+     <przystanek numer="5" id="26117" nazwa="Vivaldiego" czas="10"/>
+    </czasy>
+    <tabliczka id="10" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="12">
+       </min>
+       <min m="27">
+       </min>
+       <min m="42">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="12">
+       </min>
+       <min m="27">
+       </min>
+       <min m="50">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="14">
+       </min>
+       <min m="23">
+       </min>
+       <min m="40">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="04">
+       </min>
+       <min m="19">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="19">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="30">
+       </min>
+       <min m="40">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="20">
+       </min>
+       <min m="29">
+       </min>
+       <min m="44">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="14">
+       </min>
+       <min m="35">
+       </min>
+       <min m="44">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="07">
+       </min>
+       <min m="25">
+       </min>
+       <min m="34">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="15">
+       </min>
+       <min m="24">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="05">
+       </min>
+       <min m="14">
+       </min>
+       <min m="31">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="01">
+       </min>
+       <min m="16">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="16">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26119" nazwa="Lutosławskiego" ulica="Lutosławskiego" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26119" nazwa="Lutosławskiego" czas="0"/>
+     <przystanek numer="1" id="26105" nazwa="Malinowskiego" czas="2"/>
+     <przystanek numer="2" id="26107" nazwa="Jagodzińska" czas="4"/>
+     <przystanek numer="3" id="26109" nazwa="Kajdasza" czas="6"/>
+     <przystanek numer="4" id="26117" nazwa="Vivaldiego" czas="8"/>
+    </czasy>
+    <tabliczka id="11" mc="2" cechy="NZ">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="14">
+       </min>
+       <min m="29">
+       </min>
+       <min m="44">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="14">
+       </min>
+       <min m="29">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="01">
+       </min>
+       <min m="16">
+       </min>
+       <min m="25">
+       </min>
+       <min m="42">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="06">
+       </min>
+       <min m="21">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="21">
+       </min>
+       <min m="51">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="32">
+       </min>
+       <min m="42">
+       </min>
+       <min m="59">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="22">
+       </min>
+       <min m="31">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="01">
+       </min>
+       <min m="16">
+       </min>
+       <min m="37">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="01">
+       </min>
+       <min m="09">
+       </min>
+       <min m="27">
+       </min>
+       <min m="36">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="17">
+       </min>
+       <min m="26">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="07">
+       </min>
+       <min m="16">
+       </min>
+       <min m="33">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="03">
+       </min>
+       <min m="18">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="18">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26105" nazwa="Malinowskiego" ulica="Buforowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26105" nazwa="Malinowskiego" czas="0"/>
+     <przystanek numer="1" id="26107" nazwa="Jagodzińska" czas="2"/>
+     <przystanek numer="2" id="26109" nazwa="Kajdasza" czas="4"/>
+     <przystanek numer="3" id="26117" nazwa="Vivaldiego" czas="6"/>
+    </czasy>
+    <tabliczka id="12" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="16">
+       </min>
+       <min m="31">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="01">
+       </min>
+       <min m="16">
+       </min>
+       <min m="31">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="03">
+       </min>
+       <min m="18">
+       </min>
+       <min m="27">
+       </min>
+       <min m="44">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="08">
+       </min>
+       <min m="23">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="23">
+       </min>
+       <min m="53">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="34">
+       </min>
+       <min m="44">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="01">
+       </min>
+       <min m="24">
+       </min>
+       <min m="33">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="03">
+       </min>
+       <min m="18">
+       </min>
+       <min m="39">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="03">
+       </min>
+       <min m="11">
+       </min>
+       <min m="29">
+       </min>
+       <min m="38">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="19">
+       </min>
+       <min m="28">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="09">
+       </min>
+       <min m="18">
+       </min>
+       <min m="35">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="05">
+       </min>
+       <min m="20">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="20">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26107" nazwa="Jagodzińska" ulica="Buforowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26107" nazwa="Jagodzińska" czas="0"/>
+     <przystanek numer="1" id="26109" nazwa="Kajdasza" czas="2"/>
+     <przystanek numer="2" id="26117" nazwa="Vivaldiego" czas="4"/>
+    </czasy>
+    <tabliczka id="13" mc="1">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="17">
+       </min>
+       <min m="32">
+       </min>
+       <min m="47">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="03">
+       </min>
+       <min m="18">
+       </min>
+       <min m="33">
+       </min>
+       <min m="56">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="05">
+       </min>
+       <min m="20">
+       </min>
+       <min m="29">
+       </min>
+       <min m="46">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="10">
+       </min>
+       <min m="25">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="25">
+       </min>
+       <min m="55">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="36">
+       </min>
+       <min m="46">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="03">
+       </min>
+       <min m="26">
+       </min>
+       <min m="35">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="05">
+       </min>
+       <min m="20">
+       </min>
+       <min m="41">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="05">
+       </min>
+       <min m="13">
+       </min>
+       <min m="31">
+       </min>
+       <min m="40">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="00">
+       </min>
+       <min m="21">
+       </min>
+       <min m="30">
+       </min>
+       <min m="50">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="11">
+       </min>
+       <min m="20">
+       </min>
+       <min m="37">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="07">
+       </min>
+       <min m="22">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="22">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26109" nazwa="Kajdasza" ulica="Buforowa" cechy="">
+    <czasy>
+     <przystanek numer="0" id="26109" nazwa="Kajdasza" czas="0"/>
+     <przystanek numer="1" id="26117" nazwa="Vivaldiego" czas="2"/>
+    </czasy>
+    <tabliczka id="14" mc="2">
+     <dzien nazwa="w dni robocze">
+      <godz h="6">
+       <min m="19">
+       </min>
+       <min m="34">
+       </min>
+       <min m="49">
+       </min>
+      </godz>
+      <godz h="7">
+       <min m="05">
+       </min>
+       <min m="20">
+       </min>
+       <min m="35">
+       </min>
+       <min m="58">
+       </min>
+      </godz>
+      <godz h="8">
+       <min m="07">
+       </min>
+       <min m="22">
+       </min>
+       <min m="31">
+       </min>
+       <min m="48">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="9">
+       <min m="12">
+       </min>
+       <min m="27">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="10">
+       <min m="27">
+       </min>
+       <min m="57">
+       </min>
+      </godz>
+      <godz h="11">
+       <min m="38">
+       </min>
+       <min m="48">
+       </min>
+      </godz>
+      <godz h="12">
+       <min m="05">
+       </min>
+       <min m="28">
+       </min>
+       <min m="37">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="13">
+       <min m="07">
+       </min>
+       <min m="22">
+       </min>
+       <min m="43">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="14">
+       <min m="07">
+       </min>
+       <min m="15">
+       </min>
+       <min m="33">
+       </min>
+       <min m="42">
+       </min>
+      </godz>
+      <godz h="15">
+       <min m="02">
+       </min>
+       <min m="23">
+       </min>
+       <min m="32">
+       </min>
+       <min m="52">
+       </min>
+      </godz>
+      <godz h="16">
+       <min m="13">
+       </min>
+       <min m="22">
+       </min>
+       <min m="39">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="17">
+       <min m="09">
+       </min>
+       <min m="24">
+       </min>
+       <min m="54">
+       </min>
+      </godz>
+      <godz h="18">
+       <min m="24">
+       </min>
+      </godz>
+     </dzien>
+    </tabliczka>
+   </przystanek>
+   <przystanek id="26117" nazwa="Vivaldiego" ulica="Buforowa" cechy="">
+    <czasy>
+    </czasy>
+   </przystanek>
+  </wariant>
+ </linia>
+</linie>
