@@ -6,7 +6,7 @@ pub mod trips;
 
 fn main() {
     let (trip, trip_headsign) = trips::get_collections();
-    let (route,x,y) = routes::get_collections();
+    let route = routes::get_route();
 
     //print Trip
     println!("id,direction_id,route_id,vechicle_id,trip_destination");
